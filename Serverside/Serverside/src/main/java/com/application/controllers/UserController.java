@@ -33,7 +33,7 @@ public class UserController {
 	UserService userService;
 	
 	@GetMapping("/{id}")
-	public User findBookById(@PathVariable int id) {
+	public User findUserById(@PathVariable int id) {
 		return userService.findUserById(id);
 	}
 	@GetMapping("/users")

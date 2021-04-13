@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.application.entity.Product;
 import com.application.entity.User;
+import com.application.exceptions.NotPermittedException;
 import com.application.repositories.ProductRepository;
 
 @Service
@@ -30,29 +31,62 @@ public class ProductService {
 		return products;
 	}
 	
-//	public List<Product> getProductsByCategory(int category){
-//		List<Product> products = new ArrayList<Product>();
-//		Iterable<Product> iterable = productRepository.findAll();
-//		Iterator<Product> iterator = iterable.iterator();
-//			
-//		return products;
-//	}
-	
-	public Product addProduct(User user,Product product) {
-		Product p = product;
-		if(user.getIsactive()) {
-			productRepository.save(product);
-		}
-		return p;
+	public Optional<Product> getProductById(int id) {
+		return productRepository.findById(id);
 	}
 	
-	public Product updateProduct(User user,int id,Product product) {
-		Optional<Product> optional = productRepository.findById(id);
-		Product p = optional.orElse(null);
-		if(p!=null) {
-			productRepository.save(p);
+	public List<Product> getProductsByCategory(int category_id){
+		List<Product> products = (List<Product>) productRepository.findAll();
+		List<Product> catProduct = new ArrayList<Product>();
+		for(Product product:products)
+		{
+			if(category_id==product.getCategory_id())
+			{
+				catProduct.add(product);
+			}
 		}
-		return p;
+		return catProduct;
+	}
+	
+	
+	public Product addProduct(User user,Product product) throws NotPermittedException {
+		if((user.getRole().equals("ADMIN")||user.getRole().contentEquals("SELLER"))&&(user.getIsactive()))
+		{
+			productRepository.save(product);
+			return product;
+		}
+		else
+		{
+			throw new NotPermittedException("You are not permitted to take this action");
+		}
+	
+	}
+	
+	public Product updateProduct(User user,int id,Product product) throws NotPermittedException {
+		Optional<Product> optional = productRepository.findById(id);
+		Product dbProduct = optional.orElse(null);
+		if(dbProduct!=null&&user.getRole().equals("ADMIN")&&(user.getIsactive()))
+		{
+			productRepository.save(product);
+			return product;
+		}
+		else
+		{
+			throw new NotPermittedException("You are not permitted to update this product");
+		}
+	}
+	
+	public void deleteProduct(User user, int id) throws NotPermittedException {
+		Optional<Product> optional = productRepository.findById(id);
+		Product dbProduct = optional.orElse(null);
+		if(dbProduct!=null&&user.getRole().equals("ADMIN")&&(user.getIsactive()))
+		{
+			productRepository.deleteById(id);
+		}
+		else
+		{
+			throw new NotPermittedException("You are not permitted to delete this product");
+		}
 	}
 	
 	
