@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,7 +12,7 @@ import { SignUpService } from '../service/sign-up.service';
 export class SignUpComponent implements OnInit {
 
   signForm: FormGroup;
-  constructor(private signUpService: SignUpService,private router:Router) { }
+  constructor(private signUpService: SignUpService,private router:Router, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.signForm = new FormGroup({
