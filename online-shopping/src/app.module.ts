@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app/app-routing.module';
 
-import { HomePageComponent } from '../home-page/home-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from 'src/sign-up/sign-up/sign-up.component';
@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import routes from 'src/app.routing';
 import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app/app.component';
 
 
 @NgModule({
