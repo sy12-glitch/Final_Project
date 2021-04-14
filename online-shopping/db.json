@@ -1,0 +1,27 @@
+{
+    "users": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      },
+      {
+        "email": "demo@gmail.com",
+        "password": "demo",
+        "age": 24,
+        "address": "India",
+        "gender": "male",
+        "id": 3
+      },
+      {
+        "email": "demo@gmail.com",
+        "password": "demo",
+        "age": 24,
+        "address": "India",
+        "gender": "male",
+        "id": 4
+      }
+    ],
+    "items": []
+  }
