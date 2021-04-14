@@ -21,15 +21,18 @@ public class UserService {
 	UserRepository userRepository;
 //	private User.role r;
 	private boolean isvalid = false;
+
 //find users by ID(admin only) -logic for admin access is pending
-	public User findUserById(int id) {
+	public User findUserById(int id) throws InvalidUserException {
 		Optional<User> optional = userRepository.findById(id);
 		User user = optional.orElse(null);
-
 		System.out.println(user);
-
-		return user;
+		if ((user.getIsactive())) {
+			return user;
+		} else
+			throw new InvalidUserException("Access denied");
 	}
+
 //find all users(only admin should have access)-logic for admin access is pending
 	public List<User> findUsers() {
 		Iterable<User> iterable = userRepository.findAll();
@@ -42,6 +45,7 @@ public class UserService {
 
 		return users;
 	}
+
 //New User signup(POST method)
 	public User createUser(User user) throws InvalidUserException {
 		if (((user.getFname() == null) || (user.getFname().length() == 0) || (namevalidation(user.getFname())))) {
@@ -57,8 +61,9 @@ public class UserService {
 			return userRepository.save(user);
 		}
 	}
+
 //update service(PUT method)
-	public User updateUser(int id, User user) {
+	public User updateUser(int id, User user) throws InvalidUserException {
 		User dbUser = findUserById(id);
 		if (dbUser != null) {
 			user = userRepository.save(dbUser);
@@ -66,15 +71,24 @@ public class UserService {
 		return user;
 
 	}
+
 //Yet to be finish this method.-logic for admin access is pending
-	public void deleteUser(int id) throws InvalidUserException {
-	//	User user=new User();
-	//	if((user.getRole().equals(("ADMIN")))||(user.getRole().equals("admin"))||(user.getRole().equals("Admin"))){
+	public void deleteUser(User user, int id) throws InvalidUserException {
+		Optional<User> optional = userRepository.findById(id);
+		User dbusers = optional.orElse(null);
+		if (dbusers != null && user.getRole().equals("ADMIN") && (user.getIsactive())) {
 			userRepository.deleteById(id);
-		//}else 
-		//	throw new InvalidUserException("Permission Denied");
+		} else
+			throw new InvalidUserException("Permission Denied");
 
 	}
+	// User user=new User();
+	// if((user.getRole().equals(("ADMIN")))||(user.getRole().equals("admin"))||(user.getRole().equals("Admin"))){
+	// userRepository.deleteById(id);
+	// }else
+	// throw new InvalidUserException("Permission Denied");
+
+	// }
 //login service
 	public User Userlogin(User user) throws InvalidUserException {
 		Iterable<User> iterable = userRepository.findAll();
@@ -92,6 +106,9 @@ public class UserService {
 			System.out.println(users);
 		}
 		if (isvalid) {
+			user.setIsactive(true);
+			System.out.println(user.getIsactive());
+			System.out.println(user.getRole());
 			return user;
 		} else
 			throw new InvalidUserException("Invalid credentials");
