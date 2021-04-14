@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row register">
-
+       
         <div class="col-sm-3">
 
         </div>
@@ -42,8 +42,7 @@
                         <input type="password" name="psw" formControlName="password" class="form-control"
                             placeholder="Enter password" />
                         <small *ngIf="signForm.get('password').dirty && signForm.get('password').invalid"
-                            class="form-text text-danger">Password must content one special character and lenght should
-                            be 6-10 character</small>
+                            class="form-text text-danger">Password must content one special character and lenght should be 6-10 character</small>
                     </div>
                 </div>
 
@@ -69,10 +68,10 @@
                 <div class="form-group row">
                     <label class="control-lable col-sm-4 form-control" for="role">Role:</label>
                     <div class="col-sm-8" formControlName="role">
-                        <select class="control-lable col-sm-4">
-                            <option>Select role</option>
-                            <option>User</option>
-                            <option>Seller</option>
+                        <select  class="control-lable col-sm-4">
+                            <option >Select role</option>
+                            <option >User</option>
+                            <option >Seller</option>
                         </select>
                         <!-- <small *ngIf="signForm.get('role').dirty && signForm.get('role').invalid"
                             class="form-text text-danger">choose your role</small> -->
@@ -81,11 +80,9 @@
                 <div class="form-group row">
                     <label class="control-lable col-sm-4" for="gender">Gender:</label>
                     <div class="col-sm-2">
-                        <input id="uname" class="form-check-input" type="radio" name="flexRadioDefault"
-                            id="flexRadioDefault2">
+                        <input id ="uname" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">Male</label><br>
-                        <input id="uname" class="form-check-input" type="radio" name="flexRadioDefault"
-                            id="flexRadioDefault">
+                         <input  id ="uname" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
                         <label class="form-check-label" for="flexRadioDefault">Female</label>
                         <small *ngIf="signForm.get('gender').dirty && signForm.get('gender').invalid"
                             class="form-text text-danger">choose gender</small>
@@ -95,14 +92,14 @@
                     <div class="col-sm-offset-4 col-sm-8">
                         <div class="checkbox">
                             <label><input type="checkbox" name="remember" action="#">
-                                <a href="#"> I accept all the terms and conditions.</a>
+                                <a href="#" > I accept all the terms and conditions.</a>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group ">
                     <div class="col-sm-offset-4 col-sm-8">
-                        <button type="submit" [routerLink]="['/login']" class="btn btn-primary btn-block">Create
+                        <button type="submit" [routerLink]="['/login']"  class="btn btn-primary btn-block" >Create
                             account</button>
                     </div>
                 </div>
