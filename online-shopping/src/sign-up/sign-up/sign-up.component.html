@@ -13,7 +13,7 @@
                         <input type="text" name="fname" id="uname" formControlName="first_name" class="form-control"
                             placeholder="Enter your first name" />
                         <small *ngIf="signForm.get('first_name').dirty && signForm.get('first_name').invalid"
-                            class="form-text text-danger">First name is required</small>
+                            class="form-text text-danger">Enter valid name</small>
 
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                         <input type="text" name="lname" id="uname" formControlName="last_name" class="form-control"
                             placeholder="Enter your last name" />
                         <small *ngIf="signForm.get('last_name').dirty && signForm.get('last_name').invalid"
-                            class="form-text text-danger">Last name is required</small>
+                            class="form-text text-danger">Enter valid last name</small>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -32,7 +32,7 @@
                         <input type="email" name="email" formControlName="email" class="form-control"
                             placeholder="Enter your email-id" />
                         <small *ngIf="signForm.get('email').dirty && signForm.get('email').invalid"
-                            class="form-text text-danger">email is required</small>
+                            class="form-text text-danger">Enter valid email-id</small>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                         <input type="password" name="psw" formControlName="password" class="form-control"
                             placeholder="Enter password" />
                         <small *ngIf="signForm.get('password').dirty && signForm.get('password').invalid"
-                            class="form-text text-danger">password is required</small>
+                            class="form-text text-danger">Password must content one special character and lenght should be 6-10 character</small>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                         <input type="number" name="mobile" formControlName="mobile" class="form-control"
                             placeholder="Enter 10 digit mobile number" maxlength="10" />
                         <small *ngIf="signForm.get('mobile').dirty && signForm.get('mobile').invalid"
-                            class="form-text text-danger">mobile number is required</small>
+                            class="form-text text-danger">Enter 10 digit mobile number only</small>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -68,7 +68,7 @@
                 <div class="form-group row">
                     <label class="control-lable col-sm-4" for="role">Role:</label>
                     <div class="col-sm-8">
-                        <select formControlName="role" class="form-control form-select" aria-label="Default">
+                        <select formControlName="role" class="form-control form-select">
                             <option selected>Select role</option>
                             <option value="1">User</option>
                             <option value="2">Seller</option>
