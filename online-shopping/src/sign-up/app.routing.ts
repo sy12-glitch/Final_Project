@@ -5,6 +5,7 @@ import { ForgetComponent } from "./forget/forget.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 
 const routes:Routes = [
+    {path:''}
     {path: 'create', component: SignUpComponent},
     {path: 'edit/:id', component: ForgetComponent},
    
