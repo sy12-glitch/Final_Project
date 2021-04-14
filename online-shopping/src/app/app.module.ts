@@ -8,7 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from 'src/sign-up/sign-up/sign-up.component';
 import { ForgetComponent } from 'src/sign-up/forget/forget.component';
 import { LoginComponent } from 'src/sign-up/login/login.component';
-import { RootComponent } from 'src/sign-up/root/root.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,7 +16,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [SignUpComponent,ForgetComponent, LoginComponent, RootComponent,
+  declarations: [SignUpComponent,ForgetComponent, LoginComponent,
     AppComponent,
     HomePageComponent
   ],
@@ -34,7 +33,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule
 ],
   providers: [],
-  bootstrap: [RootComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { 
   
