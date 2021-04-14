@@ -7,13 +7,6 @@ import { Injectable } from '@angular/core';
 export class SignUpService {
   private data:any[] = [];
 
-  public set books(books){
-    this.data = books;
-  }
-  public get books(){
-    return this.data;
-  }
-
   private host:string = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }

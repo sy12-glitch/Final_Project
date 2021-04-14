@@ -9,6 +9,7 @@ import { SignUpComponent } from "./sign-up/sign-up/sign-up.component";
 const routes:Routes = [
     {path: 'sign-up',component:SignUpComponent},
     {path: 'login', component: LoginComponent},
+    {path: 'home', component: HomePageComponent},
     {path: 'reset-password', component:ForgetComponent},
     {path: '**', pathMatch: 'full', redirectTo: "home-page" }
 ];
