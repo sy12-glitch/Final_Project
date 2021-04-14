@@ -26,7 +26,7 @@ import { AppComponent } from './app.component';
     NgbModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgbModule,

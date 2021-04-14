@@ -10,6 +10,7 @@
     <a class="nav-link" [routerLink]="['/sign-up']" (click)="open(content)">SignUp/Login</a>
   
 </nav>
+<router-outlet></router-outlet>
 <div class="container-fluid">
 <ngb-carousel *ngIf="images">
   <ng-template ngbSlide>
