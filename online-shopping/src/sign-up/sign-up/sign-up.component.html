@@ -66,15 +66,15 @@
 
                 </div>
                 <div class="form-group row">
-                    <label class="control-lable col-sm-4" for="role">Role:</label>
-                    <div class="col-sm-8">
-                        <select formControlName="role" class="form-control form-select">
-                            <option selected>Select role</option>
-                            <option value="1">User</option>
-                            <option value="2">Seller</option>
+                    <label class="control-lable col-sm-4 form-control" for="role">Role:</label>
+                    <div class="col-sm-8" formControlName="role">
+                        <select  class="control-lable col-sm-4">
+                            <option >Select role</option>
+                            <option >User</option>
+                            <option >Seller</option>
                         </select>
-                        <small *ngIf="signForm.get('role').dirty && signForm.get('role').invalid"
-                            class="form-text text-danger">choose your role</small>
+                        <!-- <small *ngIf="signForm.get('role').dirty && signForm.get('role').invalid"
+                            class="form-text text-danger">choose your role</small> -->
                     </div>
                 </div>
                 <div class="form-group row">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="form-group ">
                     <div class="col-sm-offset-4 col-sm-8">
-                        <button type="submit" [disabled]="signForm.invalid" class="btn btn-primary btn-block">Create
+                        <button type="submit" [routerLink]="['/login']"  class="btn btn-primary btn-block" >Create
                             account</button>
                     </div>
                 </div>

@@ -32,8 +32,8 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@GetMapping("/{id}")
-	public User findUserById(@PathVariable int id) {
+	@GetMapping("/users/{id}")
+	public User findUserById(@PathVariable int id) throws InvalidUserException {
 		return userService.findUserById(id);
 	}
 	@GetMapping("/users")
@@ -41,16 +41,17 @@ public class UserController {
 		return userService.findUsers();
 	}
 	
-	@PostMapping("/signup")
-	public ResponseEntity<User> createUserSignup(@RequestBody User user) throws InvalidUserException {
+	@PostMapping("user/signup")
+	public String createUserSignup(@RequestBody User user) throws InvalidUserException {
 		System.out.println(user);
 		User saveduser = userService.createUser(user);
 		ResponseEntity<User> res = ResponseEntity.status(HttpStatus.CREATED).body(saveduser);
 		System.out.println(res);
-		return res;
+		//return res;
+		return "SingUp success";
 		//return userService.createUser(user);
 	}
-	@PostMapping("/login")
+	@PostMapping("user/login")
 	public String Userlogin(@RequestBody User user) throws InvalidUserException {
 		System.out.println(user);
 		User loggeduser = userService.Userlogin(user);
@@ -61,13 +62,13 @@ public class UserController {
 	}
 	
 	@PutMapping("update/{id}")
-	public User updatesUser(@PathVariable int id,@RequestBody User user) {
+	public User updatesUser(@PathVariable int id,@RequestBody User user) throws InvalidUserException {
 		return userService.updateUser(id, user);
 	}
 	
 	@DeleteMapping("delete/{id}")
-	public boolean deleteUser(@PathVariable int id) throws InvalidUserException {
-		userService.deleteUser(id);
+	public boolean deleteUser( @RequestBody User user,@PathVariable int id) throws InvalidUserException {
+		userService.deleteUser(user,id);
 		return true;
 
 }
