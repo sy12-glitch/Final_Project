@@ -32,18 +32,19 @@ public class User {
 //	}
 	private String role;
 
-	public User(String email, String password) {
+	public User(String email, String password,String role) {
 		super();
 		this.email = email;
 		this.password = password;
+		this.role = role;
 	}
 
 	public User() {
 
 	}
 
-	public User(int userid, String fname, String lname, String email, String password, String gender, Boolean isactive,
-			String address, String mobile, String role) {
+	public User(int userid, String fname, String lname, String email, String password, String gender,
+			String address, String mobile) {
 		super();
 		this.userid = userid;
 		this.fname = fname;
@@ -51,10 +52,10 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.gender = gender;
-		this.isactive = isactive;
+	//	this.isactive = isactive;
 		this.address = address;
 		this.mobile = mobile;
-		this.role = role;
+	//	this.role = role;
 	}
 
 	public int getUserid() {
