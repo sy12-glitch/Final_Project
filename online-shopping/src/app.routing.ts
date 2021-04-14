@@ -5,11 +5,9 @@ import { ForgetComponent } from "./sign-up/forget/forget.component";
 import { SignUpComponent } from "./sign-up/sign-up/sign-up.component";
 
 const routes:Routes = [
-    {path: 'create', component: SignUpComponent},
+    {path: 'SignUp/Login', loadChildren:()=> import('./sign-up/sign-up/sign-up.component').then(m=>m.SignUpComponent)},
     {path: 'edit/:id', component: ForgetComponent},
-   
-    // {path: './list', component: HomePageComponent},
-    {path: '**', pathMatch: 'full', redirectTo: "sign-up" }
+    {path: '**', pathMatch: 'full', redirectTo: "home-page" }
 ];
 
 
