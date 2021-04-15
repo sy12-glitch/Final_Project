@@ -15,12 +15,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import routes from 'src/app.routing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app/app.component';
+import { Product1Component } from './product1/product1.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
   declarations: [SignUpComponent,ForgetComponent, LoginComponent,
     AppComponent,
     HomePageComponent,
+    Product1Component,
+    CartComponent,
   
   ],
   imports: [
