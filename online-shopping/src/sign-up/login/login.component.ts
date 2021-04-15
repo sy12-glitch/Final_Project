@@ -33,7 +33,8 @@ msg="";
       this.customService.saveForm(this.loginForm.value)
       .subscribe(
         data =>{
-        console.log("Resived");
+        console.log("login successful");
+        alert("login successful");
         this.router.navigate(["/"]);
       },
       error=>{
