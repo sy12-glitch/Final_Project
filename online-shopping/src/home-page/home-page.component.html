@@ -7,7 +7,8 @@
     <a class="nav-link active" href="#"><span id="logo">HappyMart</span></a>
       <a class="nav-link" href="#">About Us</a>
       <a class="nav-link"  routerLink="/cart">Cart</a>
-      <a class="nav-link" [routerLink]="['/','sign-up']" >SignUp/Login</a>
+      <a class="nav-link" [routerLink]="['/','sign-up']" >SignUp</a>
+    <a class="nav-link" [routerLink]="['/','login']" >Login</a>
     
   </nav>
   
@@ -16,7 +17,7 @@
   <ng-template ngbSlide>
     <img [src]="images[0]" alt="Random first slide">
     <div class="carousel-caption">
-      <h3 >Wlcome to Happymart!</h3>
+      <h3 >Welcome to Happymart!</h3>
       <p >Shop from our wide range of products</p>
     </div>
   </ng-template>
@@ -47,7 +48,7 @@
   <a target="_blank" href="img_5terre.jpg">
     <img src="https://th.bing.com/th/id/OIP.6X6fU7HG3IgpPxJnM32qfwHaHa?pid=ImgDet&rs=1" alt="Cinque Terre" width="600" height="400">
   </a>
-  <div class="desc"><a>Clothing</a></div>
+  <div class="desc"><a [routerLink]="['/','product1']">Clothing</a></div>
 </div>
 
 <div class="gallery">

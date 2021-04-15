@@ -12,11 +12,14 @@ import { CustomerService } from '../service/customer.service';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
+  msg: string;
 
   constructor(private router: Router, 
     private http: HttpClient, private customService:CustomerService) { }
-
+  
+    userDetails={}
   loginForm: FormGroup;
+
     ngOnInit(): void {
       this.loginForm = new FormGroup({
         email:new FormControl("",Validators.required),
@@ -24,12 +27,23 @@ export class LoginComponent implements OnInit {
       });
     }
   
+ 
     login() : void {
-      if(this.username == 'admin' && this.password == 'admin'){
-       this.router.navigate(["home-page"]);
-      }else {
-        alert("Invalid credentials");
+      console.log(this.loginForm.value);
+      this.customService.saveForm(this.loginForm.value)
+      .subscribe(
+        data =>{
+        console.log("login successful");
+        alert("login successful");
+        this.router.navigate(["/"]);
+      },
+      error=>{
+        console.log("exception occured");
+        this.msg="Bad credential, enter right email-id or passoword !";
       }
-    }
-    }
+      
+      
+      )
+  }
+}   
   
