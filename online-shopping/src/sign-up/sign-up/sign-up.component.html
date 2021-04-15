@@ -10,9 +10,9 @@
                 <div class="form-group row">
                     <label class="control-lable col-sm-4" for="fname">First name:</label>
                     <div class="col-sm-8">
-                        <input type="text" name="fname" id="uname" formControlName="first_name" class="form-control"
+                        <input type="text" name="fname" id="uname" formControlName="fname" class="form-control"
                             placeholder="Enter your first name" />
-                        <small *ngIf="signForm.get('first_name').dirty && signForm.get('first_name').invalid"
+                        <small *ngIf="signForm.get('fname').dirty && signForm.get('fname').invalid"
                             class="form-text text-danger">Enter valid name</small>
 
                     </div>
@@ -20,9 +20,9 @@
                 <div class="form-group row">
                     <label class="control-lable col-sm-4" for="lname">Last name:</label>
                     <div class="col-sm-8">
-                        <input type="text" name="lname" id="uname" formControlName="last_name" class="form-control"
+                        <input type="text" name="lname" id="uname" formControlName="lname" class="form-control"
                             placeholder="Enter your last name" />
-                        <small *ngIf="signForm.get('last_name').dirty && signForm.get('last_name').invalid"
+                        <small *ngIf="signForm.get('lname').dirty && signForm.get('lname').invalid"
                             class="form-text text-danger">Enter valid last name</small>
                     </div>
                 </div>
@@ -80,10 +80,11 @@
                 <div class="form-group row">
                     <label class="control-lable col-sm-4" for="gender">Gender:</label>
                     <div class="col-sm-2">
-                        <input id ="uname" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">Male</label><br>
-                         <input  id ="uname" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
-                        <label class="form-check-label" for="flexRadioDefault">Female</label>
+                        <select  class="control-lable col-sm-4" formControlName="gender">
+                            <option >Gender</option>
+                            <option >Male</option>
+                            <option >Female</option>
+                        </select>
                         <small *ngIf="signForm.get('gender').dirty && signForm.get('gender').invalid"
                             class="form-text text-danger">choose gender</small>
                     </div>
