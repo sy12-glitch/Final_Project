@@ -30,11 +30,11 @@ msg="";
     login() : void {
       
       console.log(this.loginForm.value);
-      this.customService.saveForm(this.loginForm)
+      this.customService.saveForm(this.loginForm.value)
       .subscribe(
         data =>{
         console.log("Resived");
-        this.router.navigate(["home"]);
+        this.router.navigate(["/"]);
       },
       error=>{
         console.log("exception occured");

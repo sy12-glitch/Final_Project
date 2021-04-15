@@ -33,11 +33,7 @@ export class SignUpComponent implements OnInit {
   
       .subscribe((res:any)=>{
         console.log(res);
-<<<<<<< HEAD
-        this.router.navigate(["login"]);
-=======
         this.router.navigate(["/login"]);
->>>>>>> 340e26a1a8389a4ac467cb4ac136053852f3a505
       })
     }
   }
