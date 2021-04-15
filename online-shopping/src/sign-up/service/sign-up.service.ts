@@ -6,13 +6,20 @@ import { Injectable } from '@angular/core';
 })
 export class SignUpService {
   private data:any[] = [];
+  
 
+  public set home(home){
+    this.data = home;
+  }
+  public get home(){
+    return this.data;
+  }
   private host:string = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }
 
-  saveForm(signup){
-    return this.http.post(`${this.host}/sign-up`, signup);
+  saveForm(home){
+    return this.http.post(`${this.host}/home/user/signup`, home);
   }
 
 }

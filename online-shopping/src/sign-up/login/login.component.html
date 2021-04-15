@@ -5,11 +5,11 @@
         <form>
             <div class="form-group">
               <label for="loginUsername">Email address</label>
-              <input type="email" class="form-control" id="loginUsername" aria-describedby="emailHelp">
+              <input  type="email" [(ngModel)]="username" name="username" required class="form-control" id="loginUsername" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
               <label for="loginPassword">Password</label>
-              <input type="password" class="form-control" id="loginPassword">
+              <input type="password" [(ngModel)]="password"t name="password" required class="form-control" id="loginPassword">
             </div>
             <div class="form-group form-check">
               <a [routerLink]="['/reset-password']">Forget password?</a>
