@@ -2,7 +2,8 @@
 <div class="row">
     <div class="col-md-6 offset-md-3 mt-4">
         <h3>Login Page</h3>
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" method="POST" action="#">
+          <small class="danger">{{msg}}</small>
             <div class="form-group">
               <label for="loginUsername">Email address</label>
               <input  type="email" formControlName="email" name="username" required class="form-control" id="loginUsername" aria-describedby="emailHelp">
@@ -14,7 +15,7 @@
             <div class="form-group form-check">
               <a [routerLink]="['/reset-password']">Forget password?</a>
             </div>
-            <button  type="submit" routerLink="['/','home']" (click)="login()" class="btn btn-primary">Login</button>
+            <button  type="submit"  [routerLink]="['/']" (click)="login()" class="btn btn-primary">Login</button>
           </form>
     </div>
 </div>

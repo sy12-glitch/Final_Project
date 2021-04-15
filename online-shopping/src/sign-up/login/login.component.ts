@@ -12,6 +12,7 @@ import { CustomerService } from '../service/customer.service';
 export class LoginComponent implements OnInit {
 email = true;
 password = true;
+msg="";
   constructor(private router: Router, 
     private http: HttpClient, private customService:CustomerService) { }
   
@@ -25,22 +26,31 @@ password = true;
       });
     }
   
-    // login() : void {
-      
-    //   console.log(this.loginForm.value);
-    //   this.customService.login(this.loginForm)
-    //   .subscribe((res:any)=>{
-    //     console.log(res);
-    //     this.router.navigate(["/home"]);
-    //     alert("success");
-    //   })}
+ 
     login() : void {
       
       console.log(this.loginForm.value);
-      this.customService.saveForm(this.loginForm.value)
-      .subscribe((res:any)=>{
-        console.log(res);
+      this.customService.saveForm(this.loginForm)
+      .subscribe(
+        data =>{
+        console.log("Resived");
         this.router.navigate(["home"]);
-      })
+      },
+      error=>{
+        console.log("exception occured");
+        this.msg="Bad credential, enter right email or passoword";
+      }
+      
+      
+      )
   }
-}
+}   
+// login() : void {
+      
+  //   console.log(this.loginForm.value);
+  //   this.customService.login(this.loginForm)
+  //   .subscribe((res:any)=>{
+  //     console.log(res);
+  //     this.router.navigate(["/home"]);
+  //     alert("success");
+  //   })}
