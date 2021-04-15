@@ -64,10 +64,8 @@ public class UserService {
 
 //update service(PUT method)
 	public User updateUser(int id, User user) throws InvalidUserException {
-		User dbUser = findUserById(id);
-		if (dbUser != null) {
-			user = userRepository.save(dbUser);
-		}
+		user.setUserid(id);
+		userRepository.save(user);
 		return user;
 
 	}
@@ -91,27 +89,19 @@ public class UserService {
 	// }
 //login service
 	public User Userlogin(User user) throws InvalidUserException {
-		Iterable<User> iterable = userRepository.findAll();
-		Iterator<User> iterator = iterable.iterator();
-		List<User> users = new ArrayList<User>();
-
-		while (iterator.hasNext()) {
-			users.add(iterator.next());
-		}
-		for (User u1 : users) {
-			if (((u1.getEmail().equals(user.getEmail())) && ((u1.getPassword().equals(user.getPassword()))))) {
-				isvalid = true;
-			} else
-				isvalid = false;
-			System.out.println(users);
-		}
-		if (isvalid) {
-			user.setIsactive(true);
-			System.out.println(user.getIsactive());
-			System.out.println(user.getRole());
-			return user;
-		} else
-			throw new InvalidUserException("Invalid credentials");
+		
+		  User users = userRepository.findByEmail(user.getEmail());
+		  if(users==null) {
+			  throw new InvalidUserException("Invalid username or password.");
+		  }
+		  else if((user.getEmail().equals(users.getEmail()))&&(user.getPassword().equals(users.getPassword()))) {
+	        	users.setIsactive(true);
+	        	userRepository.save(users);
+	        }  else   {
+	            throw new InvalidUserException("Invalid username or password.");
+	        }
+			return users;
+			
 	}
 
 	public boolean emailvalidation(String email) {

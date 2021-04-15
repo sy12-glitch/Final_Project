@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
       console.log(this.loginForm.value);
       this.customService.saveForm(this.loginForm.value)
       .subscribe((res:any)=>{
-        console.log(res);
-        this.router.navigate(["home"]);
+        //console.log(res);
+        this.router.navigate(["/"]);
       })
     }
   }
