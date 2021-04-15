@@ -42,13 +42,13 @@ public class UserController {
 	}
 	
 	@PostMapping("user/signup")
-	public String createUserSignup(@RequestBody User user) throws InvalidUserException {
+	public ResponseEntity<User> createUserSignup(@RequestBody User user) throws InvalidUserException {
 		System.out.println(user);
 		User saveduser = userService.createUser(user);
 		ResponseEntity<User> res = ResponseEntity.status(HttpStatus.CREATED).body(saveduser);
 		System.out.println(res);
-		//return res;
-		return "SingUp success";
+		return res;
+		//return "SingUp success";
 		//return userService.createUser(user);
 	}
 	@PostMapping("user/login")
