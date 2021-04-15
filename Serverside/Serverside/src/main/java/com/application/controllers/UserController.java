@@ -53,10 +53,11 @@ public class UserController {
 	}
 	@PostMapping("user/login")
 	public String Userlogin(@RequestBody User user) throws InvalidUserException {
-		System.out.println(user);
+		//System.out.println(user);
 		User loggeduser = userService.Userlogin(user);
 		ResponseEntity<User> res =new ResponseEntity<User>(user,HttpStatus.ACCEPTED);
 		System.out.println(res);
+		System.out.println("Login success");
 	//	return res;
 		return "Login success";
 	}
