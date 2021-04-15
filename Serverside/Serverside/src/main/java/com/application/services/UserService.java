@@ -48,18 +48,19 @@ public class UserService {
 
 //New User signup(POST method)
 	public User createUser(User user) throws InvalidUserException {
-		if (((user.getFname() == null) || (user.getFname().length() == 0) || (namevalidation(user.getFname())))) {
-			throw new InvalidUserException("Name not valid");
-
-		} else if (!(emailvalidation(user.getEmail()))) {
-			throw new InvalidUserException("Email ID is is incorrect");
-		} else if (!(passwordvalidation(user.getPassword()))) {
-			throw new InvalidUserException("Password incorrect");
-		} else if (!(mobilenovalidation(user.getMobile()))) {
-			throw new InvalidUserException("Invalid mobile number");
-		} else {
-			return userRepository.save(user);
-		}
+//		if (((user.getFname() == null) || (user.getFname().length() == 0) || (namevalidation(user.getFname())))) {
+//			throw new InvalidUserException("Name not valid");
+//
+//		} else if (!(emailvalidation(user.getEmail()))) {
+//			throw new InvalidUserException("Email ID is is incorrect");
+//		} else if (!(passwordvalidation(user.getPassword()))) {
+//			throw new InvalidUserException("Password incorrect");
+//		} else if (!(mobilenovalidation(user.getMobile()))) {
+//			throw new InvalidUserException("Invalid mobile number");
+//		} else {
+//			return userRepository.save(user);
+//		}
+		return userRepository.save(user);
 	}
 
 //update service(PUT method)
