@@ -15,6 +15,7 @@ const routes:Routes = [
     { path: 'product1', component: Product1Component },
     { path: 'cart', component: CartComponent }
     
+    
    
    
 ];

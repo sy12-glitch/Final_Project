@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         data =>{
         console.log("login successful");
         alert("login successful");
-        this.router.navigate(["/"]);
+        this.router.navigate(["/my-orders"]);
       },
       error=>{
         console.log("exception occured");

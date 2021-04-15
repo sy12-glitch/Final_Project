@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { Product1Component } from './product1/product1.component';
 import { CartComponent } from './cart/cart.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CartComponent } from './cart/cart.component';
     HomePageComponent,
     Product1Component,
     CartComponent,
+    MyOrdersComponent,
   
   ],
   imports: [
