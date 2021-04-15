@@ -2,19 +2,19 @@
 <div class="row">
     <div class="col-md-6 offset-md-3 mt-4">
         <h3>Login Page</h3>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="form-group">
               <label for="loginUsername">Email address</label>
-              <input  type="email" [(ngModel)]="username" name="username" required class="form-control" id="loginUsername" aria-describedby="emailHelp">
+              <input  type="email" formControlName="email" name="username" required class="form-control" id="loginUsername" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
               <label for="loginPassword">Password</label>
-              <input type="password" [(ngModel)]="password"t name="password" required class="form-control" id="loginPassword">
+              <input type="password" formControlName="password"  name="password" required class="form-control" id="loginPassword">
             </div>
             <div class="form-group form-check">
               <a [routerLink]="['/reset-password']">Forget password?</a>
             </div>
-            <button type="submit" (click)="login()"  class="btn btn-primary">Login</button>
+            <button  type="submit" routerLink="['/','home']" (click)="login()" class="btn btn-primary">Login</button>
           </form>
     </div>
 </div>
