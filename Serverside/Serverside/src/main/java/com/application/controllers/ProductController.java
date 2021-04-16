@@ -29,7 +29,7 @@ import com.application.services.ProductService;
 
 @RestController
 @RequestMapping("home")
-@CrossOrigin(origins = {"https://"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class ProductController {
 
 	@Autowired
