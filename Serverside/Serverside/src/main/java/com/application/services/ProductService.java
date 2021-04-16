@@ -19,6 +19,7 @@ public class ProductService {
 	@Autowired
 	ProductRepository productRepository;
 	
+	
 	public List<Product> displayAllProducts(){
 		Iterable<Product> iterable = productRepository.findAll();
 		Iterator<Product> iterator = iterable.iterator();
@@ -49,17 +50,21 @@ public class ProductService {
 	}
 	
 	
-	public Product addProduct(User user,Product product) throws NotPermittedException {
-		if((user.getRole().equals("ADMIN")||user.getRole().contentEquals("SELLER"))&&(user.getIsactive()))
-		{
-			productRepository.save(product);
-			return product;
-		}
-		else
-		{
-			throw new NotPermittedException("You are not permitted to take this action");
-		}
+//	public Product addProduct(User user, Product product) throws NotPermittedException {
+//		if((user.getRole().equals("ADMIN")||user.getRole().contentEquals("SELLER"))&&(user.getIsactive()))
+//		{
+//			productRepository.save(product);
+//			return product;
+//		}
+//		else
+//		{
+//			throw new NotPermittedException("You are not permitted to take this action");
+//		}
+//	
+//	}
 	
+	public Product addProduct(Product product) {
+		return productRepository.save(product);
 	}
 	
 	public Product updateProduct(User user,int id,Product product) throws NotPermittedException {

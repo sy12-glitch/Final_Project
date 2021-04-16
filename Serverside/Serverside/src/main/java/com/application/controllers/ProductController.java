@@ -35,23 +35,33 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
+	@GetMapping("/products")
+	public List<Product> getAllProducts(){
+		return productService.displayAllProducts();
+	}
+	
 	@GetMapping("/product/{id}")
 	public Optional<Product> getProductById(@PathVariable int id) {
 		return productService.getProductById(id);
 	}
 	
-	@GetMapping("/category/{category_id}")
+	@GetMapping("/category/{id}")
 	public List<Product> getProductsByCategory(@PathVariable int id){
 		return productService.getProductsByCategory(id);
 	}
 	
-	@PostMapping("/AddProduct")
-	public ResponseEntity<Product> addProduct(@RequestBody Product product, @RequestBody User user) throws NotPermittedException {
-		System.out.println(product);
-		Product addedProduct = productService.addProduct(user, product);
-		ResponseEntity<Product> res = ResponseEntity.status(HttpStatus.CREATED).body(addedProduct);
-		System.out.println(res);
-		return res;
+//	@PostMapping("/AddProduct")
+//	public ResponseEntity<Product> addProduct(@RequestBody Product product, @RequestBody User user) throws NotPermittedException {
+//		System.out.println(product);
+//		Product addedProduct = productService.addProduct(user, product);
+//		ResponseEntity<Product> res = ResponseEntity.status(HttpStatus.CREATED).body(addedProduct);
+//		System.out.println(res);
+//		return res;
+//	}
+//	
+	@PostMapping("/addProduct")
+	public Product addProduct(@RequestBody Product product){
+		return productService.addProduct(product);
 	}
 	
 	@PutMapping("/updateProduct")
