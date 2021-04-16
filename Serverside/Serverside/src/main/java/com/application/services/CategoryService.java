@@ -1,5 +1,9 @@
 package com.application.services;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +15,18 @@ public class CategoryService {
 
 	@Autowired
 	CategoryRepository categoryRepository;
+	
+	public List<Category> getCategoryList(){
+		Iterable<Category> iterable = categoryRepository.findAll();
+		Iterator<Category> iterator = iterable.iterator();
+		List<Category> categories = new ArrayList<Category>();
+		
+		while(iterator.hasNext()){
+			categories.add(iterator.next());
+		}
+
+		return categories;
+	}
 	
 	public int getCategoryId(String name) {
 		Category c = categoryRepository.findByName(name);

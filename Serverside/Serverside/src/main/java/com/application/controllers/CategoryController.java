@@ -17,25 +17,32 @@ import com.application.services.CategoryService;
 import com.application.services.ProductService;
 
 @RestController
-@RequestMapping("display")
+@RequestMapping("category")
 @CrossOrigin(origins = {"https://"})
 public class CategoryController {
 
 	@Autowired
 	CategoryService categoryService;
+	@Autowired
+	ProductService productService;
+	
+	@GetMapping("/display")
+	public List<Category> getCategories(){
+		return categoryService.getCategoryList();
+	}
 	
 	@GetMapping("/products")
 	public List<Product> getProductByCategory(@RequestBody String name){
 		int category_id = categoryService.getCategoryId(name);
-		return ProductService.getProductsByCategory(category_id);
+		return productService.getProductsByCategory(category_id);
 	}
 	
-	@PostMapping("/add_category")
+	@PostMapping("/add")
 	public Category addCategory(@RequestBody Category category) {
 		return categoryService.addCategory(category);
 	}
 	
-	@DeleteMapping("/delete_category")
+	@DeleteMapping("/delete")
 	public void deleteCategory(@RequestBody String name) {
 		int category_id = categoryService.getCategoryId(name);
 		categoryService.deleteCategory(category_id);

@@ -17,8 +17,8 @@ import com.application.repositories.ProductRepository;
 public class ProductService {
 
 	@Autowired
-	static
 	ProductRepository productRepository;
+	
 	
 	public List<Product> displayAllProducts(){
 		Iterable<Product> iterable = productRepository.findAll();
@@ -36,7 +36,7 @@ public class ProductService {
 		return productRepository.findById(id);
 	}
 	
-	public static List<Product> getProductsByCategory(int category_id){
+	public List<Product> getProductsByCategory(int category_id){
 		List<Product> products = (List<Product>) productRepository.findAll();
 		List<Product> catProduct = new ArrayList<Product>();
 		for(Product product:products)
@@ -50,7 +50,7 @@ public class ProductService {
 	}
 	
 	
-	public Product addProduct(User user,Product product) throws NotPermittedException {
+	public Product addProduct(User user, Product product) throws NotPermittedException {
 		if((user.getRole().equals("ADMIN")||user.getRole().contentEquals("SELLER"))&&(user.getIsactive()))
 		{
 			productRepository.save(product);

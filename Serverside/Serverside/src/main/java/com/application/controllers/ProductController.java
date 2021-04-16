@@ -35,6 +35,11 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
+	@GetMapping("/products")
+	public List<Product> getAllProducts(){
+		return productService.displayAllProducts();
+	}
+	
 	@GetMapping("/product/{id}")
 	public Optional<Product> getProductById(@PathVariable int id) {
 		return productService.getProductById(id);
