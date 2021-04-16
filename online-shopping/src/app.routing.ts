@@ -16,14 +16,14 @@ const routes:Routes = [
     { path: '', redirectTo: '/sign-up/sign-up', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'product1', component: Product1Component },
-<<<<<<< HEAD
+
     { path: 'product2', component: Product2Component },
     { path: 'product3', component: Product3Component },
-    { path: 'cart', component: CartComponent }
-=======
+    { path: 'cart', component: CartComponent },
+
     { path: 'cart', component: CartComponent },
     { path: 'order', component: MyOrdersComponent }
->>>>>>> 7160f63cc9612919e000342d6d4504ea4ecccdf3
+
     
     
    
