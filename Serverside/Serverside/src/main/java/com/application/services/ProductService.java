@@ -17,6 +17,7 @@ import com.application.repositories.ProductRepository;
 public class ProductService {
 
 	@Autowired
+	static
 	ProductRepository productRepository;
 	
 	public List<Product> displayAllProducts(){
@@ -35,7 +36,7 @@ public class ProductService {
 		return productRepository.findById(id);
 	}
 	
-	public List<Product> getProductsByCategory(int category_id){
+	public static List<Product> getProductsByCategory(int category_id){
 		List<Product> products = (List<Product>) productRepository.findAll();
 		List<Product> catProduct = new ArrayList<Product>();
 		for(Product product:products)
