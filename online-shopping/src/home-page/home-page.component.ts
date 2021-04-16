@@ -1,4 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 
 
@@ -10,11 +12,34 @@ import { Component, OnInit } from "@angular/core";
 export class HomePageComponent implements OnInit {
   images = [1,2,3].map(() => `https://visitclearwaterflorida.com/wp-content/uploads/2017/05/women-shopping.jpg`);
   
+cname:['clothing','shoe', 'accessories'];
 
-
-  constructor() { }
+  constructor(private http:HttpClient,private router: Router) { }
 
   ngOnInit(): void {
   }
-
+category(){
+  const url ="http://localhost:8080/home/addProduct"
+  // const url ="http://localhost:8080/category/add"
+  this.http.post(url,{
+    cname:this.cname.values
+    
+  }).subscribe((data:any)=>{
+        console.log(data)
+    },
+    error=>{
+      console.log("error")
+    }
+  )
 }
+}
+// category(){
+//   const url ="http://localhost:8080/category/add"
+//   this.http.post(url,{
+//     cname:this.cname
+    
+//   }).toPromise().then((data:any)=>{
+//     console.log(data)
+//   })
+// }
+// }

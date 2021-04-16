@@ -18,7 +18,7 @@ import com.application.services.ProductService;
 
 @RestController
 @RequestMapping("category")
-@CrossOrigin(origins = {"https://"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class CategoryController {
 
 	@Autowired
