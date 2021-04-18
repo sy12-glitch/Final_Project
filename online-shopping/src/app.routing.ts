@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { HomePageComponent } from "src/home-page/home-page.component";
+import { HomePageComponent } from "./home-page/home-page.component";
 import { CartComponent } from "./cart/cart.component";
 import { MyOrdersComponent } from "./my-orders/my-orders.component";
 import { Product1Component } from "./product1/product1.component";
@@ -13,19 +13,20 @@ import { SignUpComponent } from "./sign-up/sign-up/sign-up.component";
 
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
-    { path: '', redirectTo: '/sign-up/sign-up', pathMatch: 'full' },
+    {path:"",component:HomePageComponent},
+   // { path: '', redirectTo: '/sign-up/sign-up', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'product1', component: Product1Component },
-<<<<<<< HEAD
     { path: 'product2', component: Product2Component },
     { path: 'product3', component: Product3Component },
-    { path: 'cart', component: CartComponent }
-=======
+   
+    
+   
     { path: 'cart', component: CartComponent },
+    { path: 'home-page', component: HomePageComponent},
     { path: 'order', component: MyOrdersComponent }
->>>>>>> 7160f63cc9612919e000342d6d4504ea4ecccdf3
-    
-    
+
+
    
    
 ];
