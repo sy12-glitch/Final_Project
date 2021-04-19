@@ -26,7 +26,9 @@ export class ProductsService {
   getProductByCategory(category) {
     return this._http.get(`${this.host}/products/category${category}`);
   }
-
+  deleteProduct(id){
+    return this._http.delete(`${this.host}/products/${id}`);
+  }
   saveProduct(product) {
     return this._http.post(`${this.host}/products`, product);
   }

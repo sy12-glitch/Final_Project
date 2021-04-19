@@ -20,7 +20,7 @@ export class AdminLoginComponent implements OnInit {
       if(this.username == 'admin' && this.password == 'admin'){
        this.router.navigate(["user"]);
        alert("login successful");
-       this.router.navigate(["/"]);
+       this.router.navigate(["/add-product"]);
       }else {
         this.msg="Bad credential, enter right email-id or passoword !";
       }

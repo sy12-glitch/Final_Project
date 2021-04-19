@@ -11,6 +11,8 @@ import { LoginComponent } from "./sign-up/login/login.component";
 
 import { SignUpComponent } from "./sign-up/sign-up/sign-up.component";
 import { AdminLoginComponent } from "./admin/admin-login/admin-login.component";
+import { ProductCreateComponent } from "./admin/add-product/add-product.component";
+import { ListProductComponent } from "./admin/list-product/list-product.component";
 
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
@@ -23,7 +25,10 @@ const routes:Routes = [
     { path: 'cart', component: CartComponent },
     { path: 'home-page', component: HomePageComponent},
     { path: 'admin-login', component: AdminLoginComponent},
-    { path: 'order', component: MyOrdersComponent }
+    { path: 'order', component: MyOrdersComponent },
+    {path: 'create', component: ProductCreateComponent},
+    {path: 'list', component: ListProductComponent},
+    {path:'add-product', component: ProductCreateComponent}
 
    
    

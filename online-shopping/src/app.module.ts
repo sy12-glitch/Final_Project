@@ -24,6 +24,9 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
+import { ListProductComponent } from './admin/list-product/list-product.component';
+import { ProductCreateComponent } from './admin/add-product/add-product.component';
+
 
 @NgModule({
   declarations: [SignUpComponent,ForgetComponent, LoginComponent,
@@ -37,6 +40,8 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     HeaderComponent,
     FooterComponent,
     AdminLoginComponent,
+    ProductCreateComponent,
+    ListProductComponent,
   
   ],
   imports: [
@@ -45,7 +50,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     NgbModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,ReactiveFormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgbModule,
