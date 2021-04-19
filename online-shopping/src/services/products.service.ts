@@ -5,33 +5,31 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductsService {
-  private data:any[] = [];
-  host: any;
+  private data: any[] = [];
 
-  public set products(products){
-    this.data=products;
+  public set products(products) {
+    this.data = products;
   }
-  public get products()
-  {
+  public get products() {
     return this.data;
   }
-  url:string="http://localhost:8080/products";  
-  constructor(private _http:HttpClient) { }  
-  
-  getAllProduct(){  
+  private host:string = "http://localhost:8080/home";
+  constructor(private _http: HttpClient) { }
+
+  getAllProduct() {
     return this._http.get(`${this.host}/products`);
-   
-  } 
-  getProductById(id){
+
+  }
+  getProductById(id) {
     return this._http.get(`${this.host}/products/${id}`);
   }
-  getProductByCategory(category){
+  getProductByCategory(category) {
     return this._http.get(`${this.host}/products/category${category}`);
   }
 
-   saveProduct(product){
+  saveProduct(product) {
     return this._http.post(`${this.host}/products`, product);
   }
- 
+
 
 }
