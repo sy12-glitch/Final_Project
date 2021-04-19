@@ -1,10 +1,10 @@
-/* input.ng-invalid{
+input.ng-invalid{
     box-shadow: 0 0 3px red;
 }
 
 input.ng-valid{
     box-shadow: 0 0 3px green;
-} */
+}
 .register{
     color: rgb(0, 0, 0);
 }
