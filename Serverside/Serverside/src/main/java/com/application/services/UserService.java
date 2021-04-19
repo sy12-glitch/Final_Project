@@ -100,7 +100,9 @@ public class UserService {
 			user.setPassword("Admin@123");
 			user.setGender("Male");
 			user.setIsactive(true);
-			userRepository.save(user);
+			if (users==null) {
+				userRepository.save(user);
+			}
 		}
 
 		else if (users == null) {
