@@ -18,12 +18,13 @@ import com.application.repositories.UserRepository;
 public class UserService {
 
 	@Autowired
+	static
 	UserRepository userRepository;
 //	private User.role r;
 	private boolean isvalid = false;
 
-//find users by ID(admin only) -logic for admin access is pending
-	public User findUserById(int id) throws InvalidUserException {
+//find users by ID
+	public static User findUserById(int id) throws InvalidUserException {
 		Optional<User> optional = userRepository.findById(id);
 		User user = optional.orElse(null);
 		System.out.println(user);
@@ -33,7 +34,7 @@ public class UserService {
 			throw new InvalidUserException("Access denied");
 	}
 
-//find all users(only admin should have access)-logic for admin access is pending
+//find all users
 	public List<User> findUsers() {
 		Iterable<User> iterable = userRepository.findAll();
 		Iterator<User> iterator = iterable.iterator();
@@ -70,7 +71,7 @@ public class UserService {
 
 	}
 
-//Yet to be finish this method.-logic for admin access is pending
+//
 	public void deleteUser(User user, int id) throws InvalidUserException {
 		Optional<User> optional = userRepository.findById(id);
 		User dbusers = optional.orElse(null);
@@ -89,19 +90,47 @@ public class UserService {
 	// }
 //login service
 	public User Userlogin(User user) throws InvalidUserException {
-		
-		  User users = userRepository.findByEmail(user.getEmail());
-		  if(users==null) {
-			  throw new InvalidUserException("Invalid username or password.");
-		  }
-		  else if((user.getEmail().equals(users.getEmail()))&&(user.getPassword().equals(users.getPassword()))) {
-	        	users.setIsactive(true);
-	        	userRepository.save(users);
-	        }  else   {
-	            throw new InvalidUserException("Invalid username or password.");
-	        }
-			return users;
-			
+		User users = userRepository.findByEmail(user.getEmail());
+		if ((user.getEmail().equals("admin@gmail.com")) && (user.getPassword().equals("Admin@123"))) {
+			user.setUserid(1);
+			user.setFname("Admin");
+			user.setLname("A");
+			user.setAddress("Manyata Tech Park");
+			user.setRole("Admin");
+			user.setMobile("987654321");
+			user.setEmail("admin@gmail.com");
+			user.setPassword("Admin@123");
+			user.setGender("Male");
+			user.setIsactive(true);
+			userRepository.save(user);
+		}
+
+		else if (users == null) {
+			throw new InvalidUserException("Invalid username or password.");
+		}
+
+		else if ((user.getEmail().equals(users.getEmail())) && (user.getPassword().equals(users.getPassword()))) {
+
+			users.setIsactive(true);
+			userRepository.save(users);
+		} else {
+			throw new InvalidUserException("Invalid username or password.");
+		}
+		return users;
+
+	}
+
+//logout service
+	public User Userlogout(User user) throws InvalidUserException {
+		User users = userRepository.findByEmail(user.getEmail());
+		System.out.println(users.getIsactive());
+		if (users.getIsactive() == true) {
+			users.setIsactive(false);
+			userRepository.save(users);
+		} else {
+			throw new InvalidUserException("Invalid username or password.");
+		}
+		return users;
 	}
 
 	public boolean emailvalidation(String email) {
