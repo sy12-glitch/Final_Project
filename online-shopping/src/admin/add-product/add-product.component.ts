@@ -36,10 +36,15 @@ export class ProductCreateComponent implements OnInit {
   create(){
     console.log(this.productForm.value);
     this.productService.saveProduct(this.productForm.value)
-
     .subscribe((res:any)=>{
       console.log(res);
       this.router.navigate(["list"]);
+      alert("Submited");
+       error=>{
+        console.log("exception occured");
+        alert("something wenr wrong");
+      }
+      
 
       
     })
