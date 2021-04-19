@@ -8,9 +8,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.application.entity.Category;
 import com.application.entity.Product;
 import com.application.entity.User;
 import com.application.exceptions.NotPermittedException;
+import com.application.repositories.CategoryRepository;
 import com.application.repositories.ProductRepository;
 
 @Service
@@ -18,6 +20,8 @@ public class ProductService {
 
 	@Autowired
 	ProductRepository productRepository;
+	@Autowired
+	CategoryRepository categoryRepository;
 	
 	
 	public List<Product> displayAllProducts(){
@@ -64,6 +68,9 @@ public class ProductService {
 //	}
 	
 	public Product addProduct(Product product) {
+		String cat = product.getCategory();
+		Category category = categoryRepository.findByName(cat);
+		product.setCategory_id(category.getId());
 		return productRepository.save(product);
 	}
 	
