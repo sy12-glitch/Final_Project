@@ -38,7 +38,7 @@ export class ProductCreateComponent implements OnInit {
     this.productService.saveProduct(this.productForm.value)
     .subscribe((res:any)=>{
       console.log(res);
-      this.router.navigate(["list"]);
+      this.router.navigate(["list-product"]);
       alert("Submited");
        error=>{
         console.log("exception occured");
