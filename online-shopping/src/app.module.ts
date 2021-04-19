@@ -22,6 +22,7 @@ import { Product2Component } from './product2/product2.component';
 import { Product3Component } from './product3/product3.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     Product3Component,
     HeaderComponent,
     FooterComponent,
+    AdminLoginComponent,
   
   ],
   imports: [

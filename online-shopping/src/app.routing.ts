@@ -10,6 +10,7 @@ import { ForgetComponent } from "./sign-up/forget/forget.component";
 import { LoginComponent } from "./sign-up/login/login.component";
 
 import { SignUpComponent } from "./sign-up/sign-up/sign-up.component";
+import { AdminLoginComponent } from "./admin/admin-login/admin-login.component";
 
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
@@ -19,11 +20,9 @@ const routes:Routes = [
     { path: 'product1', component: Product1Component },
     { path: 'product2', component: Product2Component },
     { path: 'product3', component: Product3Component },
-   
-    
-   
     { path: 'cart', component: CartComponent },
     { path: 'home-page', component: HomePageComponent},
+    { path: 'admin-login', component: AdminLoginComponent},
     { path: 'order', component: MyOrdersComponent }
 
    
