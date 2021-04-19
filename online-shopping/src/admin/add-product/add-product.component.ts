@@ -9,6 +9,8 @@ import { ProductsService } from 'src/services/products.service';
   styleUrls: ['./add-product.component.css']
 })
 export class ProductCreateComponent implements OnInit {
+ 
+
 
   
   productForm: FormGroup;
@@ -36,10 +38,11 @@ export class ProductCreateComponent implements OnInit {
   create(){
     console.log(this.productForm.value);
     this.productService.saveProduct(this.productForm.value)
+    
 
     .subscribe((res:any)=>{
       console.log(res);
-      this.router.navigate(["list"]);
+      this.router.navigate(["/list-product"]);
 
       
     })

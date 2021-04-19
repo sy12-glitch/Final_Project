@@ -28,7 +28,8 @@ const routes:Routes = [
     { path: 'order', component: MyOrdersComponent },
     {path: 'create', component: ProductCreateComponent},
     {path: 'list', component: ListProductComponent},
-    {path:'add-product', component: ProductCreateComponent}
+    {path:'add-product', component: ProductCreateComponent},
+    {path:'list-product', component: ListProductComponent}
 
    
    
