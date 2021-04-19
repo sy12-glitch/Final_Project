@@ -20,7 +20,8 @@ import { CartComponent } from './cart/cart.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { Product2Component } from './product2/product2.component';
 import { Product3Component } from './product3/product3.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     MyOrdersComponent,
     Product2Component,
     Product3Component,
-    AboutUsComponent,
+    HeaderComponent,
+    FooterComponent,
   
   ],
   imports: [

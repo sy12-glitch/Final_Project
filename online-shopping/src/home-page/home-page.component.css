@@ -1,12 +1,10 @@
 
-
-#logo{
-    color:darkgoldenrod;
-
-}
 .container-fluid{
     margin-top: 10px;
+   
 }
+
+
 div.gallery {
     margin: 15px;
     border: 1px solid #ccc;

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CustomerService } from '../service/customer.service';
+import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-login',

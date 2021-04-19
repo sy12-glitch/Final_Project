@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="header.component.css">
+<div class="container-fluid">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;" role="navigation">
+   
+    <a class="nav-link active" routerLink="/home-page"><span id="logo" >HappyMart</span></a>
+      <a class="nav-link" href="#">About Us</a>
+      <a class="nav-link"  routerLink="/cart">Cart</a>
+      <a class="nav-link" [routerLink]="['/','sign-up']" >SignUp</a>
+    <a class="nav-link" [routerLink]="['/','login']" >Login</a>
+    
+  </nav>
+  </div>
