@@ -4,18 +4,25 @@
         <tr>
             <th>category</th>
             <th>name</th>
+            <th>brand</th>
             <th>description</th>
-            <th>Price</th>
+            <th>image</th>
+            <th>price</th>
+            <th>quantity</th>
             <th>rating</th>
+            
             <th>edit</th>
             <th>Delete</th>
         </tr>
-        <tr *ngFor="let item of products">
+        <tr *ngFor="let item of productsService.products">
            
             <td>{{item.category}}</td>
             <td>{{item.name}}</td>
+            <td>{{item.Brand}}</td>
             <td>{{item.description}}</td>
+            <td>{{item.image}}</td>
             <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
             <td>{{item.rating}}</td>
             
             <td><a [routerLink]="['/','edit', item.id]" class="btn btn-warning">Edit</a></td>

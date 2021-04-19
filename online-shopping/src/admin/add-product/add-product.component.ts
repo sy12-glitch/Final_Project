@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { ProductsService } from 'src/services/products.service';
 
 @Component({
@@ -9,27 +10,35 @@ import { ProductsService } from 'src/services/products.service';
   styleUrls: ['./add-product.component.css']
 })
 export class ProductCreateComponent implements OnInit {
- 
-
+productForm: FormGroup;
 
   
-  productForm: FormGroup;
+form = new FormGroup({
+  category: new FormControl('', Validators.required)
+});
+
+get f(){
+  return this.form.controls;
+}
+
+
+
  
 
   constructor(private productService:ProductsService, private router:Router) {
+   
   }
 
   ngOnInit(): void {
     this.productForm = new FormGroup({
 
-      title: new FormControl("Default title", [
-        Validators.required
-      ]),
+      
       category: new FormControl("clothing", Validators.required),
-      name: new FormControl("zara", Validators.required),
+      name: new FormControl("zara1", Validators.required),
+      brand: new FormControl("zara", Validators.required),
       price: new FormControl("500", [Validators.required, Validators.min(1)]),
       description: new FormControl("soft material", Validators.required),
-     
+      quantity: new FormControl("4", Validators.required),
       rating: new FormControl("4", Validators.required)
 
     });
@@ -49,3 +58,7 @@ export class ProductCreateComponent implements OnInit {
   }
 
 }
+function fruits() {
+  throw new Error('Function not implemented.');
+}
+

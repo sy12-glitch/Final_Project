@@ -21,16 +21,14 @@ export class ProductsService {
 
   }
   getProductById(id) {
-    return this._http.get(`${this.host}/products/${id}`);
+    return this._http.get(`${this.host}/product/${id}`);
   }
-  getProductByCategory(category) {
-    return this._http.get(`${this.host}/products/category${category}`);
-  }
+
   deleteProduct(id){
-    return this._http.delete(`${this.host}/products/${id}`);
+    return this._http.delete(`${this.host}/deleteProduct/${id}`);
   }
   saveProduct(product) {
-    return this._http.post(`${this.host}/products`, product);
+    return this._http.post(`${this.host}/addProduct`, product);
   }
 
 
