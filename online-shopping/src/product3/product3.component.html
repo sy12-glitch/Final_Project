@@ -6,14 +6,15 @@
       <img src="https://th.bing.com/th/id/OIP.wZT6fWXmeI6l-fUzAZcR1gHaHa?pid=ImgDet&rs=1" alt="Cinque Terre" width="300"
         height="250">
     </div>
-    <div *ngFor="let item of products" class="col-8 col-md-7">
+    <div *ngFor="let item of products"  class="col-8 col-md-7">
+      <div *ngIf="item.id == 2">
       <h5>{{item.brand}}</h5>
-      <p style="font-weight: bold">Price: {{item.price}} $</p>
+      <p style="font-weight: bold">Price: {{item.price|  currency:'INR'}} </p>
       <p style="text-align: left;">{{item.description}}</p>
       
       <br>
       <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-
+    </div>
     </div>
   </div>
 
@@ -26,15 +27,15 @@
         height="250">
     </div>
     <div *ngFor="let item of products" class="col-8 col-md-7" >
-      <h5>{{item.brand}}</h5>
-      <p style="font-weight: bold">Price: {{item.price}} $</p>
-      <p style="text-align: left;">{{item.description}}</p>
-      
-      <br>
-      <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-
-    </div>
-  </div>
+      <div *ngIf="item.id == 3">
+        <h5>{{item.brand}}</h5>
+        <p style="font-weight: bold">Price: {{item.price|  currency:'INR'}} </p>
+        <p style="text-align: left;">{{item.description}}</p>
+        
+        <br>
+        <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
+      </div>
+      </div>
 
 </div>
 <div class="container">
@@ -43,22 +44,15 @@
       <img src="https://th.bing.com/th/id/OIP.hvNrJgQHr6QdGqeg4Xi7XwHaKf?pid=ImgDet&rs=1" alt="Cinque Terre" width="300"
         height="250">
     </div>
-    <div class="col-8 col-md-7">
-      <p style="text-align: left;">meekoo 1 Piece Rhinestone Tassel Choker Necklace Multi-Layer Wide Collar Necklaces
-        Tassel Chain Necklaces for Women Girls Favor</p>
-
-      <h6>price: 70$</h6>
-
-
-
-
-
-      <br>
-      <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-
-
-
-    </div>
-  </div>
+    <div *ngFor="let item of products" class="col-8 col-md-7" >
+      <div *ngIf="item.id == 4">
+        <h5>{{item.brand}}</h5>
+        <p style="font-weight: bold">Price: {{item.price |  currency:'INR'}} </p>
+        <p style="text-align: left;">{{item.description}}</p>
+        
+        <br>
+        <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
+      </div>
+      </div>
 
 </div>

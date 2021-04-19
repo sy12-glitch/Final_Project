@@ -23,6 +23,7 @@ import { Product3Component } from './product3/product3.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { ProductComponent } from './product/product.component';
 
 import { ListProductComponent } from './admin/list-product/list-product.component';
 import { ProductCreateComponent } from './admin/add-product/add-product.component';
@@ -40,8 +41,12 @@ import { ProductCreateComponent } from './admin/add-product/add-product.componen
     HeaderComponent,
     FooterComponent,
     AdminLoginComponent,
+<<<<<<< HEAD
     ProductCreateComponent,
     ListProductComponent,
+=======
+    ProductComponent,
+>>>>>>> 1aaf428ae95626672ef325681182e0324e7a5006
   
   ],
   imports: [
