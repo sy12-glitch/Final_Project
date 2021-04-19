@@ -33,15 +33,13 @@
       <img src="https://th.bing.com/th/id/OIP.xt7E2w15P5KWyuMjVJdqYAHaKZ?pid=ImgDet&rs=1" alt="Cinque Terre" width="300"
         height="250">
     </div>
-    <div class="col-8 col-md-7">
-      <p style="text-align: left;">meekoo 1 Piece Rhinestone Tassel Choker Necklace Multi-Layer Wide Collar Necklaces
-        Tassel Chain Necklaces for Women Girls Favor</p>
-
-      <h6>price: 50$</h6>
+    <div *ngFor="let item of products"  class="col-8 col-md-7">
+      <div *ngIf="item.id==3">
+      <h5>{{item.brand}}</h5>
+      <p style="font-weight: bold">Price: {{item.price | currency:"INR"}} </p>
+      <p style="text-align: left;">{{item.description}}</p>
+      
       <br>
-
-
-
       <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
 
     </div>

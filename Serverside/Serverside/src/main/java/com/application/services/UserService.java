@@ -18,16 +18,14 @@ import com.application.repositories.UserRepository;
 public class UserService {
 
 	@Autowired
-	static
 	UserRepository userRepository;
 //	private User.role r;
 	private boolean isvalid = false;
 
 //find users by ID
-	public static User findUserById(int id) throws InvalidUserException {
+	public User findUserById(int id) throws InvalidUserException {
 		Optional<User> optional = userRepository.findById(id);
 		User user = optional.orElse(null);
-		System.out.println(user);
 		if ((user.getIsactive())) {
 			return user;
 		} else
@@ -43,7 +41,7 @@ public class UserService {
 		while (iterator.hasNext()) {
 			users.add(iterator.next());
 		}
-
+		System.out.println(users.toString());
 		return users;
 	}
 
@@ -102,7 +100,9 @@ public class UserService {
 			user.setPassword("Admin@123");
 			user.setGender("Male");
 			user.setIsactive(true);
-			userRepository.save(user);
+			if (users==null) {
+				userRepository.save(user);
+			}
 		}
 
 		else if (users == null) {

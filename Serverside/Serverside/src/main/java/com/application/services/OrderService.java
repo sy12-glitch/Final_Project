@@ -12,7 +12,6 @@ import com.application.repositories.OrderRepository;
 public class OrderService {
 
 	@Autowired
-	static
 	OrderRepository orderRepository;
 
 	public Order createOrder(Order order) {
@@ -20,16 +19,16 @@ public class OrderService {
 		return orderRepository.save(order);
 	}
 
-	public Optional<Order> getOrderbyIdOrder(int id) {
+	public Optional<Order> getOrderbyIdOrder(int id) { 
 		return orderRepository.findById(id);
 
 	}
 	
-	public static List<Order> getOrdersByUser(int userid){
+	public List<Order> getOrdersByUser(int userid){
 		return orderRepository.findByUser(userid);
 	}
 	
-	public static void deleteOrder(int id) {
+	public void deleteOrder(int id) {
 		orderRepository.deleteById(id);
 	}
 }
