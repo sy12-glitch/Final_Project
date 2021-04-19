@@ -41,12 +41,12 @@ import { ProductCreateComponent } from './admin/add-product/add-product.componen
     HeaderComponent,
     FooterComponent,
     AdminLoginComponent,
-<<<<<<< HEAD
+
     ProductCreateComponent,
     ListProductComponent,
-=======
+
     ProductComponent,
->>>>>>> 1aaf428ae95626672ef325681182e0324e7a5006
+
   
   ],
   imports: [
