@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/Services/admin.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -8,22 +11,40 @@ import { Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
   username: string;
   password: string;
   msg: string;
-    ngOnInit() {
+
+  constructor(private router: Router, 
+    private http: HttpClient, private adminService:AdminService) { }
+  
+    userDetails={}
+  loginForm: FormGroup;
+
+    ngOnInit(): void {
+      this.loginForm = new FormGroup({
+        email:new FormControl("",Validators.required),
+        password :new FormControl("",Validators.required)
+      });
     }
   
+ 
     login() : void {
-      if(this.username == 'admin' && this.password == 'admin'){
-       this.router.navigate(["user"]);
-       alert("login successful");
-       this.router.navigate(["/"]);
-      }else {
+      console.log(this.loginForm.value);
+      this.adminService.saveForm(this.loginForm.value)
+      .subscribe(
+        data =>{
+        console.log("login successful");
+        alert("login successful");
+        this.router.navigate(["/order"]);
+      },
+      error=>{
+        console.log("exception occured");
         this.msg="Bad credential, enter right email-id or passoword !";
       }
-    }
-    }
+      
+      
+      )
+  }
+}   
   
