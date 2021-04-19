@@ -30,6 +30,7 @@ const routes:Routes = [
     {path: 'create', component: ProductCreateComponent},
     {path: 'list', component: ListProductComponent},
     {path:'add-product', component: ProductCreateComponent},
+    {path:'controller',component:ControllerComponent},
     {path:'list-product', component: ListProductComponent}
 
    
