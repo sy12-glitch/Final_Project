@@ -10,7 +10,7 @@ import { SignUpService } from '../service/sign-up.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-
+msg:string;
   signForm: FormGroup;
   constructor(private signUpService: SignUpService,private router:Router, private http: HttpClient) { }
 
@@ -28,12 +28,12 @@ export class SignUpComponent implements OnInit {
     });
   }
     create(){
-      console.log(this.signForm.value);
+      // console.log(this.signForm.value);
       this.signUpService.saveForm(this.signForm.value)
-  
       .subscribe((res:any)=>{
         console.log(res);
-        this.router.navigate(["sign-up"]);
+        this.router.navigate(["login"]);
+        this.msg="Successfuly singed up";
       })
     }
   }

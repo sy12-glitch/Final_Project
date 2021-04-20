@@ -18,7 +18,6 @@ import { ControllerComponent } from "./admin/controller/controller.component";
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
     {path:"",component:HomePageComponent},
-   // { path: '', redirectTo: '/sign-up/sign-up', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'product1', component: Product1Component },
     { path: 'product2', component: Product2Component },

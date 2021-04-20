@@ -34,7 +34,11 @@ public class CategoryController {
 	@GetMapping("/products")
 	public List<Product> getProductByCategory(@RequestBody String name){
 		System.out.println(name);
+<<<<<<< HEAD
 	//	int category_id = categoryService.getCategoryId(name);
+=======
+		int category_id = categoryService.getCategoryId(name);
+>>>>>>> 86b4f61c53e660531a10356a2f14c6060d12d388
 		return productService.getProductsByCategory(name);
 	}
 	
