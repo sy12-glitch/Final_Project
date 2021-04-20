@@ -133,8 +133,8 @@ public class AdminController {
 	}
 
 	@DeleteMapping("deleteProduct/{id}")
-	public boolean deleteProduct(@PathVariable int id, @RequestBody User user) throws NotPermittedException {
-		productService.deleteProduct(user, id);
+	public boolean deleteProduct(@PathVariable int id) throws NotPermittedException {
+		productService.deleteProduct(id);
 		return true;
 
 	}
