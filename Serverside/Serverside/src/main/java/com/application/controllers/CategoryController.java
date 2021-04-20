@@ -35,7 +35,7 @@ public class CategoryController {
 	public List<Product> getProductByCategory(@RequestBody String name){
 		System.out.println(name);
 		int category_id = categoryService.getCategoryId(name);
-		return productService.getProductsByCategory(category_id);
+		return productService.getProductsByCategory(name);
 	}
 	
 	@PostMapping("/add")

@@ -7,18 +7,19 @@ import { Injectable } from '@angular/core';
 export class AdminService {
     private data:any[] = [];
   
-    // public set admin(admin){
-    //   this.data = admin;
-    // }
+    public set admin(admin){
+      this.data = admin;
+    }
   
-    // public get admin(){
-    //   return this.data;
-    // }
+    public get admin(){
+      return this.data;
+    }
   
     private host:string = "http://localhost:8080";
   
     constructor(private http: HttpClient) { }
     saveForm(admin){
+      const headers= new HttpHeaders()
       return this.http.post(`${this.host}/admin/login`, admin);
     }
     // getCustomers(){

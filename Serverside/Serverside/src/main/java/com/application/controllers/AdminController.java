@@ -79,7 +79,7 @@ public class AdminController {
 	public List<Product> getProductByCategory(@RequestBody String name) {
 		System.out.println(name);
 		int category_id = categoryService.getCategoryId(name);
-		return productService.getProductsByCategory(category_id);
+		return productService.getProductsByCategory(name);
 	}
 
 	@PostMapping("category/add")
@@ -105,10 +105,10 @@ public class AdminController {
 		return productService.getProductById(id);
 	}
 
-	@GetMapping("/category/{id}")
-	public List<Product> getProductsByCategory(@PathVariable int id) {
-		return productService.getProductsByCategory(id);
-	}
+//	@GetMapping("/category/{id}")
+//	public List<Product> getProductsByCategory(@PathVariable int id) {
+//		return productService.getProductsByCategory(id);
+//	}
 
 	@PostMapping("/addProduct")
 	public Product addProduct(@RequestBody Product product) {
