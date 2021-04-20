@@ -1,75 +1,24 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<div class="container">
-  <div class="row g-0">
-    <div class="col-sm-4 col-md-5">
-      <img src="https://th.bing.com/th/id/OIP.wZT6fWXmeI6l-fUzAZcR1gHaHa?pid=ImgDet&rs=1" alt="Cinque Terre" width="300"
-        height="250">
-    </div>
-    <div class="col-8 col-md-7">
-      <!--<h3>{{products.name}}</h3>
-      <p>{{products.price}}</p>-->
-
-      <p style="text-align: left;">meekoo 1 Piece Rhinestone Tassel Choker Necklace Multi-Layer Wide Collar Necklaces
-        Tassel Chain Necklaces for Women Girls Favor</p>
 
 
-      <h6>price: 40$</h6>
-
-
-
-
-      <br>
-      <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-
-    </div>
-  </div>
-
-</div>
 
 <div class="container">
   <div class="row g-0">
-    <div class="col-sm-4 col-md-5">
-      <img src="https://th.bing.com/th/id/OIP.xt7E2w15P5KWyuMjVJdqYAHaKZ?pid=ImgDet&rs=1" alt="Cinque Terre" width="300"
-        height="250">
-    </div>
-    <div class="col-8 col-md-7">
-      <p style="text-align: left;">meekoo 1 Piece Rhinestone Tassel Choker Necklace Multi-Layer Wide Collar Necklaces
-        Tassel Chain Necklaces for Women Girls Favor</p>
-
-      <h6>price: 50$</h6>
-      <br>
-
-
-
-      <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-
-    </div>
-  </div>
-
-</div>
-<div class="container">
-  <div class="row g-0">
-    <div class="col-sm-4 col-md-5">
-      <img src="https://th.bing.com/th/id/OIP.hvNrJgQHr6QdGqeg4Xi7XwHaKf?pid=ImgDet&rs=1" alt="Cinque Terre" width="300"
-        height="250">
-    </div>
-    <div class="col-8 col-md-7">
-      <p style="text-align: left;">meekoo 1 Piece Rhinestone Tassel Choker Necklace Multi-Layer Wide Collar Necklaces
-        Tassel Chain Necklaces for Women Girls Favor</p>
-
-      <h6>price: 70$</h6>
-
-
-
-
-
-      <br>
-      <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-
-
-
+    <div *ngFor="let item of products" class="col-sm-4 col-md-5">
+       <!-- Accessories details  -->
+       <div class="col-sm-4 col-md-5" *ngIf="item.category == 'accessories'">
+        <div>
+          <img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250">
+        </div>
+        <div class="col-8 col-md-7">
+          <h3>{{item.name}}</h3>
+          <p style="text-align: left;">{{item.discription}}</p>
+          <h6>price: {{item.price | currency:'INR':true }}</h6>
+          <br>
+          <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>

@@ -2,91 +2,22 @@
 <div class="container">
 <div class="row g-0">
   
-  <div class="col-sm-4 col-md-5">
-    <img src="https://ae01.alicdn.com/kf/HTB1Oy48QXXXXXX_aFXXq6xXFXXXX/Infantil-Toddler-Kids-Baby-Girls-Floral-Dress-Black-Shirt-Bow-Skirt-2PCS-Set-Children-Clothes-Outfits.jpg" alt="Cinque Terre" width="400" height="250">
-  </div>
-  <div class="col-8 col-md-7">
-    <p style="text-align: left;">Relipop Women's Polka Dot Jumpsuits Deep V-Neck Long Sleeve Knot Front Ruffle Hem Floral Rompers</p>
-  
- 
-    <h6>price: 400$</h6>
-    <br>
-    <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-
-  </div>
-</div>
-
-</div>
-
+  <!-- Cloth details -->
 <div class="container">
   <div class="row g-0">
-    <div class="col-sm-4 col-md-5">
-      <img src="https://th.bing.com/th/id/OIP.6X6fU7HG3IgpPxJnM32qfwHaHa?pid=ImgDet&rs=1" alt="Cinque Terre" width="400" height="250">
-    </div>
-    <div class="col-8 col-md-7">
-      <p style="text-align: left;">Relipop Women's Polka Dot Jumpsuits Deep V-Neck Long Sleeve Knot Front Ruffle Hem Floral Rompers</p>
-   
-      <h6>price: 500$</h6>
-      <br>
-      <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-  
-    </div>
-  </div>
-  
-  </div>
-  <div class="container">
-  <div class="row g-0">
-    <div class="col-sm-4 col-md-5">
-      <img src="https://ae01.alicdn.com/kf/HTB1NbmdSpXXXXXVXFXXq6xXFXXX2/new-fashion-brand-summer-kids-clothes-children-clothing-girls-dress-baby-kids-princess-dress-summer-denim.jpg" alt="Cinque Terre" width="400" height="250">
-    </div>
-    <div class="col-8 col-md-7">
-      <p style="text-align: left;">Relipop Women's Polka Dot Jumpsuits Deep V-Neck Long Sleeve Knot Front Ruffle Hem Floral Rompers</p>
-   
-      <h6>price: 700$</h6>
-      <br>
-      <button type="button" class="btn btn-primary"  [routerLink]="['/','cart']">Add to cart</button>
-  
-    </div>
-  </div>
-  
-  </div>
-
-
-
-
-
-
-
-
-
-
-<!--<section>
-    <div class="spacer">
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col-lg-9">
-            <div class="row shop-listing">
-              <div class="col-lg-4" *ngFor="let product of products">
-                <div class="card shop-hover border-0">
-                  <img [src]="'http://localhost:5000/' + product.image" alt="wrapkit" class="img-fluid" />
-                  <div class="card-img-overlay align-items-center">
-                    <button class="btn btn-md btn-info" (click)="_addItemToCart(product._id, 1)">Add to Cart</button>
-                  </div>
-                </div>
-                <div class="card border-0">
-                  <h6>
-                    <a href="#" class="link">{{ product.name }}</a>
-                  </h6>
-                  <h6 class="subtitle">by Wisdom</h6>
-                  <h5 class="font-medium m-b-30">
-                    ${{product.price}}
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div *ngFor="let item of products" class="col-sm-4 col-md-5">
+      <div class="col-sm-4 col-md-5" *ngIf="item.category == 'clothing'">
+        <div>
+          <img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250">
+        </div>
+        <div class="col-8 col-md-7">
+          <h3>{{item.name}}</h3>
+          <p style="text-align: left;">{{item.discription}}</p>
+          <h6>price: {{item.price | currency:'INR':true }}</h6>
+          <br>
+          <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
         </div>
       </div>
     </div>
-  </section>-->
-
+  </div>
+</div>
