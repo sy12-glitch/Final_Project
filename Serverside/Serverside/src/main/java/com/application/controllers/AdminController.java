@@ -78,11 +78,7 @@ public class AdminController {
 	@GetMapping("category/products")
 	public List<Product> getProductByCategory(@RequestBody String name) {
 		System.out.println(name);
-<<<<<<< HEAD
-		//int category_id = categoryService.getCategoryId(name);
-=======
 		int category_id = categoryService.getCategoryId(name);
->>>>>>> 86b4f61c53e660531a10356a2f14c6060d12d388
 		return productService.getProductsByCategory(name);
 	}
 
@@ -109,17 +105,17 @@ public class AdminController {
 		return productService.getProductById(id);
 	}
 
-<<<<<<< HEAD
+
 	@GetMapping("/category/name")
 	public List<Product> getProductsByCategory(@PathVariable String name) {
 		return productService.getProductsByCategory(name);
 	}
-=======
+
 //	@GetMapping("/category/{id}")
 //	public List<Product> getProductsByCategory(@PathVariable int id) {
 //		return productService.getProductsByCategory(id);
 //	}
->>>>>>> 86b4f61c53e660531a10356a2f14c6060d12d388
+
 
 	@PostMapping("/addProduct")
 	public Product addProduct(@RequestBody Product product) {
