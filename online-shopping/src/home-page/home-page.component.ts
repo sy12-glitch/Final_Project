@@ -19,14 +19,4 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  getProducts(data:String){
-    console.log(data);
-    this.productService.getProducts(data)
-    .subscribe((res:any)=>{
-      console.log(res);
-      this.products = res;
-      this.router.navigate(["/product"]);
-    })
-  }
 }
