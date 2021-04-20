@@ -47,7 +47,7 @@
 
 <div class="container">
 <div class="gallery">
-  <a  [routerLink]="['/','product']">
+  <a  (click)="getProducts('clothing')">
     <img src="https://th.bing.com/th/id/OIP.6X6fU7HG3IgpPxJnM32qfwHaHa?pid=ImgDet&rs=1" alt="Cinque Terre" width="600" height="400">
   </a>
   <div class="desc"><a [routerLink]="['/','product1']">Clothing</a></div>
