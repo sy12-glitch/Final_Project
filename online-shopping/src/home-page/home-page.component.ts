@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit {
   getProducts(data: String){
     console.log(data);
     this.productService.getProducts(data)
-    .subscribe((res:object)=>{
+    .subscribe((res:any)=>{
       console.log(res);
       this.router.navigate(["/list-product"]);
     }) 
