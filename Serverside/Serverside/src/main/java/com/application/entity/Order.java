@@ -24,12 +24,22 @@ public class Order {
 	@ManyToOne
 	@JoinColumn(name = "PRODUCT_ID")
 	private Product product;
+	private int quantity;
 
-	public Order(int id, User user, Product product) {
+	public Order(int id, User user, Product product, int quantity) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.product = product;
+		this.quantity = quantity;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public Order() {

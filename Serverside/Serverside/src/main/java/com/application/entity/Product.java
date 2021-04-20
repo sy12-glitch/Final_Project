@@ -22,11 +22,10 @@ public class Product {
 	private String image;
 	private String description;
 	private float rating;
-	private int category_id;
 	private String category;
 	
 	public Product(int id, int quantity, String name, String brand, double price, String image, String description,
-			float rating, int category_id, String category) {
+			float rating, String category) {
 		super();
 		this.id = id;
 		this.quantity = quantity;
@@ -36,7 +35,6 @@ public class Product {
 		this.image = image;
 		this.description = description;
 		this.rating = rating;
-		this.category_id = category_id;
 		this.category = category;
 	}
 
@@ -112,14 +110,6 @@ public class Product {
 
 	public void setRating(float rating) {
 		this.rating = rating;
-	}
-
-	public int getCategory_id() {
-		return category_id;
-	}
-
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
 	}
 	
 	

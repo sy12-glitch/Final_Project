@@ -40,17 +40,9 @@ public class ProductService {
 		return productRepository.findById(id);
 	}
 	
-	public List<Product> getProductsByCategory(int category_id){
-		List<Product> products = (List<Product>) productRepository.findAll();
-		List<Product> catProduct = new ArrayList<Product>();
-		for(Product product:products)
-		{
-			if(category_id==product.getCategory_id())
-			{
-				catProduct.add(product);
-			}
-		}
-		return catProduct;
+	public List<Product> getProductsByCategory(String category){
+		List<Product> products = productRepository.findByCategory(category);
+		return products;
 	}
 	
 	
@@ -68,9 +60,9 @@ public class ProductService {
 //	}
 	
 	public Product addProduct(Product product) {
-		String cat = product.getCategory();
-		Category category = categoryRepository.findByName(cat);
-		product.setCategory_id(category.getId());
+//		String cat = product.getCategory();
+//		Category category = categoryRepository.findByName(cat);
+//		product.setCategory_id(category.getId());
 		return productRepository.save(product);
 	}
 	
