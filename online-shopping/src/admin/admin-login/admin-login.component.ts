@@ -29,8 +29,8 @@ export class AdminLoginComponent implements OnInit {
   
  
     login() : void {
-      console.log(this.loginForm.value);
-      this.adminService.saveForm(this.loginForm.value)
+      // console.log(this.loginForm.value);
+      this.adminService.saveForm(this.loginForm)
       .subscribe(
         data =>{
         console.log("login successful");
