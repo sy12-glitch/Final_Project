@@ -12,7 +12,7 @@
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <td rowspan="6"><img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250"></td>
+                <td colspan="4"><img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250"></td>
               </tr>
               <tr>
                 <td><h3>{{item.name}}</h3></td>
@@ -24,10 +24,13 @@
                 <td><h6>price: {{item.price | currency:'INR':true }}</h6></td>
               </tr>
               <tr>
-                <td><p style="text-align: left;">{{item.discription}}</p></td>
+                <td><p style="text-align: left;">{{item.description}}</p></td>
               </tr>
               <tr>
                 <td><h4>Rating: {{item.rating }}</h4></td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button></td>
               </tr>
               
             </tbody>
