@@ -23,9 +23,10 @@ public class Product {
 	private String description;
 	private float rating;
 	private int category_id;
+	private String category;
 	
 	public Product(int id, int quantity, String name, String brand, double price, String image, String description,
-			float rating, int category_id) {
+			float rating, int category_id, String category) {
 		super();
 		this.id = id;
 		this.quantity = quantity;
@@ -36,8 +37,17 @@ public class Product {
 		this.description = description;
 		this.rating = rating;
 		this.category_id = category_id;
+		this.category = category;
 	}
-	
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	public Product() {}
 	
 	public int getId() {
