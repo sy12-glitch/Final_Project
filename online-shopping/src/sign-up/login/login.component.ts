@@ -26,22 +26,20 @@ export class LoginComponent implements OnInit {
         password :new FormControl("",Validators.required)
       });
     }
-  
- 
-    login() : void {
-      // console.log(this.loginForm.value);
-      this.customService.saveForm(this.loginForm.value)
-      .subscribe(
-        data =>{
-        console.log("login successful");
-        alert("login successful");
-        this.router.navigate(["/order"]);
-      },
-      error=>{
-        console.log("exception occured");
-        this.msg="Bad credential, enter right email-id or passoword !";
-      }
-      
+
+      login() : void {
+        // console.log(this.loginForm.value);
+        this.customService.saveForm(this.loginForm.value)
+        .subscribe(
+          data =>{
+          console.log("login successful");
+          alert("login successful");
+          this.router.navigate(["/controller"]);
+        },
+        error=>{
+          console.log("exception occured");
+          this.msg="Bad credential, enter right email-id or passoword !";
+        }
       
       )
   }
