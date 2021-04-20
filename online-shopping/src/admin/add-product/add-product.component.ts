@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -20,26 +21,22 @@ form = new FormGroup({
 get f(){
   return this.form.controls;
 }
+  constructor(private productService:ProductsService,private router:Router, private http: HttpClient) { }
 
-
-
- 
-
-  constructor(private productService:ProductsService, private router:Router) {
-   
-  }
+  
 
   ngOnInit(): void {
     this.productForm = new FormGroup({
 
       
-      category: new FormControl("clothing", Validators.required),
-      name: new FormControl("zara1", Validators.required),
-      brand: new FormControl("zara", Validators.required),
-      price: new FormControl("500", [Validators.required, Validators.min(1)]),
-      description: new FormControl("soft material", Validators.required),
-      quantity: new FormControl("4", Validators.required),
-      rating: new FormControl("4", Validators.required)
+      category: new FormControl("", Validators.required),
+      name: new FormControl("", Validators.required),
+      brand: new FormControl("", Validators.required),
+      image: new FormControl("", Validators.required),
+      price: new FormControl("", [Validators.required, Validators.min(1)]),
+      description: new FormControl("", Validators.required),
+      quantity: new FormControl("", Validators.required),
+      rating: new FormControl("", Validators.required)
 
     });
   }
@@ -47,14 +44,15 @@ get f(){
   create(){
     console.log(this.productForm.value);
     this.productService.saveProduct(this.productForm.value)
-    
-
     .subscribe((res:any)=>{
       console.log(res);
       this.router.navigate(["/list-product"]);
-
-      
-    })
+      alert("submited");
+    }) 
+    error=>{
+      console.log("exception occured");
+      alert("error");
+    }
   }
 
 }
