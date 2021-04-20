@@ -1,3 +1,20 @@
+<div class="container">
+  <div class="row g-0">
+    <div *ngFor="let item of products" class="col-sm-4 col-md-5">
+        <div>
+          <img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250">
+        </div>
+        <div class="col-8 col-md-7">
+          <h3>{{item.name}}</h3>
+          <p style="text-align: left;">{{item.discription}}</p>
+          <h6>price: {{item.price | currency:'INR':true }}</h6>
+          <br>
+          <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
+        </div>
+    </div>
+  </div>
+</div>
+
 <!-- <div class="container">
     <table class="table table-bordered">
         

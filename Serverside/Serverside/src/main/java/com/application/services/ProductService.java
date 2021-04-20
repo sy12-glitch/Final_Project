@@ -81,17 +81,11 @@ public class ProductService {
 		}
 	}
 	
-	public void deleteProduct(User user, int id) throws NotPermittedException {
+	public void deleteProduct(int id) throws NotPermittedException {
 		Optional<Product> optional = productRepository.findById(id);
 		Product dbProduct = optional.orElse(null);
-		if(dbProduct!=null&&user.getRole().equals("ADMIN")&&(user.getIsactive()))
-		{
 			productRepository.deleteById(id);
-		}
-		else
-		{
-			throw new NotPermittedException("You are not permitted to delete this product");
-		}
+			
 	}
 	
 	

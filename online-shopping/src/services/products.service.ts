@@ -30,8 +30,8 @@ export class ProductsService {
   saveProduct(product) {
     return this._http.post(`${this.host}/addProduct`, product);
   }
-  getProducts(category){
-    return this._http.post('${this.host}/category',category);
+  getProducts(data){
+    return this._http.post(`${this.host}/category`, data);
   }
 
 }
