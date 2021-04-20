@@ -9,7 +9,30 @@
        <!-- Accessories details  -->
        <div class="col-sm-4 col-md-5" *ngIf="item.category == 'accessories'">
         <div>
-          <img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td rowspan="6"><img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250"></td>
+              </tr>
+              <tr>
+                <td><h3>{{item.name}}</h3></td>
+              </tr>
+              <tr>
+                <td><h3>{{item.brand}}</h3></td>
+              </tr>
+              <tr>
+                <td><h6>price: {{item.price | currency:'INR':true }}</h6></td>
+              </tr>
+              <tr>
+                <td><p style="text-align: left;">{{item.discription}}</p></td>
+              </tr>
+              <tr>
+                <td><h4>Rating: {{item.rating }}</h4></td>
+              </tr>
+              
+            </tbody>
+          </table>
+          <!-- <img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250">
         </div>
         <div class="col-8 col-md-7">
           <h3>{{item.name}}</h3>
@@ -18,7 +41,7 @@
           <br>
           <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
