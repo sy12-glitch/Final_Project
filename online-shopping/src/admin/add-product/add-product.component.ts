@@ -46,7 +46,7 @@ get f(){
     this.productService.saveProduct(this.productForm.value)
     .subscribe((res:any)=>{
       console.log(res);
-      this.router.navigate(["/list-product"]);
+      // this.router.navigate(["/add-product"]);
       alert("submited");
     }) 
     error=>{

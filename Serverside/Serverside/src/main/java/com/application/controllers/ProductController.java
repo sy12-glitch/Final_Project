@@ -45,9 +45,9 @@ public class ProductController {
 		return productService.getProductById(id);
 	}
 	
-	@GetMapping("/category/{id}")
-	public List<Product> getProductsByCategory(@PathVariable int id){
-		return productService.getProductsByCategory(id);
+	@GetMapping("/category")
+	public List<Product> getProductsByCategory(@RequestBody String name){
+		return productService.getProductsByCategory(name);
 	}
 	
 //	@PostMapping("/AddProduct")

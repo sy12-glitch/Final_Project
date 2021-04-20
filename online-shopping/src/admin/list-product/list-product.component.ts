@@ -24,4 +24,17 @@ export class ListProductComponent implements OnInit {
       this.products = res;
     })
   }
+  
+  deleteProduct(product){
+    this.productService.deleteProduct(product.id)
+    .subscribe((res:any)=>{
+      this.getAllProducts();
+    })
+  }
+
+
+}
+
+function id(id: any) {
+  throw new Error('Function not implemented.');
 }

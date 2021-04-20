@@ -20,8 +20,6 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
   saveForm(home){
     const headers= new HttpHeaders()
-  .set('content-type', 'application/json')
-  .set('Access-Control-Allow-Origin', '*');
     return this.http.post(`${this.host}/home/user/login`, home);
   }
   // getCustomers(){

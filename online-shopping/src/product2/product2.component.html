@@ -4,82 +4,22 @@
   <div class="col-sm-4 col-md-5">
     <img src="https://cdn.sweatband.com/Wilson_Tour_Vision_Mens_Tennis_Shoes_2_2000x2000.jpg" alt="Cinque Terre" width="300" height="250">
   </div>
-  <div class="col-8 col-md-7">
-    <p style="text-align: left;">UMYOGO Women's Running Shoes Non Slip Athletic Tennis Walking Blade Type Sneakers</p>
-  
- 
-    <h6>price: 400$</h6>
-    <br>
-    
-    Select size: <select  class="control-lable col-sm-2" formControlName="size" >
-     
-     <option >36</option>
-     <option >37</option>
-     <option >38</option>
-     
- </select>
- <br>
-    <br>
- <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-    
-  </div>
-</div>
-
-</div>
-
-<div class="container">
-  <div class="row g-0">
-    <div class="col-sm-4 col-md-5">
-      <img src="https://th.bing.com/th/id/OIP.D6Ewdtp5vwHmOiL9pRL-ZQHaHa?w=180&h=180&c=7&o=5&dpr=1.5&pid=1.7" alt="Cinque Terre" width="300" height="250">
-    </div>
-    <div class="col-8 col-md-7">
-      <p style="text-align: left;">VIFUUR Water Sports Shoes Barefoot Quick-Dry Aqua Yoga Socks Slip-on for Men Women</p>
-   
-      <h6>price: 500$</h6>
-      <br>
-      Select size: <select  class="control-lable col-sm-2" formControlName="size" >
-     
-        <option >36</option>
-        <option >37</option>
-        <option >38</option>
-        
-    </select>
-    <br>
-       <br>
-    <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-       
-    </div>
-  </div>
-  
-  </div>
   <div class="container">
-  <div class="row g-0">
-    <div class="col-sm-4 col-md-5">
-      <img src="https://th.bing.com/th/id/OIP.KzVp7UUsmuub9C4qInZ4VgHaHa?w=218&h=218&c=7&o=5&dpr=1.5&pid=1.7" alt="Cinque Terre" width="300" height="250">
-    </div>
-    <div class="col-8 col-md-7">
-      <p style="text-align: left;">VIFUUR Water Sports Shoes Barefoot Quick-Dry Aqua Yoga Socks Slip-on for Men Women</p>
-   
-      <h6>price: 700$</h6>
-     
-      
-      
-      Select size: <select  class="control-lable col-sm-2" formControlName="size" >
-     
-        <option >36</option>
-        <option >37</option>
-        <option >38</option>
-        
-    </select>
-    <br>
-       <br>
-    <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-       
-     
-    
+    <div class="row g-0">
+      <div *ngFor="let item of products" class="col-sm-4 col-md-5">
+        <!-- Shoe details -->
+        <div class="col-sm-4 col-md-5" *ngIf="item.category == 'shoes'">
+          <div>
+            <img src="{{item.image}}" alt="Cinque Terre" width="300"  height="250">
+          </div>
+          <div class="col-8 col-md-7">
+            <h3>{{item.name}}</h3>
+            <p style="text-align: left;">{{item.discription}}</p>
+            <h6>price: {{item.price | currency:'INR':true }}</h6>
+            <br>
+            <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  
-  </div>
-
-

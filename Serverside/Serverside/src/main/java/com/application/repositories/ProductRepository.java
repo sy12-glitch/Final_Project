@@ -8,5 +8,5 @@ import com.application.entity.Product;
 
 
 public interface ProductRepository extends CrudRepository<Product, Integer> {
-	
+	public List<Product> findByCategory(String category);
 }

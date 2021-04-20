@@ -13,7 +13,7 @@ export class Product {
 	public constructor(id:number, brand:string, category_id:number,
 		 description:string, image:string, 
 		 name:string, price:number,
-		  quantity:number, rating:number)
+		  quantity:number, rating:number, category:string)
 	{
 
 	}

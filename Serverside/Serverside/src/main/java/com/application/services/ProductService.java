@@ -1,7 +1,5 @@
 package com.application.services;
 
-
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -42,17 +40,9 @@ public class ProductService {
 		return productRepository.findById(id);
 	}
 	
-	public List<Product> getProductsByCategory(int category_id){
-		List<Product> products = (List<Product>) productRepository.findAll();
-		List<Product> catProduct = new ArrayList<Product>();
-		for(Product product:products)
-		{
-			if(category_id==product.getCategory_id())
-			{
-				catProduct.add(product);
-			}
-		}
-		return catProduct;
+	public List<Product> getProductsByCategory(String category){
+		List<Product> products = productRepository.findByCategory(category);
+		return products;
 	}
 	
 	
@@ -71,6 +61,7 @@ public class ProductService {
 	
 	public Product addProduct(Product product) {
 		String cat = product.getCategory();
+		System.out.println(cat);
 		Category category = categoryRepository.findByName(cat);
 		product.setCategory_id(category.getId());
 		return productRepository.save(product);
@@ -90,17 +81,11 @@ public class ProductService {
 		}
 	}
 	
-	public void deleteProduct(User user, int id) throws NotPermittedException {
+	public void deleteProduct(int id) throws NotPermittedException {
 		Optional<Product> optional = productRepository.findById(id);
 		Product dbProduct = optional.orElse(null);
-		if(dbProduct!=null&&user.getRole().equals("ADMIN")&&(user.getIsactive()))
-		{
 			productRepository.deleteById(id);
-		}
-		else
-		{
-			throw new NotPermittedException("You are not permitted to delete this product");
-		}
+			
 	}
 	
 	
