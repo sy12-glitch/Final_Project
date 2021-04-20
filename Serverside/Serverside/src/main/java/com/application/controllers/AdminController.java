@@ -79,7 +79,6 @@ public class AdminController {
 	public List<Product> getProductByCategory(@RequestBody String name) {
 		System.out.println(name);
 		int category_id = categoryService.getCategoryId(name);
-
 		return productService.getProductsByCategory(name);
 	}
 
@@ -105,6 +104,7 @@ public class AdminController {
 	public Optional<Product> getProductById(@PathVariable int id) {
 		return productService.getProductById(id);
 	}
+
 
 	@GetMapping("/category/name")
 	public List<Product> getProductsByCategory(@PathVariable String name) {
