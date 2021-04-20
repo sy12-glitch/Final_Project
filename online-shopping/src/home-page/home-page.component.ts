@@ -22,5 +22,14 @@ export class HomePageComponent implements OnInit {
 
   getProducts(data: String){
     console.log(data);
+    this.productService.getProducts(data)
+    .subscribe((res:object)=>{
+      console.log(res);
+      this.router.navigate(["/list-product"]);
+    }) 
+    error=>{
+      console.log("no products");
+      alert("error");
+    }
   }
 }

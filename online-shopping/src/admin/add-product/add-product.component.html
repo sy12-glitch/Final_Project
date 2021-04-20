@@ -5,9 +5,9 @@
         <div class="form-group">
             <label for="category">Category:</label>
             <select formControlName="category" class="form-control">
-                <option value="1">Clothing</option>
-                <option value="2">Shoes</option>
-                <option value="3">Accessories</option>
+                <option value="clothing">Clothing</option>
+                <option value="shoes">Shoes</option>
+                <option value="accessories">Accessories</option>
             </select>
             <div *ngIf="f.category.touched && f.category.invalid" class="alert alert-danger">
                 <div *ngIf="f.category.errors.required">category is required.</div>

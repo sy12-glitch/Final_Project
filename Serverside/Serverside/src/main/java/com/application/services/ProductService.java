@@ -60,9 +60,10 @@ public class ProductService {
 //	}
 	
 	public Product addProduct(Product product) {
-//		String cat = product.getCategory();
-//		Category category = categoryRepository.findByName(cat);
-//		product.setCategory_id(category.getId());
+		String cat = product.getCategory();
+		System.out.println(cat);
+		Category category = categoryRepository.findByName(cat);
+		product.setCategory_id(category.getId());
 		return productRepository.save(product);
 	}
 	
