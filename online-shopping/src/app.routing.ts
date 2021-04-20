@@ -31,7 +31,7 @@ const routes:Routes = [
     {path: 'list', component: ListProductComponent},
     {path:'add-product', component: ProductCreateComponent},
     {path:'list-product', component: ListProductComponent},
- 
+    {path:'controller', component: ControllerComponent}
    
 
    

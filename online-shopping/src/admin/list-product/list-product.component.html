@@ -14,16 +14,16 @@
             <th>edit</th>
             <th>Delete</th>
         </tr>
-        <tr *ngFor="let item of productsService.products">
+        <tr *ngFor="let prouduct of products">
            
-            <td>{{item.category}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.Brand}}</td>
-            <td>{{item.description}}</td>
-            <td>{{item.image}}</td>
-            <td>{{item.price}}</td>
-            <td>{{item.quantity}}</td>
-            <td>{{item.rating}}</td>
+            <td>{{prouduct.category}}</td>
+            <td>{{prouduct.name}}</td>
+            <td>{{prouduct.Brand}}</td>
+            <td>{{prouduct.description}}</td>
+            <td>{{prouduct.image}}</td>
+            <td>{{prouduct.price}}</td>
+            <td>{{prouduct.quantity}}</td>
+            <td>{{prouduct.rating}}</td>
             
             <td><a [routerLink]="['/','edit', item.id]" class="btn btn-warning">Edit</a></td>
             <td><button class="btn btn-danger" (click)="deleteProduct(item)">Delete</button></td>
