@@ -68,8 +68,8 @@ public class UserController {
 	}
 	
 	@DeleteMapping("delete/{id}")
-	public boolean deleteUser( @RequestBody User user,@PathVariable int id) throws InvalidUserException {
-		userService.deleteUser(user,id);
+	public boolean deleteUser(@PathVariable int id) throws InvalidUserException {
+		userService.deleteUser(id);
 		return true;
 
 }
