@@ -8,10 +8,10 @@ export class UserdetailsService {
 
     private data: any[] = [];
   
-    public set home(home) {
-      this.data = home;
+    public set user(user) {
+      this.data = user;
     }
-    public get home() {
+    public get user() {
       return this.data;
     }
     private host:string = "http://localhost:8080/home";
