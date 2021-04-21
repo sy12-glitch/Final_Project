@@ -23,9 +23,9 @@ public class OrderController {
 	@Autowired
 	OrderService orderService;
 
-	@PostMapping("/orders")
-	public Order createOrder(@RequestBody Order order) {
-		Order neworder = orderService.createOrder(order);
+	@PostMapping("/orders/{userid}")
+	public Order createOrder(@PathVariable int userid, @RequestBody int productid) {
+		Order neworder = orderService.createOrder(userid, productid);
 		// return repo.save(order);
 		return neworder;
 	}

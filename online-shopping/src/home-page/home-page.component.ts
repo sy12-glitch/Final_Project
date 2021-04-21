@@ -12,23 +12,15 @@ import { ProductsService } from 'src/services/products.service';
 })
 export class HomePageComponent implements OnInit {
   images = [1,2,3].map(() => `https://visitclearwaterflorida.com/wp-content/uploads/2017/05/women-shopping.jpg`);
-  
-  products:Product[]=[]
 
   constructor(private productService:ProductsService,private router:Router, private http: HttpClient) { }
+
+  name:String;
 
   ngOnInit(): void {
   }
 
-  getProducts(data){
-    console.log(data);
-    this.productService.getProducts(data)
-    .subscribe((res:any)=>{
-   //   console.log(res);
-      this.products = res;
-      console.log(this.products);
-      this.router.navigate(["/product"]);
-    })
- }
+  getName(data:String){
+    this.name=data;
+  }
 }
-
