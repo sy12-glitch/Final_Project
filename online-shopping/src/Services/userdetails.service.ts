@@ -31,3 +31,13 @@ export class UserdetailsService {
   
   }
   
+  
+
+function deleteUser(userid: any) {
+  throw new Error('Function not implemented.');
+}
+
+function userid(userid: any) {
+  throw new Error('Function not implemented.');
+}
+  

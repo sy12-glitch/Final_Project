@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {Product} from 'src/Models/products.model';
@@ -19,7 +19,6 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   getProducts(data){
     console.log(data);
     this.productService.getProducts(data)

@@ -14,10 +14,22 @@ import {HomePageComponent} from 'src/home-page/home-page.component';
 export class ProductComponent implements OnInit {
 
 products:Product[]
+  getAllProduct: any;
 
-  constructor(private router: Router, private http: HttpClient,private productService:ProductsService) { }
-
-  ngOnInit(): void {
-  }
+constructor(private _data:ProductsService) { }  
+ngOnInit() {  
+  this._data.getAllProduct().subscribe(  
+    (data:Product[])=>{  
+      this.getAllProduct=data;  
+    }  
+  );  
+}  
+onClicked(value:string){  
   
-}
+this._data.getAllProduct().subscribe(  
+    (data:Product[])=>{  
+      this.getAllProduct=data;  
+    }  
+  );  
+}  
+}  
