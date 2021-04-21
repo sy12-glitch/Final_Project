@@ -29,8 +29,8 @@ export class UserDetailsComponent implements OnInit {
       })
     }
 
-    deleteUser(home){
-      this.userdetailsService.deleteUser(home.userid)
+    deleteUser(user){
+      this.userdetailsService.deleteUser(user.userid)
       .subscribe((res:any)=>{
         this.getAllUsers();
       })
