@@ -1,4 +1,51 @@
-<app-header></app-header>
+<link rel="stylesheet" href="product1.component.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<div class="container">
+
+  <div *ngFor="let item of products" class="">
+      <div class="" *ngIf="item.category == 'clothing'">
+     
+        <div class="card">
+        <div>
+  
+          <table class="table table-bordered table-responsive" style="display: inline;margin-left: 5px;">
+            <tr>
+              <td>
+                <img src="{{item.image}}" width="200px;" height="250px;" />
+              </td>
+            </tr>
+            <tr>
+              <td class="name">{{item.name}}</td>
+            </tr>
+            <tr>
+              <td class="price">Price:{{item.price | currency:'INR':true }}</td>
+            </tr>
+            <tr>
+              <td class="description">{{item.description|slice:0:50}}</td>
+            </tr>
+            <tr>
+              <td>
+                <button type="button" class="btn btn-outline-success" (click)="OnAddCart(prod)"><b>Add to
+                    cart</b></button>
+  
+              </td>
+            </tr>
+          </table>
+        </div>
+  
+  
+  
+  
+      </div>
+    </div>
+ 
+
+  </div>
+</div>
+
+
+
+<!-- <div class="container-fluid">
 <div id="collapseExample">
   <div class="card">
     <div class="card-body">
@@ -8,7 +55,7 @@
           <table class="table table-bordered table-responsive" style="display: inline;margin-left: 5px;">
             <tr>
               <td>
-                 <img src="{{item.image}}" width="180px;" height="300px;"/>
+                 <img src="{{item.image}}" width="180px;" height="180px;"/>
               </td>
             </tr>
             <tr>
@@ -29,4 +76,4 @@
           </table>
     </div>
   </div>
-</div>
+</div> -->
