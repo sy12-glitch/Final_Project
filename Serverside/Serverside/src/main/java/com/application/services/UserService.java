@@ -70,13 +70,13 @@ public class UserService {
 	}
 
 //
-	public void deleteUser(User user, int id) throws InvalidUserException {
+	public void deleteUser(int id) throws InvalidUserException {
 		Optional<User> optional = userRepository.findById(id);
 		User dbusers = optional.orElse(null);
-		if (dbusers != null && user.getRole().equals("ADMIN") && (user.getIsactive())) {
+	//	if (dbusers != null && user.getRole().equals("ADMIN") && (user.getIsactive())) {
 			userRepository.deleteById(id);
-		} else
-			throw new InvalidUserException("Permission Denied");
+	//	} else
+	//		throw new InvalidUserException("Permission Denied");
 
 	}
 	// User user=new User();
