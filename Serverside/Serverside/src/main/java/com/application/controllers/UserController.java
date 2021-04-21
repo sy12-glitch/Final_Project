@@ -63,7 +63,7 @@ public class UserController {
 	}
 	
 	@PutMapping("update/{userid}")
-	public User updatesUser(@PathVariable int id,@RequestBody User user) throws InvalidUserException {
+	public User updatesUser(@PathVariable int userid,@RequestBody User user) throws InvalidUserException {
 		return userService.updateUser(userid, user);
 	}
 	
