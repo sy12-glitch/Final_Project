@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/models/products.model';
 import { ProductsService } from 'src/services/products.service';
 
@@ -8,10 +10,14 @@ import { ProductsService } from 'src/services/products.service';
   styleUrls: ['./list-product.component.css']
 })
 export class ListProductComponent implements OnInit {
-  products:Product[]=[];
+    products:Product[]=[];
+    
+    
+    constructor(private router: Router, 
+      private productService:ProductsService) { }
   
   
-  constructor(private productService:ProductsService) { }
+  
 
   ngOnInit(): void {
     this.getAllProducts();

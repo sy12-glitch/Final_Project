@@ -1,31 +1,4 @@
-<div class="container">  
-  <div class="row">  
-    <div class="col-md-3">  
-      <app-home-page  (clicked)="onClicked($event)"></app-home-page>  
-    </div>  
-    <div class="col-md-9">  
-      <h1>Products</h1>  
-      <div class="row">  
-        <div *ngFor="let item of products" class="col-sm-6 col-md-4">  
-          <div class="thumbnail">  
-            <img height="250" src="{{item.pimg}}" alt="...">  
-            <div class="caption">  
-              <h3>{{item.name}}</h3>  
-              <p>{{item.price | currency:'INR':true }}</p>  
-              <button type="button" class="btn btn-primary" [routerLink]="['/','cart']">Add to cart</button>
-            </div>  
-          </div>  
-        </div>  
-      </div>  
-    </div>  
-  </div>  
-</div>
-
-
-
-
-
-<!--<div class="container">
+<div class="container">
   <div class="row g-0">
     <div *ngFor="let item of products" class="col-sm-4 col-md-5">
         <div>
@@ -41,26 +14,5 @@
     </div>
   </div>
 </div>
+ 
 
- <div class="container">
-    <table class="table table-bordered">
-        
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          
-          </tr>
-          <tr>
-            <td scope="row">3</th>
-            <td rowspan="2">Larry the Bird</td>
-          </tr>
-        </tbody>
-      </table>
-</div> -->
