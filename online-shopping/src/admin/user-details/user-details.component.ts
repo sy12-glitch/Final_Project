@@ -30,7 +30,7 @@ export class UserDetailsComponent implements OnInit {
     }
 
     deleteUser(home){
-      this.userdetailsService.deleteUser(home.id)
+      this.userdetailsService.deleteUser(home.userid)
       .subscribe((res:any)=>{
         this.getAllUsers();
       })

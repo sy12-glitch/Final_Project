@@ -21,12 +21,12 @@ export class UserdetailsService {
       return this._http.get(`${this.host}/users`);
   
     }
-    getUsersById(id) {
-      return this._http.get(`${this.host}/users/${id}`);
+    getUsersById(userid) {
+      return this._http.get(`${this.host}/users/${userid}`);
     }
   
-    deleteUser(id){
-      return this._http.delete(`${this.host}/delete/${id}`);
+    deleteUser(userid){
+      return this._http.delete(`${this.host}/delete/${userid}`);
     }
   
   }

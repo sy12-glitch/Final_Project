@@ -62,19 +62,19 @@ public class UserService {
 	}
 
 //update service(PUT method)
-	public User updateUser(int id, User user) throws InvalidUserException {
-		user.setUserid(id);
+	public User updateUser(int userid, User user) throws InvalidUserException {
+		user.setUserid(userid);
 		userRepository.save(user);
 		return user;
 
 	}
 
 //
-	public void deleteUser(int id) throws InvalidUserException {
-		Optional<User> optional = userRepository.findById(id);
+	public void deleteUser(int userid) throws InvalidUserException {
+		Optional<User> optional = userRepository.findById(userid);
 		User dbusers = optional.orElse(null);
 	//	if (dbusers != null && user.getRole().equals("ADMIN") && (user.getIsactive())) {
-			userRepository.deleteById(id);
+			userRepository.deleteById(userid);
 	//	} else
 	//		throw new InvalidUserException("Permission Denied");
 
