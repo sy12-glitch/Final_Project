@@ -25,15 +25,9 @@ export class UserdetailsService {
       return this._http.get(`${this.host}/users/${id}`);
     }
   
-    deleteUsers(id){
+    deleteUser(id){
       return this._http.delete(`${this.host}/delete/${id}`);
     }
-    // saveProduct(product) {
-    //   return this._http.post(`${this.host}/addProduct`, product);
-    // }
-    // getProducts(data){
-    //   return this._http.post(`${this.host}/category`, data);
-    // }
   
   }
   
