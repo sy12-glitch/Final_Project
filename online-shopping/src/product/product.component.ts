@@ -12,7 +12,6 @@ import { ProductsService } from 'src/services/products.service';
 
 export class ProductComponent implements OnInit {
 
-<<<<<<< HEAD
 @Input('name')
 
 products:Product[]=[];
@@ -22,35 +21,13 @@ products:Product[]=[];
   ngOnInit(): void {
   }
 
-  getProducts(name){
-    console.log(name);
-    this.productService.getProducts(name)
-    .subscribe((res:any)=>{
-      console.log(res);
-      this.products = res;
-      this.router.navigate(["/product"]);
-    })
-  }
+  // getProducts(name){
+  //   console.log(name);
+  //   this.productService.getProducts(name)
+  //   .subscribe((res:any)=>{
+  //     console.log(res);
+  //     this.products = res;
+  //     this.router.navigate(["/product"]);
+  //   })
+  // }
 }
-=======
-products:Product[]
-  getAllProduct: any;
-
-constructor(private _data:ProductsService) { }  
-ngOnInit() {  
-  this._data.getAllProduct().subscribe(  
-    (data:Product[])=>{  
-      this.getAllProduct=data;  
-    }  
-  );  
-}  
-onClicked(value:string){  
-  
-this._data.getAllProduct().subscribe(  
-    (data:Product[])=>{  
-      this.getAllProduct=data;  
-    }  
-  );  
-}  
-}  
->>>>>>> b88fc21b4b7f747d80936d9e86a2d954178aee2c

@@ -19,21 +19,8 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-<<<<<<< HEAD
 
   getName(data:String){
     this.name=data;
   }
-=======
-  getProducts(data){
-    console.log(data);
-    this.productService.getProducts(data)
-    .subscribe((res:any)=>{
-   //   console.log(res);
-      this.products = res;
-      console.log(this.products);
-      this.router.navigate(["/product"]);
-    })
- }
->>>>>>> b88fc21b4b7f747d80936d9e86a2d954178aee2c
 }
