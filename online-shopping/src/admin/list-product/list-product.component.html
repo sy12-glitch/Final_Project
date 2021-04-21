@@ -1,10 +1,10 @@
 <app-header></app-header>
 <div class="container">
-    <div class="table-responsive">
+    <div class="table-responsive table table-bordered">
     
     <h2 class="text-center text-primary">All Products</h2>
     <table class="table">
-        <tr>
+        <tr class="text-center">
             <th>id</th>
             <th>category</th>
             <th>name</th>
@@ -20,7 +20,7 @@
         <tr *ngFor="let item of products">
            
             <td>{{item.id}}</td>
-            <td>{{item.category}}</td>
+            <td><strong>{{item.category}}</strong></td>
             <td>{{item.name}}</td>
             <td>{{item.brand}}</td>
             <td>{{item.description|slice:0:50}}</td>
