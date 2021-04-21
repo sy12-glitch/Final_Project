@@ -26,7 +26,7 @@ export class UserdetailsService {
     }
   
     deleteUser(userid){
-      return this._http.delete(`${this.host}/deleteUser/${userid}`);
+      return this._http.delete(`${this.host}/delete/${userid}`);
     }
   
   }

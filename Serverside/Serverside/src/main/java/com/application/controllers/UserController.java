@@ -62,14 +62,14 @@ public class UserController {
 		return res;
 	}
 	
-	@PutMapping("update/{id}")
+	@PutMapping("update/{userid}")
 	public User updatesUser(@PathVariable int id,@RequestBody User user) throws InvalidUserException {
-		return userService.updateUser(id, user);
+		return userService.updateUser(userid, user);
 	}
 	
-	@DeleteMapping("delete/{id}")
-	public boolean deleteUser(@PathVariable int id) throws InvalidUserException {
-		userService.deleteUser(id);
+	@DeleteMapping("delete/{userid}")
+	public boolean deleteUser(@PathVariable int userid) throws InvalidUserException {
+		userService.deleteUser(userid);
 		return true;
 
 }
