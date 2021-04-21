@@ -1,4 +1,6 @@
+<app-header></app-header>
 <div class="table-responsive">
+    
     <h2 class="text-center text-primary">All Products</h2>
     <table class="table">
         <tr>
@@ -11,7 +13,6 @@
             <th>price</th>
             <th>quantity</th>
             <th>rating</th>
-            
             <th>edit</th>
             <th>Delete</th>
         </tr>
@@ -30,4 +31,5 @@
             <td><a [routerLink]="['/','edit', item.id]" class="btn btn-warning">Edit</a></td>
             <td><button class="btn btn-danger" (click)="deleteProduct(item)">Delete</button></td>
         </tr>
+    
     </table>

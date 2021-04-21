@@ -8,7 +8,7 @@ import { Product2Component } from "./product2/product2.component";
 import { Product3Component } from "./product3/product3.component";
 import { ForgetComponent } from "./sign-up/forget/forget.component";
 import { LoginComponent } from "./sign-up/login/login.component";
-
+import { ProductComponent } from "./product/product.component";
 import { SignUpComponent } from "./sign-up/sign-up/sign-up.component";
 import { AdminLoginComponent } from "./admin/admin-login/admin-login.component";
 import { ProductCreateComponent } from "./admin/add-product/add-product.component";
@@ -29,8 +29,10 @@ const routes:Routes = [
     {path: 'create', component: ProductCreateComponent},
     {path: 'list', component: ListProductComponent},
     {path:'add-product', component: ProductCreateComponent},
+    {path:'controller', component: ControllerComponent},
     {path:'list-product', component: ListProductComponent},
-    {path:'controller', component: ControllerComponent}
+    {path:'product', component: ProductComponent}
+ 
    
 
    
