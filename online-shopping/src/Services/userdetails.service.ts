@@ -21,8 +21,8 @@ export class UserdetailsService {
       return this._http.get(`${this.host}/users`);
   
     }
-    getUsersById(userid) {
-      return this._http.get(`${this.host}/users/${userid}`);
+    getUsersById(id) {
+      return this._http.get(`${this.host}/users/${id}`);
     }
   
     deleteUsers(id){
