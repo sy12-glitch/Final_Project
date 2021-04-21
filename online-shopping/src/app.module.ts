@@ -28,6 +28,7 @@ import { ProductComponent } from './product/product.component';
 import { ListProductComponent } from './admin/list-product/list-product.component';
 import { ProductCreateComponent } from './admin/add-product/add-product.component';
 import { ControllerComponent } from './admin/controller/controller.component';
+import { UserDetailsComponent } from './admin/user-details/user-details.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { ControllerComponent } from './admin/controller/controller.component';
 
     ProductComponent,
       ControllerComponent,
+      UserDetailsComponent,
 
   
   ],

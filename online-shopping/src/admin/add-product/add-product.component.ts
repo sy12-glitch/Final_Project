@@ -36,7 +36,7 @@ get f(){
       price: new FormControl("", [Validators.required, Validators.min(1)]),
       description: new FormControl("", Validators.required),
       quantity: new FormControl("", Validators.required),
-      rating: new FormControl("", Validators.required)
+      rating: new FormControl("", [Validators.required,Validators.max(5)])
 
     });
   }

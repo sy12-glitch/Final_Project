@@ -61,15 +61,26 @@ public class UserController {
 	//	return res;
 		return res;
 	}
-	
-	@PutMapping("update/{id}")
-	public User updatesUser(@PathVariable int id,@RequestBody User user) throws InvalidUserException {
-		return userService.updateUser(id, user);
+
+	@PostMapping("user/logout")
+	public ResponseEntity<User> Userlogout(@RequestBody User user) throws InvalidUserException {
+		// System.out.println(user);
+		User loggedoutuser = userService.Userlogout(user);
+		ResponseEntity<User> res = new ResponseEntity<User>(user, HttpStatus.ACCEPTED);
+		System.out.println(res);
+		System.out.println("Logot success");
+		// return res;
+		return res;
 	}
 	
-	@DeleteMapping("delete/{id}")
-	public boolean deleteUser( @RequestBody User user,@PathVariable int id) throws InvalidUserException {
-		userService.deleteUser(user,id);
+	@PutMapping("update/{userid}")
+	public User updatesUser(@PathVariable int userid,@RequestBody User user) throws InvalidUserException {
+		return userService.updateUser(userid, user);
+	}
+	
+	@DeleteMapping("delete/{userid}")
+	public boolean deleteUser(@PathVariable int userid) throws InvalidUserException {
+		userService.deleteUser(userid);
 		return true;
 
 }

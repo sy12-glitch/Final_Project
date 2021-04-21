@@ -1,10 +1,14 @@
-export interface Registration
+export class User 
 {
-    Id:number;
-    UserName:string;
-    Password:string;
-    Email:string;
-    Role:string;
-    Gender:string;
-    Phone:string;
+    public constructor(
+        userid:number,
+        fname:string,
+        lname:string,
+        address:string,
+        password:string,
+        email:string,
+        role:string,
+        gender:string,
+        mobile:number){}
+   
 }
