@@ -1,32 +1,46 @@
 <app-header></app-header>
-<div id="collapseExample">
-  <div class="card">
-    <div class="card-body">
-    <div *ngFor="let item of products" class="col-sm-4 col-md-5">
-       <div class="col-sm-4 col-md-5" *ngIf="item.category == 'shoes'">
-        <div>
-          <table class="table table-bordered table-responsive" style="display: inline;margin-left: 5px;">
-            <tr>
-              <td>
-                 <img src="{{item.image}}" width="180px;" height="300px;"/>
-              </td>
-            </tr>
-            <tr>
-              <td>{{item.name}}</td>
-            </tr>
-            <tr>
-              <td>Price:{{item.price | currency:'INR':true }}</td>
-            </tr>
-            <tr>
-               <td>{{item.description|slice:0:50}}</td>
-             </tr>
-             <tr>
-                 <td>
-                  <button type="button"   class="btn btn-outline-success" (click)="OnAddCart(prod)"><b>Add to cart</b></button>
 
+<link rel="stylesheet" href="product2.component.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <div class="container">
+  
+    <div *ngFor="let item of products" class="">
+        <div class="" *ngIf="item.category == 'shoes'">
+       
+          <div class="card">
+          <div>
+    
+            <table class="table table-bordered table-responsive" style="display: inline;margin-left: 5px;">
+              <tr>
+                <td>
+                  <img src="{{item.image}}" width="200px;" height="250px;" />
                 </td>
-               </tr>
-          </table>
+              </tr>
+              <tr>
+                <td class="name">{{item.name}}</td>
+              </tr>
+              <tr>
+                <td class="price">Price:{{item.price | currency:'INR':true }}</td>
+              </tr>
+              <tr>
+                <td class="description">{{item.description|slice:0:50}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-outline-success" (click)="OnAddCart(prod)"><b>Add to
+                      cart</b></button>
+    
+                </td>
+              </tr>
+            </table>
+          </div>
+    
+    
+    
+    
+        </div>
+      </div>
+   
+  
     </div>
   </div>
-</div>

@@ -15,6 +15,7 @@ import { ProductCreateComponent } from "./admin/add-product/add-product.componen
 import { ListProductComponent } from "./admin/list-product/list-product.component";
 import { ControllerComponent } from "./admin/controller/controller.component";
 import { UserDetailsComponent } from "./admin/user-details/user-details.component";
+import { AboutUsComponent } from "./about-us/about-us.component";
 
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
@@ -33,7 +34,8 @@ const routes:Routes = [
     {path:'controller', component: ControllerComponent},
     {path:'list-product', component: ListProductComponent},
     {path:'user-det', component: UserDetailsComponent},
-    {path:'product', component: ProductComponent}
+    {path:'product', component: ProductComponent},
+    {path:'about-us', component: AboutUsComponent}
  
    
 
