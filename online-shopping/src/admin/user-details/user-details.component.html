@@ -14,7 +14,7 @@
             <th>Gender</th>
             <th>Mobile number</th>
             <th>Role</th>
-            <th>edit</th>
+            <th>Block</th>
             <th>Delete</th>
         </tr>
     </thead>
@@ -29,7 +29,7 @@
             <td>{{item.mobile}}</td>
             <td>{{item.role}}</td>
             
-            <td><a [routerLink]="['/','edit', item.userid]" class="btn btn-warning">Edit</a></td>
+            <td><a [routerLink]="['/','edit', item.userid]" class="btn btn-warning">Block</a></td>
             <td><button class="btn btn-danger" (click)="deleteUser(item)">Delete</button></td>
         </tr>
     
