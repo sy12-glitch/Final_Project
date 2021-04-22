@@ -44,6 +44,23 @@ public class ProductService {
 		List<Product> products = productRepository.findByCategory(category);
 		return products;
 	}
+
+	public Product findProductById(int id) {
+		
+		Optional<Product> optional = productRepository.findById(id);
+		Product product = optional.orElse(null);
+		
+		System.out.println(product);
+		System.out.println("Hello");
+		return product;
+	}
+//edit method
+	public boolean editProduct(int id, Product product) {
+		product.setId(id);
+		productRepository.save(product);
+
+		return true;
+	}
 	
 	
 //	public Product addProduct(User user, Product product) throws NotPermittedException {

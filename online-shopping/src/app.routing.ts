@@ -14,6 +14,7 @@ import { ListProductComponent } from "./admin/list-product/list-product.componen
 import { ControllerComponent } from "./admin/controller/controller.component";
 import { UserDetailsComponent } from "./admin/user-details/user-details.component";
 import {Cart2Component} from "./cart2/cart2.component";
+import { EditProductComponent } from "./admin/edit-product/edit-product.component";
 
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
@@ -28,6 +29,7 @@ const routes:Routes = [
     {path: 'create', component: ProductCreateComponent},
     {path: 'list', component: ListProductComponent},
     {path:'add-product', component: ProductCreateComponent},
+    {path: 'edit/:id', component: EditProductComponent},
     {path:'controller', component: ControllerComponent},
     {path:'list-product', component: ListProductComponent},
     {path:'user-det', component: UserDetailsComponent},
