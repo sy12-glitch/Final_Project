@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SessionStorageService } from 'angular-web-storage';
 import { Product } from 'src/models/products.model';
 import { User } from 'src/Models/User.Model';
 import { CartService } from 'src/services/cart.service';
@@ -16,17 +17,18 @@ export class Product1Component implements OnInit {
 
   products:Product[]=[];
   users:User[]=[];
-  
+  email='';
   
   constructor(private router: Router, 
     private http: HttpClient,
     private productService:ProductsService,
     private cartService:CartService
-    , private userdetailsService:UserdetailsService
+    , private userdetailsService:UserdetailsService, private session: SessionStorageService
     ) { }
 
   ngOnInit(): void {
     this.getAllProducts();
+  
   }
 
   getAllProducts(){
@@ -49,6 +51,15 @@ export class Product1Component implements OnInit {
   //     this.users = res;
   //   })
   // }
+//   getAllUsers(){
+//     let email = this.session.get("email");
+//     this.userdetailsService.getAllUsers(email)
+//     .subscribe((res:any)=>{
+//       console.log(res);
+//       this.users = res;
+      
+//   });
+// }
   
   _addItemToCart( id, quantity): void {
     let product  = {

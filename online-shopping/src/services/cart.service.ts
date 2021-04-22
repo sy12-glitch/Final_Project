@@ -33,7 +33,11 @@ export class CartService {
   
   addToCart(product) {
     const headers= new HttpHeaders()
+
+    return this.http.post(`${this.host}/orders/32}`, product.id);
+
     return this.http.post(`${this.host}/orders`,product);
+
   }
   
 }

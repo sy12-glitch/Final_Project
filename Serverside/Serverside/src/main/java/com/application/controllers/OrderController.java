@@ -1,5 +1,6 @@
 package com.application.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.application.entity.Order;
-import com.application.entity.User;
 import com.application.services.OrderService;
-import com.application.services.ProductService;
 
 @RestController
 @RequestMapping("home")
@@ -22,6 +21,11 @@ import com.application.services.ProductService;
 public class OrderController {
 	@Autowired
 	OrderService orderService;
+	
+	@GetMapping("/orders")
+	public List<Order> getAllOrders(){
+		return orderService.getAllOrders();
+	}
 
 	@PostMapping("/orders/{userid}")
 	public Order createOrder(@PathVariable int userid, @RequestBody int productid) {

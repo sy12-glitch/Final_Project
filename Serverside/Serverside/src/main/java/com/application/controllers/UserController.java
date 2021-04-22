@@ -36,6 +36,12 @@ public class UserController {
 	public User findUserById(@PathVariable int id) throws InvalidUserException {
 		return userService.findUserById(id);
 	}
+	
+	@GetMapping("/getuser")
+	public User getUserByEmail(@RequestBody String email) {
+		return userService.getUserByemail(email);
+	}
+	
 	@GetMapping("/users")
 	public List<User> findUsers(){
 		return userService.findUsers();
