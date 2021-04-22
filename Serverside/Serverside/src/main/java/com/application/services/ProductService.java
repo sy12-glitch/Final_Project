@@ -80,6 +80,12 @@ public class ProductService {
 			throw new NotPermittedException("You are not permitted to update this product");
 		}
 	}
+	public boolean editProduct(int id, Product product) {
+		product.setId(id);
+		productRepository.save(product);
+
+		return true;
+	}
 	
 	public void deleteProduct(int id) throws NotPermittedException {
 		Optional<Product> optional = productRepository.findById(id);

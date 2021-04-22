@@ -32,6 +32,7 @@ import { UserDetailsComponent } from './admin/user-details/user-details.componen
 import { Header2Component } from './shared/header2/header2.component';
 
 
+
 @NgModule({
   declarations: [SignUpComponent,ForgetComponent, LoginComponent,
     AppComponent,
@@ -40,8 +41,9 @@ import { Header2Component } from './shared/header2/header2.component';
     CartComponent,
     MyOrdersComponent,
     Product2Component,
-    Product3Component,
+ 
     HeaderComponent,
+ 
     FooterComponent,
     AdminLoginComponent,
 
@@ -52,6 +54,7 @@ import { Header2Component } from './shared/header2/header2.component';
       ControllerComponent,
       UserDetailsComponent,
       Header2Component,
+     
 
   
   ],
