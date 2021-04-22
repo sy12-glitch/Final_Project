@@ -24,7 +24,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { ProductComponent } from './product/product.component';
-
+import { Header2Component } from './shared/header2/header2.component';
 import { ListProductComponent } from './admin/list-product/list-product.component';
 import { ProductCreateComponent } from './admin/add-product/add-product.component';
 import { ControllerComponent } from './admin/controller/controller.component';
@@ -42,6 +42,7 @@ import { Cart2Component } from './cart2/cart2.component';
     Product2Component,
     Product3Component,
     HeaderComponent,
+    Header2Component,
     FooterComponent,
     AdminLoginComponent,
 
