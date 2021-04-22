@@ -26,8 +26,7 @@
             </tr>
             <tr>
               <td>
-                <button type="button"   class="btn btn-outline-success" (click)="OnAddCart(prod)"><b>Add to cart</b></button>
-  
+                <button type="button"   class="btn btn-outline-success" (click)="OnAddCart(item)"><b>Add to cart</b></button>
               </td>
             </tr>
           </table>
@@ -38,9 +37,10 @@
   
       </div>
     </div>
- 
+    
 
   </div>
+  <button type="button"   class="btn btn-outline-success" [routerLink]="['/','cart2']"><b>view cart</b></button>
 </div>
 
 

@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div *ngFor="let item of products" class="">
+        <div class="" *ngIf="item.category == 'shoes'">
+
+            <div class="card">
+                <div>
+
+                    <table class="table table-bordered table-responsive" style="display: inline;margin-left: 5px;">
+                        <tr>
+                            <td>
+                                <img src="{{item.image}}" width="200px;" height="250px;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="name">{{item.name}}</td>
+                        </tr>
+                        <tr>
+                            <td class="price">Price:{{item.price | currency:'INR':true }}</td>
+                        </tr>
+                        <tr>
+                            <td class="description">{{item.description|slice:0:50}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-outline-success"><b>place order</b></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
