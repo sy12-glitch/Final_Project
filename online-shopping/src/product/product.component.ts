@@ -45,5 +45,8 @@ products:Product[]=[];
     console.log(item);
     this.cartProducts.push(item);
     sessionStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    alert("Added to the cart");
+   
   }
+  
 }
