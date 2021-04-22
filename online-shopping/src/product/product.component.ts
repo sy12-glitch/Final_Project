@@ -19,7 +19,10 @@ export class ProductComponent implements OnInit {
 catName:String;
 products:Product[]=[];
 
-  constructor(private router: Router, private http: HttpClient,private productService:ProductsService, private session: SessionStorageService,
+  constructor(private router: Router, 
+    private http: HttpClient,
+    private productService:ProductsService,
+     private session: SessionStorageService,
     private cartService:CartService) { }
 
   cartProducts:Product[]=[];

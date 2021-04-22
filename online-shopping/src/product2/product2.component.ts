@@ -17,7 +17,8 @@ export class Product2Component implements OnInit {
   cartProducts:Product[]=[];
   P:Product[];
 
-  constructor(private router: Router, private http: HttpClient,private productService:ProductsService, private session: SessionStorageService,
+  constructor(private router: Router, 
+    private http: HttpClient,private productService:ProductsService, private session: SessionStorageService,
     private cartService:CartService
     ) { }
 
