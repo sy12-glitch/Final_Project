@@ -1,9 +1,9 @@
+  
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Product} from 'src/Models/products.model';
 import { ProductsService } from 'src/services/products.service';
-import {HomePageComponent} from 'src/home-page/home-page.component';
 
 @Component({
   selector: 'app-product',
@@ -13,23 +13,22 @@ import {HomePageComponent} from 'src/home-page/home-page.component';
 
 export class ProductComponent implements OnInit {
 
-products:Product[]
-  getAllProduct: any;
+@Input('name')
 
-constructor(private _data:ProductsService) { }  
-ngOnInit() {  
-  this._data.getAllProduct().subscribe(  
-    (data:Product[])=>{  
-      this.getAllProduct=data;  
-    }  
-  );  
-}  
-onClicked(value:string){  
-  
-this._data.getAllProduct().subscribe(  
-    (data:Product[])=>{  
-      this.getAllProduct=data;  
-    }  
-  );  
-}  
-}  
+products:Product[]=[];
+
+  constructor(private router: Router, private http: HttpClient,private productService:ProductsService) { }
+
+  ngOnInit(): void {
+  }
+
+  // getProducts(name){
+  //   console.log(name);
+  //   this.productService.getProducts(name)
+  //   .subscribe((res:any)=>{
+  //     console.log(res);
+  //     this.products = res;
+  //     this.router.navigate(["/product"]);
+  //   })
+  // }
+}

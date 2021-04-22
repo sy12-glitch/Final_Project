@@ -1,12 +1,10 @@
 <app-header></app-header>
-
-
 <link rel="stylesheet" href="product1.component.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <div class="container">
 
-  <div *ngFor="let item of products" class="">
-      <div class="" *ngIf="item.category == 'clothing'">
+  <div *ngFor="let item of products"   class="">
+      <div class="" *ngIf="item.category == 'clothing'"  >
      
         <div class="card">
         <div>
@@ -28,7 +26,7 @@
             </tr>
             <tr>
               <td>
-                <button type="button" class="btn btn-outline-success" [routerLink]="['/','cart']"><b>Add to
+                <button type="button" class="btn btn-outline-success" (click)="_addItemToCart(item.id, 1)"><b>Add to
                     cart</b></button>
   
               </td>
@@ -41,7 +39,5 @@
   
       </div>
     </div>
- 
-
   </div>
 </div>

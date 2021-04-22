@@ -1,8 +1,8 @@
-
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/cart.service';
-import { Cart } from 'src/models/Cart.Model';
+import { CartService } from 'src/services/cart.service';
+import { ProductsService } from 'src/services/products.service';
 
 @Component({
   selector: 'app-cart',
@@ -11,38 +11,26 @@ import { Cart } from 'src/models/Cart.Model';
 })
 export class CartComponent implements OnInit {
 
-  cart:Cart[]=[];
-    
-    
+  carts;
+  cartDetails;
   constructor(private router: Router, 
-    private cartService: CartService) { }
-    carts;
-    cartDetails;
-   
-    _getCart(): void {
-      this.cartService.getCartItems().subscribe((data: any) => {
-        this.carts = data.data;
-        // this.cartDetails = data.data;
-        console.log(this.carts);
-      });
-    }
-    _increamentQTY(id, quantity): void {
-      const payload = {
-        productId: id,
-        quantity,
-      };
-      this.cartService.increaseQty(payload).subscribe(() => {
-        this._getCart();
-        alert('Product Added');
-      });
-    }
-    _emptyCart(): void {
-      this.cartService.emptyCart().subscribe(() => {
-        this._getCart();
-        alert('Cart Emptied');
-      });
-    }
-    ngOnInit(): void {
-      this._getCart();
-    }
+    private http: HttpClient,
+    private productService:ProductsService,
+    private cartService:CartService) {}
+
+  _getCart(id): void {
+    this.cartService.getCartItems(id).subscribe((data: any) => {
+      this.carts = data.data;
+      // this.cartDetails = data.data;
+      console.log(this.carts);
+    });
   }
+ 
+  ngOnInit(): void {
+    this._getCart(id);
+  }
+}
+
+function id(id: any) {
+  throw new Error('Function not implemented.');
+}

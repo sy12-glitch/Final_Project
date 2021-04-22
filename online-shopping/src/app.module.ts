@@ -29,6 +29,7 @@ import { ListProductComponent } from './admin/list-product/list-product.componen
 import { ProductCreateComponent } from './admin/add-product/add-product.component';
 import { ControllerComponent } from './admin/controller/controller.component';
 import { UserDetailsComponent } from './admin/user-details/user-details.component';
+import { Header2Component } from './shared/header2/header2.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { UserDetailsComponent } from './admin/user-details/user-details.componen
     ProductComponent,
       ControllerComponent,
       UserDetailsComponent,
+      Header2Component,
 
   
   ],

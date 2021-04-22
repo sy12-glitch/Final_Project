@@ -1,25 +1,40 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CartService {
-  private host:string="https//localhost:8080";
-  constructor(private http: HttpClient) {}
-  getAllProducts() {
-    return this.http.get(`${this.host}/product`);
+
+  private data: any[] = [];
+
+  public set customer_order(customer_order) {
+    this.data = customer_order;
   }
-  addToCart(payload) {
-    return this.http.post(`${this.host}/cart`, payload);
+  public get customer_order() {
+    return this.data;
   }
-  getCartItems() {
-    return this.http.get(`${this.host}/cart`);
+  
+  public set user(user) {
+    this.data = user;
   }
-  increaseQty(payload) {
-    return this.http.post(`${this.host}/cart`, payload);
+  public get user() {
+    return this.data;
   }
-  emptyCart() {
-    return this.http.delete(`${this.host}/cart/empty-cart`);
+  private host:string = "http://localhost:8080/home";
+  constructor(private http: HttpClient) { }
+  getAllUsers(id) {
+    return this.http.get(`${this.host}/users/${id}`);
+
   }
+  getCartItems(id) {
+    return this.http.get(`${this.host}/orders/${id}`);
+  }
+  
+  addToCart(product) {
+    const headers= new HttpHeaders()
+    return this.http.post(`${this.host}/orders`,product);
+  }
+  
 }
+
