@@ -31,6 +31,11 @@ public class UserService {
 		} else
 			throw new InvalidUserException("Access denied");
 	}
+	
+	public User getUserByemail(String email) {
+		User user = userRepository.findByEmail(email);
+		return user;
+	}
 
 //find all users
 	public List<User> findUsers() {
