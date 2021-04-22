@@ -90,6 +90,13 @@ public class UserController {
 		return true;
 
 }
+
+	@GetMapping("user/isloggedin")
+	public boolean isloggedin(@RequestBody User user) {
+		return userService.isloggedin(user);
+		
+	}
+
 	@ExceptionHandler(InvalidUserException.class)
 	public ResponseEntity<ErrorMessage> handleException(HttpServletRequest req, InvalidUserException e){
 		ErrorMessage error = new ErrorMessage(e.getMessage(), LocalDate.now(), req.getRequestURL(), HttpStatus.BAD_REQUEST);
