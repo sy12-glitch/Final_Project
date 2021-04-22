@@ -16,7 +16,6 @@ import routes from 'src/app.routing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { Product1Component } from './product1/product1.component';
-import { CartComponent } from './cart/cart.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { Product2Component } from './product2/product2.component';
 import { Product3Component } from './product3/product3.component';
@@ -37,7 +36,6 @@ import { Cart2Component } from './cart2/cart2.component';
     AppComponent,
     HomePageComponent,
     Product1Component,
-    CartComponent,
     MyOrdersComponent,
     Product2Component,
     Product3Component,

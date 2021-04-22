@@ -4,7 +4,6 @@ import { SessionStorageService } from 'angular-web-storage';
 import { Router } from '@angular/router';
 import { Product } from 'src/models/products.model';
 import { ProductsService } from 'src/services/products.service';
-import { CartComponent } from 'src/cart/cart.component';
 import { CartService } from 'src/services/cart.service';
 
 @Component({
