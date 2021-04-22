@@ -19,7 +19,7 @@ import {Cart2Component} from "./cart2/cart2.component";
 
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
-    {path:"",component:HomePageComponent},
+    {path: '""', component: HomePageComponent},
     { path: 'login', component: LoginComponent },
     { path: 'product1', component: Product1Component },
     { path: 'product2', component: Product2Component },
