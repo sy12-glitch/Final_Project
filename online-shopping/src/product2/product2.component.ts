@@ -23,7 +23,7 @@ export class Product2Component implements OnInit {
   getAllProducts(){
     this.productService.getAllProduct()
     .subscribe((res:any)=>{
-      console.log(res);
+      // console.log(res);
       this.products = res;
     })
   }
