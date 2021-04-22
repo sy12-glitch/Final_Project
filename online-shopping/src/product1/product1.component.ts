@@ -22,8 +22,7 @@ export class Product1Component implements OnInit {
   constructor(private router: Router, 
     private http: HttpClient,
     private productService:ProductsService,
-    private cartService:CartService
-    , private userdetailsService:UserdetailsService, private session: SessionStorageService
+    
     ) { }
 
   ngOnInit(): void {
@@ -38,43 +37,7 @@ export class Product1Component implements OnInit {
       this.products = res;
     })
   }
-  getProductById(id){
-    this.productService.getProductById(id)
-    .subscribe((res:any)=>{
-      console.log(res);
-      this.products = res;
-    }) }
-  // getUsersById(userid){
-  //   this.userdetailsService.getUsersById(userid)
-  //   .subscribe((res:any)=>{
-  //     console.log(res);
-  //     this.users = res;
-  //   })
-  // }
-//   getAllUsers(){
-//     let email = this.session.get("email");
-//     this.userdetailsService.getAllUsers(email)
-//     .subscribe((res:any)=>{
-//       console.log(res);
-//       this.users = res;
-      
-//   });
-// }
-  
-  _addItemToCart( id, quantity): void {
-    let product  = {
-      productId: id,
-      quantity,
-     
-     
-    }  
-    this.cartService.addToCart(product)
-    .subscribe(() => {
-      this.getProductById(id);
-      alert('Product Added');
-    });   
-    
-  }
+ 
  
 }
  
