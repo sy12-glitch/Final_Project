@@ -1,7 +1,8 @@
 package com.application.services;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,18 @@ public class OrderService {
 	UserRepository userRepository;
 	@Autowired
 	ProductRepository productRepository;
+	
+	public List<Order> getAllOrders(){
+		Iterable<Order> iterable = orderRepository.findAll();
+		Iterator<Order> iterator = iterable.iterator();
+		List<Order> orders = new ArrayList<Order>();
+		
+		while(iterator.hasNext()) {
+			orders.add(iterator.next());
+		}
+		return orders;
+		
+	}
 
 	public Order createOrder(int userid, int productid) {
 		Optional<User> u = userRepository.findById(userid);
