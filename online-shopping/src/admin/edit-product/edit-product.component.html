@@ -1,0 +1,88 @@
+<app-header></app-header>
+<h1 class="text-center">Add new products</h1>
+
+<div class="container">
+    <form (ngSubmit)="update()" [formGroup]="productForm"*ngIf="productForm" >
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select formControlName="category" class="form-control">
+                <option value="clothing">Clothing</option>
+                <option value="shoes">Shoes</option>
+                <option value="accessories">Accessories</option>
+            </select>
+            <div *ngIf="productForm.get('category').touched && productForm.get('category').invalid" class="alert alert-danger">
+                <div *ngIf="productForm.category.errors.required">category is required.</div>
+            </div>
+        </div>
+         <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" required formControlName="name" class="form-control" />
+              <small *ngIf="productForm.get('name').dirty && productForm.get('name').invalid" class="form-text text-danger">name is required</small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Brand</label>
+            <div class="col-sm-10">
+              <input type="text" required formControlName="brand" class="form-control" />
+              <small *ngIf="productForm.get('brand').dirty && productForm.get('brand').invalid" class="form-text text-danger">brand is required</small>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <input type="text" required formControlName="description" class="form-control" />
+              <small *ngIf="productForm.get('description').dirty && productForm.get('description').invalid" class="form-text text-danger">description is required</small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Image url</label>
+            <div class="col-sm-10">
+              <input type="text"  formControlName="image" class="form-control" />
+              <small *ngIf="productForm.get('image').dirty && productForm.get('image').invalid" class="form-text text-danger">image is required</small>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-10">
+              <input type="number" required formControlName="price" class="form-control" />
+              <small *ngIf="productForm.get('price').dirty && productForm.get('price').invalid" class="form-text text-danger">price is required</small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-10">
+              <input type="number" required formControlName="quantity" class="form-control" />
+              <small *ngIf="productForm.get('quantity').dirty && productForm.get('quantity').invalid" class="form-text text-danger">quantity is required</small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Rating</label>
+            <div class="col-sm-10">
+              <input type="number" required formControlName="rating" class="form-control" />
+              <small *ngIf="productForm.get('rating').dirty && productForm.get('rating').invalid" class="form-text text-danger">rating is required</small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-5 offset-sm-4">
+                <button type="submit" [disabled]="productForm.invalid" class="btn btn-primary btn-block">Add product</button>
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-5 offset-sm-4">
+                <button [routerLink]="['/','controller']" class="btn btn-danger btn-block">Cancel</button>
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-5 offset-sm-4">
+                <button [routerLink]="['/','list-product']"  class="btn btn-success btn-block">View Products</button>
+            </div>
+        </div>
+      </form>
+</div>
+  
+         
+  
+          

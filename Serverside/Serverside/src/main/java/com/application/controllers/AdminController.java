@@ -122,15 +122,26 @@ public class AdminController {
 		return productService.addProduct(product);
 	}
 
-	@PutMapping("/updateProduct")
-	public ResponseEntity<Product> updateProduct(@RequestBody Product product, @RequestBody User user,
-			@RequestBody int id) throws NotPermittedException {
-		System.out.println(product);
-		Product updatedProduct = productService.updateProduct(user, id, product);
-		ResponseEntity<Product> res = ResponseEntity.status(HttpStatus.CREATED).body(updatedProduct);
-		System.out.println(res);
-		return res;
+
+	@GetMapping("findproduct/{id}")
+	public Product findProductById(@PathVariable int id) {
+		return productService.findProductById(id);
 	}
+	
+	@PutMapping("updateproduct/{id}")
+	public boolean editBook(@PathVariable int id,@RequestBody Product product) {
+		return productService.editProduct(id, product);
+	}
+
+//	@PutMapping("/updateProduct")
+//	public ResponseEntity<Product> updateProduct(@RequestBody Product product, @RequestBody User user,
+//			@RequestBody int id) throws NotPermittedException {
+//		System.out.println(product);
+//		Product updatedProduct = productService.updateProduct(user, id, product);
+//		ResponseEntity<Product> res = ResponseEntity.status(HttpStatus.CREATED).body(updatedProduct);
+//		System.out.println(res);
+//		return res;
+//	}
 
 	@DeleteMapping("deleteProduct/{id}")
 	public boolean deleteProduct(@PathVariable int id) throws NotPermittedException {
