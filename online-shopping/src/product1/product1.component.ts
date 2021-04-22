@@ -36,24 +36,30 @@ export class Product1Component implements OnInit {
       this.products = res;
     })
   }
-  getAllUsers(){
-    this.userdetailsService.getAllUsers()
+  getProductById(id){
+    this.productService.getProductById(id)
     .subscribe((res:any)=>{
       console.log(res);
-      this.users = res;
-    })
-  }
+      this.products = res;
+    }) }
+  // getUsersById(userid){
+  //   this.userdetailsService.getUsersById(userid)
+  //   .subscribe((res:any)=>{
+  //     console.log(res);
+  //     this.users = res;
+  //   })
+  // }
   
   _addItemToCart( id, quantity): void {
-    let product = {
+    let product  = {
       productId: id,
       quantity,
+     
      
     }  
     this.cartService.addToCart(product)
     .subscribe(() => {
-      this.getAllProducts();
-      this.getAllUsers();
+      this.getProductById(id);
       alert('Product Added');
     });   
     
