@@ -1,13 +1,14 @@
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 <div class="container-fluid">
 
     <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;" role="navigation">
-      <!-- <a class="navbar-brand">E-mart</a> -->
+     
       <a class="nav-link active" href="#"><span id="logo">HappyMart</span></a>
         <a class="nav-link" href="#">My profile</a>
         <a class="nav-link"  routerLink="/cart">My orders</a>
        
-      <a class="nav-link" [routerLink]="['/']" >Logout</a>
+        <button mat-button (click)="isLoggedIn()" *ngIf="isLoggedIn">Logout</button>
       
     </nav>
 
