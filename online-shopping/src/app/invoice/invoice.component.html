@@ -7,10 +7,10 @@
     <h6>Invoice time:{{invoice.date}}</h6>
     <br>
     <h5>BILLED TO</h5>
-    <h6 class="username">username here</h6>
-    <h6 class="email">user email here</h6> 
-    <h6 class="mobile">user mobile here</h6>
-    <h6 class="address">user address here</h6>
+    <h6 class="username">Name:{{user['fname']}} {{user['lname']}}</h6>
+    <h6 class="email">Email: {{user['email']}}</h6> 
+    <h6 class="mobile">Mobile: {{user['mobile']}}</h6>
+    <h6 class="address">Address: {{user['address']}}</h6>
     
   
   
@@ -35,7 +35,7 @@
            
         </tr>
       <tr>
-            <td colspan="5" style="text-align: center;"><b>Total amount: {{invoice.amount}}</b></td>
+            <td colspan="5" style="text-align: center; "><b>Total amount: {{invoice.amount}}</b></td>
             
         </tr>
    <tr>
