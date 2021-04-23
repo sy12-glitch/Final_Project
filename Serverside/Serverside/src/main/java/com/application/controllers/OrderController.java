@@ -38,7 +38,7 @@ public class OrderController {
 		return neworder;
 	}
 
-/	@PostMapping("/orders/{userid}")
+//	@PostMapping("/orders/{userid}")
 //	public Order createOrder(@PathVariable int userid, @RequestBody int productid) {
 //		Order neworder = orderService.createOrder(userid, productid);
 //		// return repo.save(order);

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
+import { User} from 'src/Models/User.Model';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, 
     private http: HttpClient, private customService:CustomerService) { }
-  
+    
+    user:User;
+
     userDetails={}
   loginForm: FormGroup;
 
@@ -29,21 +32,25 @@ export class LoginComponent implements OnInit {
   
  
     login() : void {
-    // console.log(this.loginForm.value);
-      this.customService.saveForm(this.loginForm.value)
-      .subscribe(
-        data =>{
-        console.log("login successful");
-        alert("login successful");
-        this.router.navigate(["/order"]);
-      },
-      error=>{
-        console.log("exception occured");
-        this.msg="Bad credential, enter right email-id or passoword !";
-      }
-      
-      
-      )
-  }
+      // console.log(this.loginForm.value);
+        this.customService.saveForm(this.loginForm.value)
+        .subscribe(
+          data =>{
+          console.log("login successful");
+           // console.log(data);
+            this.customService.userdata=data;
+            localStorage.setItem('userlogindetails', JSON.stringify(data));
+            console.log( this.customService.userdata);
+          alert("login successful");
+          this.router.navigate(["/order"]);
+        },
+        error=>{
+          console.log("exception occured");
+          this.msg="Bad credential, enter right email-id or passoword !";
+        }
+        
+        
+        )
+    }
 }   
   
