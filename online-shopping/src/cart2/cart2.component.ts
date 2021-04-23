@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
 import { ProductsService } from 'src/services/products.service';
 import { Product } from 'src/models/products.model';
+import { order } from 'src/Models/order.model';
 
 @Component({
   selector: 'app-cart2',
@@ -13,6 +14,7 @@ import { Product } from 'src/models/products.model';
 })
 export class Cart2Component implements OnInit {
 
+ 
   constructor(private router: Router, private http: HttpClient,private productService:ProductsService, private session: SessionStorageService,
     private cartService:CartService
     ) { }
