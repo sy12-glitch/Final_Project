@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       // console.log(this.loginForm.value);
         this.customService.saveForm(this.loginForm.value)
         .subscribe(
-          data =>{
+          (data:User) =>{
           console.log("login successful");
            // console.log(data);
             this.customService.userdata=data;

@@ -60,7 +60,7 @@ export class Product2Component implements OnInit {
       data =>{
       console.log(" Added to cart");
         console.log(data);
-        this.customService.userdata=data;
+      //  this.customService.userdata=data;
       //  console.log( this.customService.userdata);
      // alert("login successful");
       this.router.navigate(["/cart2"]);
