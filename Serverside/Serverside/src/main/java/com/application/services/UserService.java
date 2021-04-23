@@ -125,17 +125,19 @@ public class UserService {
 
 	}
 
+
 //logout service
-	public User Userlogout(User user) throws InvalidUserException {
+	public boolean Userlogout(User user) throws InvalidUserException {
 		User users = userRepository.findByEmail(user.getEmail());
 		System.out.println(users.getIsactive());
 		if (users.getIsactive() == true) {
 			users.setIsactive(false);
-			userRepository.save(users);
+			 userRepository.save(users);
+			 return true;
 		} else {
-			throw new InvalidUserException("Invalid username or password.");
+			throw new InvalidUserException("User not logged in.");
 		}
-		return users;
+		
 	}
 
 
