@@ -13,7 +13,7 @@ import { CartService } from 'src/services/cart.service';
 })
 
 export class ProductComponent implements OnInit {
-
+msg:string;
 @Input('name')
 
 catName:String;
