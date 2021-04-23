@@ -1,4 +1,5 @@
-export class Product {  
+export class Product {
+  [x: string]: any;  
     
     // private  id: number;
 	// private  quantity: number;
