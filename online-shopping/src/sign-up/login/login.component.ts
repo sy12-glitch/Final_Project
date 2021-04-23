@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('userlogindetails', JSON.stringify(data));
             console.log( this.customService.userdata);
           alert("login successful");
-          this.router.navigate(["/order"]);
+          this.router.navigate(["/home-page"]);
         },
         error=>{
           console.log("exception occured");

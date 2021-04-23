@@ -33,7 +33,6 @@ export class InvoiceComponent implements OnInit {
         console.log(data);
         this.invoiceService.invoice = data;
         this.invoice = data;
-        this.user = userlogin;
       }
     )
   }

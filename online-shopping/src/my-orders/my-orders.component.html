@@ -4,16 +4,15 @@
 
     <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;" role="navigation">
      
-      <a class="nav-link active" href="#"><span id="logo">HappyMart</span></a>
-        <a class="nav-link" href="#">My profile</a>
+      <a class="nav-link active" routerLink="/home"><span id="logo">HappyMart</span></a>
+        <a class="nav-link" routerLink="/my-profile">My profile</a>
         <a class="nav-link"  routerLink="/cart">My orders</a>
        
-      <a class="nav-link" [routerLink]="['/']" (click)="logout()" >Logout</a>
+      <a class="nav-link" [routerLink]="['/home']" (click)="logout()" >Logout</a>
       <!-- <a class="nav-link" [routerLink]="['/']" (click)="logout()" *ngIf="isLoggedIn">Logout</a> -->
       
     </nav>
 
-   
     <div class="container-fluid">
       <ngb-carousel *ngIf="images">
         <ng-template ngbSlide>
@@ -93,4 +92,4 @@
     
         <div class="desc">Electronics</div>
       </div>
-    
+  

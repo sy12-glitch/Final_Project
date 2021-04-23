@@ -56,7 +56,7 @@ export class ProductComponent implements OnInit {
       quantity: item.quantity
 
     }
-    console.log(orderdata.quantity);
+
     localStorage.setItem('ordervalue', JSON.stringify(orderdata));
     console.log(localStorage.setItem('ordervalue', JSON.stringify(orderdata)));
     let userstr = localStorage.getItem('ordervalue');

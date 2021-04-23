@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/Models/User.Model';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
- 
+  userlogin = localStorage.getItem('userlogindetails')
+  isLoggedIn:boolean = this.userlogin != null ? true:false;
 
   constructor() { }
 
