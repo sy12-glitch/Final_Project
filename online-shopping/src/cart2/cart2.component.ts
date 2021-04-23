@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
 import { ProductsService } from 'src/services/products.service';
 import { Product } from 'src/models/products.model';
+import {order} from 'src/Models/order.model';
+import { User } from 'src/Models/User.Model';
 
 @Component({
   selector: 'app-cart2',
@@ -17,14 +19,25 @@ export class Cart2Component implements OnInit {
     private cartService:CartService
     ) { }
 
+  orders:order[];
   products:Product[] = JSON.parse(sessionStorage.getItem('cart'));
+  user:User;
 
   ngOnInit(): void {
   this.printCart()
   }
 
   printCart(){
-    console.log(this.products);
+    let userstring = localStorage.getItem('userlogindetails');
+    const userlogin = JSON.parse(userstring);
+    console.log(userlogin);
+    this.user = userlogin;
+    this.cartService.getOrders(this.user)
+    .subscribe(
+      (data)=>{
+        var orders = data;
+        console.log(orders);
+      }
+    )
   }
-
 }

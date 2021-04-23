@@ -38,6 +38,12 @@ export class CartService {
 
 
   }
+
+  getOrders(userlogin){
+    console.log(userlogin);
+    const headers = new HttpHeaders()
+    return this.http.get(`${this.host}/getorders`, userlogin);
+  }
   
 }
 

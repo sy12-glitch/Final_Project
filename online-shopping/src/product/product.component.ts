@@ -71,7 +71,7 @@ export class ProductComponent implements OnInit {
           this.customService.userdata = data;
           //  console.log( this.customService.userdata);
           // alert("login successful");
-          this.router.navigate(["/cart2"]);
+          // this.router.navigate(["/cart2"]);
         },
         error => {
           console.log("exception occured");

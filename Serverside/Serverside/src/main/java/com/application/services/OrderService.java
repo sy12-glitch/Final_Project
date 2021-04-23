@@ -57,8 +57,8 @@ public class OrderService {
 
 	}
 	
-	public List<Order> getOrdersByUser(int userid){
-		return orderRepository.findByUser(userid);
+	public ArrayList<Order> getOrdersByUser(User user){
+		return orderRepository.findByUser(user);
 	}
 	
 	public void deleteOrder(int id) {

@@ -1,18 +1,19 @@
 package com.application.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.application.entity.Order;
+import com.application.entity.User;
 import com.application.services.OrderService;
 
 @RestController
@@ -45,11 +46,18 @@ public class OrderController {
 //		return neworder;
 //	}
 
-	@GetMapping("orders/{id}")
-	public Optional<Order> findOrderById(@PathVariable int id) {
-		Optional<Order> getorder = orderService.getOrderbyIdOrder(id);
+	@GetMapping("/getorders")
+	public ArrayList<Order> findOrderByUser(@RequestBody User user) {
+		int id = user.getUserid();
+		ArrayList<Order> orders = orderService.getOrdersByUser(user);
 		// return repo.findById(id);
-		return getorder;
+		return orders;
+	}
+	
+	@DeleteMapping("/deleteOrder")
+	public void deleteOrder(@RequestBody Order order) {
+		int id = order.getId();
+		orderService.deleteOrder(id);
 	}
 
 }
