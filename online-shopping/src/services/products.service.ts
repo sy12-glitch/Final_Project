@@ -33,5 +33,13 @@ export class ProductsService {
   getProducts(data){
     return this._http.post(`${this.host}/category`, data);
   }
+ findProductById(id){
+    return this._http.get(`http://localhost:8080/admin/findproduct/${id}`);
+  }
+
+  editProduct(id, newProduct){
+    return this._http.put(`http://localhost:8080/admin/updateproduct/${id}`, newProduct);
+  }
+
 
 }

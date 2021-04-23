@@ -1,0 +1,35 @@
+create database final_pgt;
+
+use final_pgt;
+
+
+
+
+-----------------------------------------------------------------
+--------------------After admin login:---------------------------
+Add product
+
+images links:
+shoe:
+1.https://cdn.sweatband.com/Wilson_Tour_Vision_Mens_Tennis_Shoes_2_2000x2000.jpg
+
+2.https://th.bing.com/th/id/OIP.D6Ewdtp5vwHmOiL9pRL-ZQHaHa?w=180&h=180&c=7&o=5&dpr=1.5&pid=1.7
+
+3.https://th.bing.com/th/id/OIP.KzVp7UUsmuub9C4qInZ4VgHaHa?w=218&h=218&c=7&o=5&dpr=1.5&pid=1.7
+-----------------------------------------------------------------
+accessories:
+1. https://th.bing.com/th/id/OIP.wZT6fWXmeI6l-fUzAZcR1gHaHa?pid=ImgDet&rs=1
+
+2.https://th.bing.com/th/id/OIP.xt7E2w15P5KWyuMjVJdqYAHaKZ?pid=ImgDet&rs=1
+
+3.https://th.bing.com/th/id/OIP.hvNrJgQHr6QdGqeg4Xi7XwHaKf?pid=ImgDet&rs=1
+
+-----------------------------------------------------------------
+clothes
+1. https://ae01.alicdn.com/kf/HTB1Oy48QXXXXXX_aFXXq6xXFXXXX/Infantil-Toddler-Kids-Baby-Girls-Floral-Dress-Black-Shirt-Bow-Skirt-2PCS-Set-Children-Clothes-Outfits.jpg
+
+2.https://th.bing.com/th/id/OIP.6X6fU7HG3IgpPxJnM32qfwHaHa?pid=ImgDet&rs=1
+
+3.https://ae01.alicdn.com/kf/HTB1NbmdSpXXXXXVXFXXq6xXFXXX2/new-fashion-brand-summer-kids-clothes-children-clothing-girls-dress-baby-kids-princess-dress-summer-denim.jpg
+
+-----------------------------------------------------------------

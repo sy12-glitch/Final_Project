@@ -138,6 +138,16 @@ public class UserService {
 		return users;
 	}
 
+
+		public boolean isloggedin(User user) {
+		User dbuser = userRepository.findByEmail(user.getEmail());
+		if(dbuser.getIsactive()) {
+			return true;
+		}else 
+		return false;
+	}
+
+
 	public boolean emailvalidation(String email) {
 		String emailregex = "[A-ZA-z0-9_\\.]+[@][a-z]+[\\.]([a-z]{2,3})";
 		return email.matches(emailregex);

@@ -13,8 +13,11 @@ export class Product1Component implements OnInit {
 
   products:Product[]=[];
   
-  
-  constructor(private router: Router, private http: HttpClient,private productService:ProductsService) { }
+  constructor(private router: Router, 
+    private http: HttpClient,
+    private productService:ProductsService,
+    
+    ) { }
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -27,5 +30,7 @@ export class Product1Component implements OnInit {
       this.products = res;
     })
   }
+ 
+ 
 }
  

@@ -16,7 +16,6 @@ import routes from 'src/app.routing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { Product1Component } from './product1/product1.component';
-import { CartComponent } from './cart/cart.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { Product2Component } from './product2/product2.component';
 import { Product3Component } from './product3/product3.component';
@@ -24,12 +23,14 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { ProductComponent } from './product/product.component';
-
+import { Header2Component } from './shared/header2/header2.component';
 import { ListProductComponent } from './admin/list-product/list-product.component';
 import { ProductCreateComponent } from './admin/add-product/add-product.component';
 import { ControllerComponent } from './admin/controller/controller.component';
 import { UserDetailsComponent } from './admin/user-details/user-details.component';
-import { Header2Component } from './shared/header2/header2.component';
+import { Cart2Component } from './cart2/cart2.component';
+import { EditProductComponent } from './admin/edit-product/edit-product.component';
+
 
 
 
@@ -38,12 +39,11 @@ import { Header2Component } from './shared/header2/header2.component';
     AppComponent,
     HomePageComponent,
     Product1Component,
-    CartComponent,
     MyOrdersComponent,
     Product2Component,
  
     HeaderComponent,
- 
+    Header2Component,
     FooterComponent,
     AdminLoginComponent,
 
@@ -53,7 +53,8 @@ import { Header2Component } from './shared/header2/header2.component';
     ProductComponent,
       ControllerComponent,
       UserDetailsComponent,
-      Header2Component,
+      Cart2Component,
+      EditProductComponent,
      
 
   

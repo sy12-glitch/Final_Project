@@ -14,7 +14,13 @@ export class HomePageComponent implements OnInit {
 
   constructor(private productService:ProductsService,private router:Router, private http: HttpClient) { }
 
+  catName:String;
+
   ngOnInit(): void {
   }
 
+  getProducts(data:String){
+    sessionStorage.setItem('catName', JSON.stringify(data));
+    this.router.navigate(["product"]);
+  }
 }
