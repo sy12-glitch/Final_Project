@@ -9,10 +9,29 @@
             <td class="date">Invoice time:{{invoice.date}}</td>
         </tr>
         <tr>
+            <td class="username">username here</td>
+            <td class="email">useremail</td>
+            <td class="mobile">user mobile here</td>
+        </tr>
+        <tr>
+            <td class="address">Delivery address here</td>
+        </tr>
+        <tr>
+            <div>
+                <td>Product id</td>
+                <td>Product name</td>
+                <td>Product price</td>
+                <td>Number od Products ordered</td>
+                <td>Product total</td>
+            </div> 
+        </tr>
+        <tr>
             <div *ngFor="let order of invoice.orders" class="orders">
                 <td>{{order.product.id}}</td>
                 <td>{{order.product.name}}</td>
                 <td>{{order.product.price}}</td>
+                <td>{{order.quantity}}</td>
+                <td>{{order.quantity*order.product.price}}</td>
             </div>
         </tr>
         <tr>
