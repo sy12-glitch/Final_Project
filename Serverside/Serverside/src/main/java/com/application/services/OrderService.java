@@ -64,4 +64,18 @@ public class OrderService {
 	public void deleteOrder(int id) {
 		orderRepository.deleteById(id);
 	}
+
+	public List<Order> getOrders() {
+		Iterable<Order> iterable = orderRepository.findAll();
+		Iterator<Order> iterator = iterable.iterator();
+		List<Order> orders = new ArrayList<Order>();
+
+		while(iterator.hasNext()){
+			orders.add(iterator.next());
+		}
+
+		return orders;
+	}
+
+
 }

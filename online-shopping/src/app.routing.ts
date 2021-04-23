@@ -16,6 +16,7 @@ import { UserDetailsComponent } from "./admin/user-details/user-details.componen
 import {Cart2Component} from "./cart2/cart2.component";
 import { EditProductComponent } from "./admin/edit-product/edit-product.component";
 
+
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
     {path: '', component: HomePageComponent},
@@ -34,7 +35,8 @@ const routes:Routes = [
     {path:'list-product', component: ListProductComponent},
     {path:'user-det', component: UserDetailsComponent},
     {path:'product', component: ProductComponent},
-    {path:'cart2', component: Cart2Component}
+    {path:'cart2', component: Cart2Component},
+   
  
    
 

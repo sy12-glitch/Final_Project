@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
       });
     }
   
- 
     login() : void {
       // console.log(this.loginForm.value);
         this.customService.saveForm(this.loginForm.value)

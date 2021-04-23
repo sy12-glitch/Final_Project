@@ -32,6 +32,8 @@ import { Cart2Component } from './cart2/cart2.component';
 import { EditProductComponent } from './admin/edit-product/edit-product.component';
 
 
+
+
 @NgModule({
   declarations: [SignUpComponent,ForgetComponent, LoginComponent,
     AppComponent,
@@ -39,7 +41,7 @@ import { EditProductComponent } from './admin/edit-product/edit-product.componen
     Product1Component,
     MyOrdersComponent,
     Product2Component,
-    Product3Component,
+ 
     HeaderComponent,
     Header2Component,
     FooterComponent,
@@ -53,6 +55,7 @@ import { EditProductComponent } from './admin/edit-product/edit-product.componen
       UserDetailsComponent,
       Cart2Component,
       EditProductComponent,
+     
 
   
   ],
