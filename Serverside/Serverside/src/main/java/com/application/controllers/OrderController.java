@@ -51,6 +51,13 @@ public class OrderController {
 		// return repo.findById(id);
 		return getorder;
 	}
+	@GetMapping("getorders")
+	public List<Order> findOrderById() {
+		List<Order> getorder = orderService.getOrders();
+		// return repo.findById(id);
+		return getorder;
+	}
+
 
 }
 
