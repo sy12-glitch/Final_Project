@@ -3,14 +3,14 @@
 
   <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;" role="navigation">
    
-    <a class="nav-link active" routerLink="/home-page"><span id="logo" >HappyMart</span></a>
+    <a class="nav-link active" [routerLink]="['/','home-page']"><span id="logo" >HappyMart</span></a>
       <a class="nav-link" routerLink="/home-page">About Us</a>
       <a class="nav-link"  routerLink="/cart2">Cart</a>
       <a class="nav-link" [routerLink]="['/','sign-up']" >SignUp</a>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" [routerLink]="['/','login']" >User</a>
+        <a class="dropdown-item" [routerLink]="['/','login']"  >User</a>
         <a class="dropdown-item" [routerLink]="['/','admin-login']" >Admin</a>
       </div>
     </li>

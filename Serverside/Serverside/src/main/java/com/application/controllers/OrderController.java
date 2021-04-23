@@ -59,6 +59,13 @@ public class OrderController {
 		int id = order.getId();
 		orderService.deleteOrder(id);
 	}
+	@GetMapping("getorders")
+	public List<Order> findOrderById() {
+		List<Order> getorder = orderService.getOrders();
+		// return repo.findById(id);
+		return getorder;
+	}
+
 
 }
 
