@@ -17,13 +17,13 @@ export class InvoiceService {
     return this.data;
   }
 
-  private host: string = "http://localhost:8080/home";
+  private host: string = "http://localhost:8080";
   constructor(private http: HttpClient) { }
 
   getInvoice(user) {
     console.log(user);
     const headers = new HttpHeaders()
-    return this.http.post(`${this.host}/getorders`, user);
+    return this.http.post(`${this.host}/invoice`, user);
   }
 
 }
