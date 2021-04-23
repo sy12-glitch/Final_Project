@@ -25,7 +25,7 @@ export class ProductComponent implements OnInit {
     private cartService:CartService
     ) { }
 
-  cartProducts: Product[] = [];
+  item:Product;
 
   ngOnInit(): void {
     this.getProducts();
@@ -41,7 +41,7 @@ export class ProductComponent implements OnInit {
       })
   }
 
-  OnAddCart(item: Product) {
+  OnAddCart(item) {
     // console.log(item);
     // this.cartProducts.push(item);
     // sessionStorage.setItem('cart', JSON.stringify(this.cartProducts));
@@ -53,9 +53,10 @@ export class ProductComponent implements OnInit {
     let orderdata = {
       user: userlogin,
       product: item,
-      quantity: 5
+      quantity: item.quantity
 
     }
+    console.log(orderdata.quantity);
     localStorage.setItem('ordervalue', JSON.stringify(orderdata));
     console.log(localStorage.setItem('ordervalue', JSON.stringify(orderdata)));
     let userstr = localStorage.getItem('ordervalue');
@@ -77,5 +78,10 @@ export class ProductComponent implements OnInit {
           console.log("exception occured");
           //this.msg="Bad credential, enter right email-id or passoword !";
         })
+  }
+
+  decreaseQuantity(item){
+  }
+  increaseQuantity(item){
   }
 }

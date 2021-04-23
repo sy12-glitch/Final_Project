@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionStorageService } from 'angular-web-storage';
 import { Invoice } from 'src/Models/Invoice.model';
+import { User } from 'src/Models/User.Model';
 import { InvoiceService } from 'src/Services/invoice.service';
 import { ProductsService } from 'src/services/products.service';
 
@@ -17,6 +18,7 @@ export class InvoiceComponent implements OnInit {
     private invoiceService:InvoiceService) { }
 
     invoice:Invoice;
+    user:User={};
 
   ngOnInit(): void {
     this.createInvoice();
@@ -31,6 +33,7 @@ export class InvoiceComponent implements OnInit {
         console.log(data);
         this.invoiceService.invoice = data;
         this.invoice = data;
+        this.user = this.invoice.user;
       }
     )
   }

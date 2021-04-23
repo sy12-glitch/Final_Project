@@ -23,7 +23,10 @@
             <td class="description">{{item.description|slice:0:50}}</td>
           </tr>
           <tr>
-           
+            <tr><button class="desc" (click)="decreaseQauntity(item)">-</button>
+              &nbsp;<input type="number" value={{item.quantity}} style="width: 45px;">
+              &nbsp;<button class="inc" (click)="increaseQauntity(item)">+</button>
+          </tr>  
             <td>
               <button type="button" class="btn btn-outline-success" (click)="OnAddCart(item)"><b>Add to
                   cart</b></button>
