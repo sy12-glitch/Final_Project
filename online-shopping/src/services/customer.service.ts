@@ -1,11 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from 'src/Models/User.Model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
   private data:any[] = [];
+  userdata:User={};
 
   public set home(home){
     this.data = home;
