@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
+import { User} from 'src/Models/User.Model';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, 
     private http: HttpClient, private customService:CustomerService) { }
-  
+    
+    user:User;
+
     userDetails={}
   loginForm: FormGroup;
 

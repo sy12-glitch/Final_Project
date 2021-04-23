@@ -58,14 +58,14 @@ public class UserController {
 		//return userService.createUser(user);
 	}
 	@PostMapping("user/login")
-	public ResponseEntity<User> Userlogin(@RequestBody User user) throws InvalidUserException {
+	public User Userlogin(@RequestBody User user) throws InvalidUserException {
 		//System.out.println(user);
 		User loggeduser = userService.Userlogin(user);
 		ResponseEntity<User> res =new ResponseEntity<User>(user,HttpStatus.ACCEPTED);
 		System.out.println(res);
 		System.out.println("Login success");
 	//	return res;
-		return res;
+		return loggeduser;
 	}
 
 	@PostMapping("user/logout")

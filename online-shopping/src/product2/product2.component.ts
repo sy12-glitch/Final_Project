@@ -15,8 +15,6 @@ import { CustomerService } from 'src/services/customer.service';
 export class Product2Component implements OnInit {
 
   products:Product[]=[];
-  cartProducts:Product[]=[];
-  P:Product[];
 
   constructor(private router: Router, 
     private http: HttpClient,private productService:ProductsService, private customService:CustomerService, private session: SessionStorageService,
@@ -73,5 +71,3 @@ export class Product2Component implements OnInit {
     })
   }
   }
-
- 
