@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { UserdetailsService } from 'src/Services/userdetails.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { UserdetailsService } from 'src/Services/userdetails.service';
 export class MyOrdersComponent implements OnInit {
  
     images = [1,2,3].map(() => `https://visitclearwaterflorida.com/wp-content/uploads/2017/05/women-shopping.jpg`);
-    isLoggedIn: Observable<boolean>; 
+    // isLoggedIn: Observable<boolean>; 
 
   constructor(private userdetailsservice:UserdetailsService) { }
 

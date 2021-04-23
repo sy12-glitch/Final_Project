@@ -1,0 +1,23 @@
+<app-header></app-header>>
+<div class="container">
+    <table class="table table-bordered table-responsive" style="display: inline;margin-left: 5px;">
+        <tr>
+            <h1>Invoice</h1>
+        </tr>
+        <tr>
+            <td class="id">Invoice number:{{invoice.id}}</td>
+            <td class="date">Invoice time:{{invoice.date}}</td>
+        </tr>
+        <tr>
+            <td>Total amount: {{invoice.amount}}</td>
+        </tr>
+        <tr>
+            <div *ngFor="let order of invoice.orders" class="orders">
+                <td>{{order.product.id}}</td>
+                <td>{{order.product.name}}</td>
+                <td>{{order.product.price}}</td>
+            </div>
+        </tr>
+    </table>
+
+</div>

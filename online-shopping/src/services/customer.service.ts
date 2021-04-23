@@ -7,7 +7,7 @@ import { User } from 'src/Models/User.Model';
 })
 export class CustomerService {
   private data:any[] = [];
-  userdata:User={};
+  userdata:User;
 
   public set home(home){
     this.data = home;

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.application.entity.Invoice;
 import com.application.entity.Order;
+import com.application.entity.Product;
 import com.application.entity.User;
 import com.application.exceptions.InvalidUserException;
 import com.application.repositories.InvoiceRepository;
@@ -28,14 +29,16 @@ public class InvoiceService {
 	@Autowired
 	OrderRepository orderRepository;
 	
-	public Invoice createInvoice(int userid) throws InvalidUserException {
-	//	int userid = invoice.getUser().getUserid();	
-		User user = findUserById(userid);
+	public Invoice createInvoice(User user) throws InvalidUserException {
+		int userid = user.getUserid();	
+//		User user = findUserById(userid);
 		Invoice invoice = new Invoice();
 		List<Order> orders = getOrdersByUser(user);
+		System.out.println(orders.toString());
 		double amount =0;
 		for(Order order:orders) {
-			amount = amount + order.getProduct().getPrice();
+			Product product = order.getProduct();
+			amount = amount + order.getQuantity()*(product.getPrice());
 		}
 		invoice.setAmount(amount);
 		invoice.setOrders(orders);
@@ -44,11 +47,11 @@ public class InvoiceService {
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 		Date orderdate = new Date(System.currentTimeMillis());
 		invoice.setDate(orderdate);
-		
-		for(Order order:orders) {
-			deleteOrder(order.getId());
-		}
 		invoiceRepository.save(invoice);
+		
+//		for(Order order:orders) {
+//			deleteOrder(order.getId());
+//		}
 		return invoice;
 	}
 	public  User findUserById(int id) throws InvalidUserException {
@@ -62,7 +65,9 @@ public class InvoiceService {
 	}
 
 	public  List<Order> getOrdersByUser(User user){
-		return orderRepository.findByUser(user);
+		List<Order> orders = orderRepository.findByUser(user);
+		System.out.println(orders.toString());
+		return orders;
 	}
 	
 	public void deleteOrder(int id) {
