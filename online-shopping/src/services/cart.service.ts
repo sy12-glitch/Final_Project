@@ -39,10 +39,10 @@ export class CartService {
 
   }
 
-  getOrders(userlogin){
-    console.log(userlogin);
+  getOrders(user){
+    console.log(user);
     const headers = new HttpHeaders()
-    return this.http.get(`${this.host}/getorders`, userlogin);
+    return this.http.post(`${this.host}/getorders`, user);
   }
   
 }

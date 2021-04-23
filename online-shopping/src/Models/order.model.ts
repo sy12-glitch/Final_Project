@@ -1,8 +1,10 @@
+import {User} from 'src/Models/User.Model';
+import {Product} from 'src/Models/products.model';
+
 export class order
 {
 id:number;
-product_id:number;
-user_id:number;
-order_id:number;
+product:Product;
+user:User;
 quantity:number;
 }

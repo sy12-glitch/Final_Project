@@ -46,10 +46,10 @@ public class OrderController {
 //		return neworder;
 //	}
 
-	@GetMapping("/getorders")
-	public ArrayList<Order> findOrderByUser(@RequestBody User user) {
+	@PostMapping("/getorders")
+	public List<Order> findOrderByUser(@RequestBody User user) {
 		int id = user.getUserid();
-		ArrayList<Order> orders = orderService.getOrdersByUser(user);
+		List<Order> orders = orderService.getOrdersByUser(user);
 		// return repo.findById(id);
 		return orders;
 	}
@@ -59,12 +59,12 @@ public class OrderController {
 		int id = order.getId();
 		orderService.deleteOrder(id);
 	}
-	@GetMapping("getorders")
-	public List<Order> findOrderById() {
-		List<Order> getorder = orderService.getOrders();
-		// return repo.findById(id);
-		return getorder;
-	}
+//	@GetMapping("orders")
+//	public List<Order> findOrderById() {
+//		List<Order> getorder = orderService.getOrders();
+//		// return repo.findById(id);
+//		return getorder;
+//	}
 
 
 }

@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container">
 
-    <div *ngFor="let item of products" class="">
+    <div *ngFor="let item of orders" class="">
         <!-- <div class="" *ngIf="item.category == 'shoes'"> -->
 
             <div class="card">
@@ -10,22 +10,17 @@
                     <table class="table table-bordered table-responsive" style="display: inline;margin-left: 5px;">
                         <tr>
                             <td>
-                                <img src="{{item.image}}" width="200px;" height="250px;" />
+                                <img src="{{item.product.image}}" width="200px;" height="250px;" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="name">{{item.name}}</td>
+                            <td class="name">{{item.product.name}}</td>
                         </tr>
                         <tr>
-                            <td class="price">Price:{{item.price | currency:'INR':true }}</td>
+                            <td class="price">Price:{{item.product.price | currency:'INR':true }}</td>
                         </tr>
                         <tr>
-                            <td class="description">{{item.description|slice:0:50}}</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button type="button" class="btn btn-outline-success"  [routerLink]="['/','login']"><b>place order</b></button>
-                            </td>
+                            <td class="description">{{item.product.description|slice:0:50}}</td>
                         </tr>
                     </table>
                 </div>
@@ -38,4 +33,7 @@
 
 
     </div>
+    <td>
+        <button type="button" class="btn btn-outline-success"><b>place order</b></button>
+    </td>
 </div>

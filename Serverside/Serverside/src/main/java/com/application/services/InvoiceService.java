@@ -32,7 +32,7 @@ public class InvoiceService {
 	//	int userid = invoice.getUser().getUserid();	
 		User user = findUserById(userid);
 		Invoice invoice = new Invoice();
-		List<Order> orders = getOrdersByUser(userid);
+		List<Order> orders = getOrdersByUser(user);
 		double amount =0;
 		for(Order order:orders) {
 			amount = amount + order.getProduct().getPrice();
@@ -61,8 +61,8 @@ public class InvoiceService {
 			throw new InvalidUserException("Access denied");
 	}
 
-	public  List<Order> getOrdersByUser(int userid){
-		return orderRepository.findByUser(userid);
+	public  List<Order> getOrdersByUser(User user){
+		return orderRepository.findByUser(user);
 	}
 	
 	public void deleteOrder(int id) {

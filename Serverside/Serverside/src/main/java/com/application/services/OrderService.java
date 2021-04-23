@@ -57,7 +57,7 @@ public class OrderService {
 
 	}
 	
-	public ArrayList<Order> getOrdersByUser(User user){
+	public List<Order> getOrdersByUser(User user){
 		return orderRepository.findByUser(user);
 	}
 	

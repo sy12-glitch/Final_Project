@@ -20,8 +20,7 @@ export class Cart2Component implements OnInit {
     private cartService:CartService
     ) { }
 
-  orders:order[];
-  products:Product[] = JSON.parse(sessionStorage.getItem('cart'));
+  orders:order[]=[];
   user:User;
 
   ngOnInit(): void {
@@ -35,9 +34,10 @@ export class Cart2Component implements OnInit {
     this.user = userlogin;
     this.cartService.getOrders(this.user)
     .subscribe(
-      (data)=>{
-        var orders = data;
-        console.log(orders);
+      (data:order[])=>{
+        console.log(data);
+        this.orders = data;
+        console.log(this.orders);
       }
     )
   }
