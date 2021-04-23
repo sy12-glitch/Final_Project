@@ -13,13 +13,16 @@ import { CartService } from 'src/services/cart.service';
 })
 
 export class ProductComponent implements OnInit {
-
+msg:string;
 @Input('name')
 
 catName:String;
 products:Product[]=[];
 
-  constructor(private router: Router, private http: HttpClient,private productService:ProductsService, private session: SessionStorageService,
+  constructor(private router: Router, 
+    private http: HttpClient,
+    private productService:ProductsService,
+     private session: SessionStorageService,
     private cartService:CartService) { }
 
   cartProducts:Product[]=[];
@@ -42,5 +45,8 @@ products:Product[]=[];
     console.log(item);
     this.cartProducts.push(item);
     sessionStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    alert("Added to the cart");
+   
   }
+  
 }

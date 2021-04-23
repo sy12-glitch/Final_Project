@@ -23,6 +23,11 @@ public class OrderService {
 	UserRepository userRepository;
 	@Autowired
 	ProductRepository productRepository;
+
+	public Order createOrder(Order order) {
+	//	order.getProduct().setQuantity((order.getProduct().getQuantity()-order.getQuantity()));
+		return orderRepository.save(order);
+	}
 	
 	public List<Order> getAllOrders(){
 		Iterable<Order> iterable = orderRepository.findAll();
@@ -36,16 +41,16 @@ public class OrderService {
 		
 	}
 
-	public Order createOrder(int userid, int productid) {
-		Optional<User> u = userRepository.findById(userid);
-		User user = u.orElse(null);
-		Optional<Product> p = productRepository.findById(productid);
-		Product product = p.orElse(null);
-		Order order = new Order();
-		order.setUser(user);
-		order.setProduct(product);
-		return orderRepository.save(order);
-	}
+//	public Order createOrder(int userid, int productid) {
+//		Optional<User> u = userRepository.findById(userid);
+//		User user = u.orElse(null);
+//		Optional<Product> p = productRepository.findById(productid);
+//		Product product = p.orElse(null);
+//		Order order = new Order();
+//		order.setUser(user);
+//		order.setProduct(product);
+//		return orderRepository.save(order);
+//	}
 
 	public Optional<Order> getOrderbyIdOrder(int id) { 
 		return orderRepository.findById(id);

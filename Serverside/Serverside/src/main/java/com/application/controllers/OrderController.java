@@ -27,12 +27,23 @@ public class OrderController {
 		return orderService.getAllOrders();
 	}
 
-	@PostMapping("/orders/{userid}")
-	public Order createOrder(@PathVariable int userid, @RequestBody int productid) {
-		Order neworder = orderService.createOrder(userid, productid);
+
+	@PostMapping("/orders")
+	public Order createOrder(@RequestBody Order order) {
+		System.out.println(order.getQuantity());
+		System.out.println(order.getProduct());
+		System.out.println(order.getUser());
+		Order neworder = orderService.createOrder(order);
 		// return repo.save(order);
 		return neworder;
 	}
+
+/	@PostMapping("/orders/{userid}")
+//	public Order createOrder(@PathVariable int userid, @RequestBody int productid) {
+//		Order neworder = orderService.createOrder(userid, productid);
+//		// return repo.save(order);
+//		return neworder;
+//	}
 
 	@GetMapping("orders/{id}")
 	public Optional<Order> findOrderById(@PathVariable int id) {
