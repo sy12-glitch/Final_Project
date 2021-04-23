@@ -5,12 +5,8 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
 import { ProductsService } from 'src/services/products.service';
 import { Product } from 'src/models/products.model';
-<<<<<<< HEAD
 import {order} from 'src/Models/order.model';
 import { User } from 'src/Models/User.Model';
-=======
-import { order } from 'src/Models/order.model';
->>>>>>> 9408cbd50bcd3e424ac238ce00c237c704604bc9
 
 @Component({
   selector: 'app-cart2',
@@ -45,9 +41,4 @@ export class Cart2Component implements OnInit {
       }
     )
   }
-<<<<<<< HEAD
 }
-=======
-
-}
->>>>>>> 9408cbd50bcd3e424ac238ce00c237c704604bc9
