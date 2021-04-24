@@ -30,10 +30,10 @@ const routes:Routes = [
     { path: 'product3', component: Product3Component },
     { path: 'home-page', component: HomePageComponent},
     { path: 'admin-login', component: AdminLoginComponent},
-  
-    {path: 'create', component: ProductCreateComponent, canActivate: [AdminGuard]},
+    { path: 'order', component: MyOrdersComponent },
+    // {path: 'create', component: ProductCreateComponent, canActivate: [AdminGuard]},
     {path: 'list', component: ListProductComponent},
-    {path:'add-product', component: ProductCreateComponent},
+    {path:'add-product', component: ProductCreateComponent, canActivate: [AdminGuard]},
     {path: 'edit/:id', component: EditProductComponent},
     {path:'controller', component: ControllerComponent},
     {path:'list-product', component: ListProductComponent},

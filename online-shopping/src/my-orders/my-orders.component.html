@@ -6,9 +6,9 @@
      
       <a class="nav-link active" routerLink="/home"><span id="logo">HappyMart</span></a>
         <a class="nav-link" routerLink="/my-profile">My profile</a>
-        <a class="nav-link"  routerLink="/cart">My orders</a>
+        <a class="nav-link"  routerLink="/home">My orders</a>
        
-      <a class="nav-link" [routerLink]="['/home']" (click)="logout()" >Logout</a>
+      <a class="nav-link" [routerLink]="['/order']" (click)="logout()" >Logout</a>
       <!-- <a class="nav-link" [routerLink]="['/']" (click)="logout()" *ngIf="isLoggedIn">Logout</a> -->
       
     </nav>
