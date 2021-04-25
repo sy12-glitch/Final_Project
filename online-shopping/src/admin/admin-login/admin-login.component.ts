@@ -40,9 +40,7 @@ export class AdminLoginComponent implements OnInit {
       error=>{
         console.log("exception occured");
         this.msg="Bad credential, enter right email-id or passoword !";
-      }
-      
-      
+      }  
       )
   }
 }   
