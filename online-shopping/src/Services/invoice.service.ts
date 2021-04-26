@@ -26,5 +26,10 @@ export class InvoiceService {
     return this.http.post(`${this.host}/invoice`, user);
   }
 
+  getAllInvoice(user){
+    const headers = new HttpHeaders()
+    return this.http.post(`${this.host}/invoice/Myinvoice`, user)
+  }
+
 }
 

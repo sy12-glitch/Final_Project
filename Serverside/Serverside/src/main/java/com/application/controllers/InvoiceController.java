@@ -32,4 +32,9 @@ public class InvoiceController {
 	public List<Order> getOrders(@RequestBody User user){
 		return invoiceService.getOrdersByUser(user);
 	}
+	
+	@PostMapping("/Myinvoice")
+	public List<Invoice> getAllInvoice(@RequestBody User user){
+		return invoiceService.getAllInvoice(user);
+	}
 }

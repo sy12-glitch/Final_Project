@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/Models/User.Model';
 
 @Component({
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
   role: String;
   gender: String;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.displayUser();
@@ -33,4 +34,5 @@ export class ProfileComponent implements OnInit {
     this.role = userlogin.role;
     this.gender = userlogin.gender;
   }
+
 }

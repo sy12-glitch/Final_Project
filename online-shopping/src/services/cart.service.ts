@@ -51,6 +51,8 @@ export class CartService {
     const headers = new HttpHeaders()
     return this.http.post(`${this.host}/getorders`, user);
   }
-  
+  deleteOrder(id){
+    return this.http.delete(`${this.host}/deleteOrder/${id}`);
+  }
 }
 

@@ -73,4 +73,8 @@ public class InvoiceService {
 	public void deleteOrder(int id) {
 		orderRepository.deleteById(id);
 	}
+	
+	public List<Invoice> getAllInvoice(User user){
+		return invoiceRepository.findByUser(user);
+	}
 }

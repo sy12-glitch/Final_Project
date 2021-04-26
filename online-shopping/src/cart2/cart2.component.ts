@@ -57,4 +57,10 @@ export class Cart2Component implements OnInit {
       }
     )
   }
+  deleteOrder(item){
+    this.cartService.deleteOrder(item.id)
+    .subscribe((res:any)=>{
+      this.printCart();
+    })
+  }
 }

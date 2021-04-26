@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="container">
- 
+
   <div *ngFor="let item of products" class="">
 
     <div class="card">
@@ -22,19 +22,22 @@
           <tr>
             <td class="description">{{item.description|slice:0:50}}</td>
           </tr>
-          <tr>
-            <tr><button class="desc" (click)="decreaseQauntity(item)">-</button>
-              &nbsp;<input type="number" value={{item.quantity}} style="width: 45px;">
-              &nbsp;<button class="inc" (click)="increaseQauntity(item)">+</button>
-          </tr>  
-            <td>
-              <button type="button" class="btn btn-outline-success" (click)="OnAddCart(item)"><b>Add to cart</b></button>
-             
-            </td>
-            
+          <tr *ngIf="item.quantity==0">
+            <p>Product out of stock</p>
+          </tr>
+          <tr *ngIf="item.quantity!=0">
+            <button class="add-btn" clear (click)="decrementQty()">-</button>
+            <span>{{orderqty}}</span>
+            <button class="add-btn" clear (click)="incrementQty(item.quantity)">+</button>
+          </tr>
+          <td>
+            <button type="button" class="btn btn-outline-success" (click)="OnAddCart(item)"><b>Add to cart</b></button>
+
+          </td>
+
         </table>
       </div>
-    </div> 
+    </div>
   </div>
   <button type="button" class="btn btn-outline-success" [routerLink]="['/','cart2']"><b>view cart</b></button>
   <!-- <br>  <span class="text-success">{{msg}}</span>   -->

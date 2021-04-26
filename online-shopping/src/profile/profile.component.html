@@ -1,23 +1,14 @@
 <app-header></app-header>
-<div>
-    <table>
-        <h1>My Profile</h1>
-        <tr>
-            <td>
-                Firstname: {{fname}}
-            </td>
-            <td>
-                Lastname: {{lname}}
-            </td>
-        </tr>
-        <tr>
-            Email: {{email}}
-        </tr>
-        <tr>
-            Mobile: {{mobile}}
-        </tr>
-        <tr>
-            Address: {{address}}
-        </tr>
-    </table>
+<div class="container">
+    <div class="card">
+        <img src="https://th.bing.com/th/id/OIP.tmgWGdzGFmIwg1iaqCbSvgHaHa?w=209&h=209&c=7&o=5&dpr=1.5&pid=1.7" alt="John" style="width: 100%">
+        
+        <br>
+        <h3> {{fname}} {{lname}}</h3>
+        <p> Email: {{email}}</p>
+        <p>Mobile: {{mobile}}</p>
+        <p> Address: {{address}}</p>
+        
+        <button type="button" [routerLink]="['/','my-order']" class="btn btn-warning">My Orders</button>
+      </div>
 </div>

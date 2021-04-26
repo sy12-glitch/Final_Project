@@ -46,7 +46,7 @@ const routes:Routes = [
     {path:'invoice', component:InvoiceComponent},
     {path:'manage-cat', component:ManageCategoryComponent},
     {path:'profile', component:ProfileComponent},
-    {path:'order',component:MyOrderComponent}
+    {path:'my-order',component:MyOrderComponent}
  
    
 
