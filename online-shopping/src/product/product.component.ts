@@ -82,7 +82,7 @@ msg: string;
   }
   else{
     alert("user must login to add product to cart");
-    this.router.navigate(["/home-page"]);
+    this.router.navigate(["/login"]);
   }
 }
 

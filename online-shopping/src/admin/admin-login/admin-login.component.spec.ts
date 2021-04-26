@@ -19,7 +19,18 @@ describe('AdminLoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('[Email-Check]- Should check admin email address is invalid', () => {
+    let email = component.loginForm.controls['email'];
+    expect(email.valid).toBeFalsy();
+    expect(email.pristine).toBeTruthy();
+    expect(email.errors['required']).toBeTruthy();
+    email.setValue('admin');
+
+    expect(email.errors['email']).toBeTruthy();
+  });
+  it('[Email-Check] - should check admin correct email address is entered',()=>{
+    let email = component.loginForm.controls['email'];
+    email.setValue('admin@gmail.com')
+    expect(email.errors).toBeNull();
   });
 });
