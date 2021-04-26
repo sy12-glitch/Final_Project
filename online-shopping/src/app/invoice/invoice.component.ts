@@ -29,8 +29,9 @@ export class InvoiceComponent implements OnInit {
 
   createInvoice(){
     let userstring = localStorage.getItem('userlogindetails');
-    const userlogin = JSON.parse(userstring);
-    this.invoiceService.getInvoice(userlogin)
+    var userlogin = JSON.parse(userstring);
+    console.log(userlogin );
+    this.invoiceService.getInvoice(userlogin )
     .subscribe(
       (data:Invoice)=>{
         console.log(data);

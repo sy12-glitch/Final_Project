@@ -1,51 +1,52 @@
 <app-header></app-header>
- 
+
 <div class="container">
     <h2>INVOICE</h2>
     <h6>Invoice number:{{invoice.id}}</h6>
-    
+
     <h6>Invoice time:{{invoice.date}}</h6>
     <br>
     <h5>BILLED TO</h5>
     <h6 class="username">{{username}}</h6>
-    <h6 class="email">{{email}}</h6> 
+    <h6 class="email">{{email}}</h6>
     <h6 class="mobile">{{mobile}}</h6>
     <h6 class="address">{{address}}</h6>
-    
-  
-  
+
+
+
     <h2 class="text-center text-primary">Your orders</h2>
     <table class="table" style="width:70%">
         <tr class="text-center">
-                <th>Product id</th>
-                <th>Product name</th>
-                <th>Product price</th>
-                <th>Quantity</th>
-                <th>Product total</th>
-           
+            <th>Product id</th>
+            <th>Product name</th>
+            <th>Product price</th>
+            <th>Quantity</th>
+            <th>Product total</th>
+
         </tr>
         <tr *ngFor="let order of invoice.orders" class="orders">
-           
-             <td>{{order.product.id}}</td>
-                <td>{{order.product.name}}</td>
-                <td>{{order.product.price}}</td>
-                <td>{{order.quantity}}</td>
-                <td>{{order.quantity*order.product.price}}</td>
-            
-           
+
+            <td>{{order.product.id}}</td>
+            <td>{{order.product.name}}</td>
+            <td>{{order.product.price}}</td>
+            <td>{{order.quantity}}</td>
+            <td>{{order.quantity*order.product.price}}</td>
+
+
         </tr>
-      <tr>
-            <td colspan="5" style="text-align: center;"><b>Total amount: {{invoice.amount}}</b></td>
-            
+        <tr>
+            <td colspan="5" style="text-align: center; "><b>Total amount: {{invoice.amount}}</b></td>
+
         </tr>
-   <tr>
-            <button onclick="window.print()"class="btn btn-success" id="invoice-print"><i class="fa fa-print"></i>Print Invoice</button>
+        <tr>
+            <button onclick="window.print()" class="btn btn-success" id="invoice-print"><i class="fa fa-print"></i>Print
+                Invoice</button>
         </tr>
     </table>
-   
-       
-   <br>
-   <div class="bt">
-    <button class="btn btn-success" type="button">Purchase now</button>
-</div>
+
+
+    <br>
+    <div class="bt">
+        <button class="btn btn-success" type="button">Purchase now</button>
+    </div>
 </div>

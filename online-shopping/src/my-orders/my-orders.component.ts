@@ -18,6 +18,16 @@ export class MyOrdersComponent implements OnInit {
   ngOnInit(): void {
     this.logout();
   }
+  // isLoggedin(user){
+  //   this.userdetailsservice.isLoggedIn(user)
+  //   .subscribe((res:any)=>{
+  //     this.userdetailsservice.user=res;
+  //   })
+  // }
+  getProducts(data:String){
+    sessionStorage.setItem('catName', JSON.stringify(data));
+    this.router.navigate(["product"]);
+  }
 
 logout(){
   let userstring=localStorage.getItem('userlogindetails');

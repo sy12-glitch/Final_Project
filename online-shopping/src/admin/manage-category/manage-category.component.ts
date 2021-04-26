@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { getEnabledCategories } from 'node:trace_events';
 import { Category } from 'src/Models/Category.model';
 import { CategoryService } from 'src/Services/category.service';
 

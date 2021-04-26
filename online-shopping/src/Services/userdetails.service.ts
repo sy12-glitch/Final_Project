@@ -28,6 +28,10 @@ export class UserdetailsService {
     deleteUser(userid){
       return this._http.delete(`${this.host}/delete/${userid}`);
     }
+    isLoggedIn(user){
+      return this._http.delete(`${this.host}/user/isloggedin/${user}`);
+
+    }
 
      logoutUser(userlogin){
       return this._http.post(`${this.host}/user/logout`,userlogin);
