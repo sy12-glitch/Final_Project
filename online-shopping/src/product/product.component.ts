@@ -76,6 +76,7 @@ export class ProductComponent implements OnInit {
         },
         error => {
           console.log("exception occured");
+          this.router.navigate(["/login"]);
           //this.msg="Bad credential, enter right email-id or passoword !";
         })
   }
