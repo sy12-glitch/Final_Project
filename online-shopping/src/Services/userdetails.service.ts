@@ -39,9 +39,14 @@ export class UserdetailsService {
      logoutUser(userlogin){
       return this._http.post(`${this.host}/user/logout`,userlogin);
     }
-    ngOnInit(): void {
-      let user = localStorage.getItem('userlogindetails');
-      const userlogin = JSON.parse(user);
+    isLoggedin(user){
+      return this._http.post(`${this.host}/user/isloggedin`,user);
+    }
+    // ngOnInit(): void {
+    //   let userstring = localStorage.getItem('userlogindetails');
+    //   const userlogin = JSON.parse(userstring);
+    //   console.log("++++++++++++++");
+    //   console.log(userlogin);
   
   }
   
@@ -54,4 +59,3 @@ export class UserdetailsService {
 // function userid(userid: any) {
 //   throw new Error('Function not implemented.');
 // }
-}

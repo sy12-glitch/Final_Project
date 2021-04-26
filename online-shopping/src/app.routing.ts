@@ -18,29 +18,33 @@ import { EditProductComponent } from "./admin/edit-product/edit-product.componen
 import { InvoiceComponent } from "./app/invoice/invoice.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { AdminGuard } from "./guard/admin.guard";
+import { LoginGuard } from "./guard/login.guard";
+// import { AdminGuard } from "./guard/admin.guard";
 
 
 const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
     {path: '', component: HomePageComponent},
     { path: 'login', component: LoginComponent },
-    { path: 'about-us', component: AboutUsComponent},
+    { path: 'about-us', component: AboutUsComponent, canActivate: [LoginGuard]},
     { path: 'product1', component: Product1Component },
     { path: 'product2', component: Product2Component },
     { path: 'product3', component: Product3Component },
     { path: 'home-page', component: HomePageComponent},
     { path: 'admin-login', component: AdminLoginComponent},
-    { path: 'order', component: MyOrdersComponent },
+    { path: 'order', component: MyOrdersComponent, canActivate: [LoginGuard] },
     // {path: 'create', component: ProductCreateComponent, canActivate: [AdminGuard]},
     {path: 'list', component: ListProductComponent},
-    {path:'add-product', component: ProductCreateComponent, canActivate: [AdminGuard]},
+    //  {path:'add-product', component: ProductCreateComponent, canActivate: [AdminGuard]},
+     {path:'add-product', component: ProductCreateComponent, canActivate: [AdminGuard]},
     {path: 'edit/:id', component: EditProductComponent},
-    {path:'controller', component: ControllerComponent},
+    {path:'controller', component: ControllerComponent, canActivate: [AdminGuard]},
     {path:'list-product', component: ListProductComponent},
     {path:'user-det', component: UserDetailsComponent},
     {path:'product', component: ProductComponent},
     {path:'cart2', component: Cart2Component},
-    {path:'invoice', component:InvoiceComponent}
+    {path:'invoice', component:InvoiceComponent},
+    {path:'order', component:MyOrdersComponent}
    
  
    

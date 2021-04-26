@@ -50,7 +50,7 @@ import { InvoiceComponent } from './app/invoice/invoice.component';
 
     ProductCreateComponent,
     ListProductComponent,
-
+    
     ProductComponent,
       ControllerComponent,
       UserDetailsComponent,

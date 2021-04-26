@@ -13,6 +13,7 @@ export class AdminLoginComponent implements OnInit {
   username: string;
   password: string;
   msg: string;
+  customService: any;
 
   constructor(private router: Router, 
     private http: HttpClient, private adminService: AdminService) { }
@@ -34,6 +35,9 @@ export class AdminLoginComponent implements OnInit {
       .subscribe(
         data =>{
         console.log("login successful");
+        this.adminService.admindata=data;
+        localStorage.setItem('adminlogindetails', JSON.stringify(data));
+        console.log( this.adminService.admindata);
         alert("login successful");
         this.router.navigate(["/controller"]);
       },

@@ -7,15 +7,19 @@ import { UserdetailsService } from 'src/Services/userdetails.service';
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
+  adminService: any;
   constructor(private UserdetailsService:UserdetailsService, private router:Router){}
   
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.UserdetailsService.user.role == 'Admin'){
+      let userstring=localStorage.getItem('adminlogindetails');
+       const adminlogin = JSON.parse(userstring);
+      
+      if(adminlogin.role == 'Admin'){
         return true;
       } else {
-        this.router.navigate(['add-product']);
+        this.router.navigate(['home-page']);
       }
   }
   

@@ -4,7 +4,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;" role="navigation">
    
     <a class="nav-link active" [routerLink]="['/','home-page']"><span id="logo" >HappyMart</span></a>
-      <a class="nav-link" routerLink="/about-us">About Us</a>
+      <a class="nav-link" routerLink="/home-page">About Us</a>
       <a class="nav-link" *ngIf="isLoggedIn==true" routerLink="/cart2">Cart</a>
       <a class="nav-link" *ngIf="isLoggedIn==false"[routerLink]="['/','sign-up']" >SignUp</a>
     <li *ngIf="isLoggedIn==false" class="nav-item dropdown">
@@ -15,6 +15,6 @@
       </div>
     </li>
       <a class="nav-link" *ngIf="isLoggedIn==true" [routerLink]="['']" >My Profile</a>
-      <a class="nav-link" *ngIf="isLoggedIn==true" [routerLink]="['/','home']" >Logout</a>
+      <a class="nav-link" *ngIf="isLoggedIn==true" [routerLink]="['/','order']" >Logout</a>
   </nav>
   </div>

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AdminService {
     private data:any[] = [];
+  admindata: Object;
   
     public set admin(admin){
       this.data = admin;
