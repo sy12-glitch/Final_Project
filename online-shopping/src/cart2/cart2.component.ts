@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
 import { ProductsService } from 'src/services/products.service';
 import { Product } from 'src/models/products.model';
-import {order} from 'src/Models/order.model';
+import { order } from 'src/Models/order.model';
 import { User } from 'src/Models/User.Model';
 
 @Component({
@@ -15,30 +15,36 @@ import { User } from 'src/Models/User.Model';
 })
 export class Cart2Component implements OnInit {
 
- 
-  constructor(private router: Router, private http: HttpClient,private productService:ProductsService, private session: SessionStorageService,
-    private cartService:CartService
-    ) { }
 
-  orders:order[]=[];
-  user:User;
+  constructor(private router: Router, private http: HttpClient, private productService: ProductsService, private session: SessionStorageService,
+    private cartService: CartService
+  ) { }
+
+  orders: order[] = [];
+  user: User;
 
   ngOnInit(): void {
-  this.printCart()
+    this.printCart()
   }
 
-  printCart(){
+  printCart() {
     let userstring = localStorage.getItem('userlogindetails');
     const userlogin = JSON.parse(userstring);
     console.log(userlogin);
-    this.user = userlogin;
-    this.cartService.getOrders(this.user)
-    .subscribe(
-      (data:order[])=>{
-        console.log(data);
-        this.orders = data;
-        console.log(this.orders);
-      }
-    )
+    if (userlogin != null) {
+      this.cartService.getOrders(this.user)
+        .subscribe(
+          (data: order[]) => {
+            console.log(data);
+            this.orders = data;
+            this.user = userlogin;
+            console.log(this.orders);
+          }
+        )
+    }
+    else if(userlogin==null){
+      alert("User must login to view cart");
+      this.router.navigate(["/login"]);
+    }
   }
 }

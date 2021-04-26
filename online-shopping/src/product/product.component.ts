@@ -49,7 +49,7 @@ export class ProductComponent implements OnInit {
     const userlogin = JSON.parse(userstring);
     console.log("++++++++++++++");
     console.log(userlogin);
-
+    if(userlogin!=null){
     let orderdata = {
       user: userlogin,
       product: item,
@@ -79,6 +79,11 @@ export class ProductComponent implements OnInit {
           //this.msg="Bad credential, enter right email-id or passoword !";
         })
   }
+  else{
+    alert("user must login to add product to cart");
+    this.router.navigate(["/home-page"]);
+  }
+}
 
   decreaseQuantity(item){
   }

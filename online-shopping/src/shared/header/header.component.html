@@ -14,7 +14,7 @@
         <a class="dropdown-item" [routerLink]="['/','admin-login']"  >Admin</a>
       </div>
     </li>
-      <a class="nav-link" *ngIf="isLoggedIn==true" [routerLink]="['']" >My Profile</a>
-      <a class="nav-link" *ngIf="isLoggedIn==true" [routerLink]="['/','home-page']" >Logout</a>
+      <a class="nav-link" *ngIf="isLoggedIn==true" [routerLink]="['/','profile']" >My Profile</a>
+      <a class="nav-link" *ngIf="isLoggedIn==true" [routerLink]="['/','logout']" >Logout</a>
   </nav>
   </div>

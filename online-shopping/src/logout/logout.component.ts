@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { UserdetailsService } from 'src/Services/userdetails.service';
 
 @Component({
-  selector: 'app-my-orders',
-  templateUrl: './my-orders.component.html',
-  styleUrls: ['./my-orders.component.css']
+  selector: 'app-logout',
+  templateUrl: './logout.component.html',
+  styleUrls: ['./logout.component.css']
 })
-export class MyOrdersComponent implements OnInit {
+export class LogoutComponent implements OnInit {
  
     images = [1,2,3].map(() => `https://visitclearwaterflorida.com/wp-content/uploads/2017/05/women-shopping.jpg`);
   router: any;
