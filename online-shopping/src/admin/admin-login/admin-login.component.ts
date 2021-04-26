@@ -13,7 +13,8 @@ export class AdminLoginComponent implements OnInit {
   username: string;
   password: string;
   msg: string;
-
+  em="admin@gmail.com";
+  pwd="Admin@123";
   constructor(private router: Router, 
     private http: HttpClient, private adminService: AdminService) { }
   
@@ -22,14 +23,14 @@ export class AdminLoginComponent implements OnInit {
 
     ngOnInit(): void {
       this.loginForm = new FormGroup({
-        email:new FormControl("",[Validators.required,Validators.email]),
-        password :new FormControl("",[Validators.required,Validators.minLength(3)])
+        email:new FormControl("em",[Validators.required,Validators.email]),
+        password :new FormControl("pwd",[Validators.required,Validators.minLength(3)])
       });
     }
   
  
     login() : void {
-      if(this.username == 'admin@gmail.com' && this.password == 'Admin@123'){
+      if(this.username == this.em && this.password == this.pwd){
   
       this.adminService.saveForm(this.loginForm.value)
       .subscribe(
