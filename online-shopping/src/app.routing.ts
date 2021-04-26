@@ -16,6 +16,7 @@ import { UserDetailsComponent } from "./admin/user-details/user-details.componen
 import {Cart2Component} from "./cart2/cart2.component";
 import { EditProductComponent } from "./admin/edit-product/edit-product.component";
 import { InvoiceComponent } from "./app/invoice/invoice.component";
+import { ManageCategoryComponent } from "./admin/manage-category/manage-category.component";
 
 
 const routes:Routes = [
@@ -37,7 +38,8 @@ const routes:Routes = [
     {path:'user-det', component: UserDetailsComponent},
     {path:'product', component: ProductComponent},
     {path:'cart2', component: Cart2Component},
-    {path:'invoice', component:InvoiceComponent}
+    {path:'invoice', component:InvoiceComponent},
+    {path:'manage-cat', component:ManageCategoryComponent}
    
  
    

@@ -18,7 +18,10 @@ export class InvoiceComponent implements OnInit {
     private invoiceService:InvoiceService) { }
 
     invoice:Invoice;
-    user:User;
+    email:String;
+    username:String;
+    mobile:Number;
+    address:String;
 
   ngOnInit(): void {
     this.createInvoice();
@@ -33,6 +36,10 @@ export class InvoiceComponent implements OnInit {
         console.log(data);
         this.invoiceService.invoice = data;
         this.invoice = data;
+        this.email=userlogin.email;
+        this.username=userlogin.fname;
+        this.mobile=userlogin.mobile;
+        this.address=userlogin.address;
       }
     )
   }

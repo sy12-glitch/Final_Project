@@ -33,7 +33,7 @@ logout(){
        let userstring1=localStorage.getItem('userlogindetails');
        const userlogin1 = JSON.parse(userstring1);
        console.log(userlogin1);
-       this.router.navigate(["/home-page"]);
+       this.router.navigate([""]);
      }
   },
   error=>{
