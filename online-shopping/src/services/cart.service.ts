@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +36,14 @@ export class CartService {
     const headers= new HttpHeaders()
 
     return this.http.post(`${this.host}/orders/`, product);
+  }
+  getAllOrder(orders) {
+    const headers= new HttpHeaders()
 
-
+    return this.http.post(`${this.host}/orders`,orders);
+  }
+  deleteItem(){
+    return this.http.delete(`${this.host}/orders/deleteOrder`);
   }
 
   getOrders(user){

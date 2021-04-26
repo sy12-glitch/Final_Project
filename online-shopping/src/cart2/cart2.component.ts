@@ -17,14 +17,30 @@ export class Cart2Component implements OnInit {
 
  
   constructor(private router: Router, private http: HttpClient,private productService:ProductsService, private session: SessionStorageService,
-    private cartService:CartService
+    private cartService:CartService 
+    
     ) { }
 
   orders:order[]=[];
   user:User;
+  products:Product[]=[];
 
   ngOnInit(): void {
   this.printCart()
+  }
+  getAllOrder(orders) {
+    this.cartService.getAllOrder(orders) 
+    .subscribe((res:any)=>{
+      console.log("--+++++++++-------")
+      console.log(res);
+      this.orders = res;
+    })
+  }
+  deleteItem(customer_order){
+    this.cartService.deleteItem()
+    .subscribe((res:any)=>{
+      this.printCart();
+    })
   }
 
   printCart(){

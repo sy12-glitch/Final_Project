@@ -35,7 +35,6 @@ import { ManageCategoryComponent } from './admin/manage-category/manage-category
 
 
 
-
 @NgModule({
   declarations: [SignUpComponent,ForgetComponent, LoginComponent,
     AppComponent,

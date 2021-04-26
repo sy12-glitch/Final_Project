@@ -28,3 +28,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Add this-
 ng add @ng-bootstrap/ng-bootstrap
+
+ npm install --save angular2-notifications
