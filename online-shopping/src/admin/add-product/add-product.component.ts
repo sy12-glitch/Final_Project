@@ -12,8 +12,8 @@ import { ProductsService } from 'src/services/products.service';
 })
 export class ProductCreateComponent implements OnInit {
 productForm: FormGroup;
-
-  
+img = "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
+msg:string;
 form = new FormGroup({
   category: new FormControl('', Validators.required)
 });
@@ -30,13 +30,13 @@ get f(){
 
       
       category: new FormControl("", Validators.required),
-      name: new FormControl("", Validators.required),
-      brand: new FormControl("", Validators.required),
-      image: new FormControl("", Validators.required),
-      price: new FormControl("", [Validators.required, Validators.min(1)]),
-      description: new FormControl("", Validators.required),
-      quantity: new FormControl("", Validators.required),
-      rating: new FormControl("", [Validators.required,Validators.max(5)])
+      name: new FormControl("",[ Validators.required,Validators.minLength(3),Validators.maxLength(50)]),
+      brand: new FormControl("", [ Validators.required,Validators.minLength(3),Validators.maxLength(50)]),
+      image: new FormControl(this.img),
+      price: new FormControl("", [Validators.required, Validators.min(1),Validators.max(10000000)]),
+      description: new FormControl("",  [ Validators.required,Validators.minLength(10),Validators.maxLength(50)]),
+      quantity: new FormControl("", [Validators.required,Validators.min(1),Validators.max(100)]),
+      rating: new FormControl("", [Validators.required,Validators.max(5),Validators.min(1)])
 
     });
   }
@@ -47,11 +47,12 @@ get f(){
     .subscribe((res:any)=>{
       console.log(res);
       // this.router.navigate(["/add-product"]);
-      alert("submited");
+      // alert("submited");
+      this.msg="Successfuly Added";
     }) 
     error=>{
       console.log("exception occured");
-      alert("error");
+      this.msg="Something went wrong";
     }
   }
 

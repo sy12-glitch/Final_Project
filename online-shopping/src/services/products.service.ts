@@ -41,5 +41,4 @@ export class ProductsService {
     return this._http.put(`http://localhost:8080/admin/updateproduct/${id}`, newProduct);
   }
 
-
 }

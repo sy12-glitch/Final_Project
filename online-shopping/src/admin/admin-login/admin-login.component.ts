@@ -30,7 +30,8 @@ export class AdminLoginComponent implements OnInit {
   
  
     login() : void {
-      // console.log(this.loginForm.value);
+      if(this.username == 'admin@gmail.com' && this.password == 'Admin@123'){
+  
       this.adminService.saveForm(this.loginForm.value)
       .subscribe(
         data =>{
@@ -40,14 +41,16 @@ export class AdminLoginComponent implements OnInit {
         console.log( this.adminService.admindata);
         alert("login successful");
         this.router.navigate(["/controller"]);
+        this.msg="login success !";
       },
       error=>{
         console.log("exception occured");
         this.msg="Bad credential, enter right email-id or passoword !";
-      }
-      
-      
-      )
+      }  
+      ) 
+    }else {
+      this.msg="Bad credential, enter right email-id or passoword !";
   }
+}
 }   
   

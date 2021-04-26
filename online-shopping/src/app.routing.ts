@@ -16,6 +16,7 @@ import { UserDetailsComponent } from "./admin/user-details/user-details.componen
 import {Cart2Component} from "./cart2/cart2.component";
 import { EditProductComponent } from "./admin/edit-product/edit-product.component";
 import { InvoiceComponent } from "./app/invoice/invoice.component";
+import { ManageCategoryComponent } from "./admin/manage-category/manage-category.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { AdminGuard } from "./guard/admin.guard";
 import { LoginGuard } from "./guard/login.guard";
@@ -26,13 +27,13 @@ const routes:Routes = [
     { path: 'sign-up', component: SignUpComponent },
     {path: '', component: HomePageComponent},
     { path: 'login', component: LoginComponent },
-    { path: 'about-us', component: AboutUsComponent, canActivate: [LoginGuard]},
+    { path: 'about-us', component: AboutUsComponent},
     { path: 'product1', component: Product1Component },
     { path: 'product2', component: Product2Component },
     { path: 'product3', component: Product3Component },
     { path: 'home-page', component: HomePageComponent},
     { path: 'admin-login', component: AdminLoginComponent},
-    { path: 'order', component: MyOrdersComponent, canActivate: [LoginGuard] },
+    { path: 'order', component: MyOrdersComponent },
     // {path: 'create', component: ProductCreateComponent, canActivate: [AdminGuard]},
     {path: 'list', component: ListProductComponent},
     //  {path:'add-product', component: ProductCreateComponent, canActivate: [AdminGuard]},
@@ -44,7 +45,7 @@ const routes:Routes = [
     {path:'product', component: ProductComponent},
     {path:'cart2', component: Cart2Component},
     {path:'invoice', component:InvoiceComponent},
-    {path:'order', component:MyOrdersComponent}
+    {path:'manage-cat', component:ManageCategoryComponent}
    
  
    

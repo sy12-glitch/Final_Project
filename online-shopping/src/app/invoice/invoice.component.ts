@@ -18,7 +18,10 @@ export class InvoiceComponent implements OnInit {
     private invoiceService:InvoiceService) { }
 
     invoice:Invoice;
-    user:User;
+    email:String;
+    username:String;
+    mobile:Number;
+    address:String;
 
   ngOnInit(): void {
     this.createInvoice();
@@ -26,13 +29,18 @@ export class InvoiceComponent implements OnInit {
 
   createInvoice(){
     let userstring = localStorage.getItem('userlogindetails');
-    const userlogin = JSON.parse(userstring);
-    this.invoiceService.getInvoice(userlogin)
+    var userlogin = JSON.parse(userstring);
+    console.log(userlogin );
+    this.invoiceService.getInvoice(userlogin )
     .subscribe(
       (data:Invoice)=>{
         console.log(data);
         this.invoiceService.invoice = data;
         this.invoice = data;
+        this.email=userlogin.email;
+        this.username=userlogin.fname;
+        this.mobile=userlogin.mobile;
+        this.address=userlogin.address;
       }
     )
   }

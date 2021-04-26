@@ -29,18 +29,21 @@ export class LoginComponent implements OnInit {
         password :new FormControl("Demo@123",Validators.required)
       });
     }
-  
+    
+
     login() : void {
+      if(this.username == 'admin@gmail.com' && this.password == 'Admin@123'){
+        this.msg="Bad credential, enter right email-id or passoword !";
+      }else{
       // console.log(this.loginForm.value);
         this.customService.saveForm(this.loginForm.value)
         .subscribe(
           (data:User) =>{
           console.log("login successful");
-           // console.log(data);
             this.customService.userdata=data;
             localStorage.setItem('userlogindetails', JSON.stringify(data));
             console.log( this.customService.userdata);
-          alert("login successful");
+          this.msg="Login success !";
           this.router.navigate(["/home-page"]);
         },
         error=>{
@@ -50,6 +53,6 @@ export class LoginComponent implements OnInit {
         
         
         )
-    }
+    }}
 }   
   
