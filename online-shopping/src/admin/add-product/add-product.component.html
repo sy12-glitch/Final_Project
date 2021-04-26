@@ -5,7 +5,7 @@
     <form (ngSubmit)="create()" [formGroup]="productForm" >
         <div class="form-group">
             <label for="category">Category:</label>
-            <select formControlName="category" name='categories'>
+            <select formControlName="category"style="margin-left: 130px;"  name='categories'>
               <option *ngFor="let cat of categories" [value]="cat.name">
                 {{cat.name}}
               </option>    
@@ -13,6 +13,7 @@
             <div *ngIf="f.category.touched && f.category.invalid" class="alert alert-danger">
                 <div *ngIf="f.category.errors.required">category is required.</div>
             </div>
+            <button [routerLink]="['/','manage-cat']"  class="btn btn-success" style="margin-left: 40px;">Add category</button>
         </div>
          <div class="form-group row">
             <label class="col-sm-2 col-form-label">Name</label>

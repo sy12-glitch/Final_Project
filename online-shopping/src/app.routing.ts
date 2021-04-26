@@ -2,9 +2,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { LogoutComponent} from "./logout/logout.component";
-import { Product1Component } from "./product1/product1.component";
-import { Product2Component } from "./product2/product2.component";
-import { Product3Component } from "./product3/product3.component";
 import { LoginComponent } from "./sign-up/login/login.component";
 import { ProductComponent } from "./product/product.component";
 import { SignUpComponent } from "./sign-up/sign-up/sign-up.component";
@@ -28,9 +25,6 @@ const routes:Routes = [
     {path: '', component: HomePageComponent},
     { path: 'login', component: LoginComponent },
     { path: 'about-us', component: AboutUsComponent},
-    { path: 'product1', component: Product1Component },
-    { path: 'product2', component: Product2Component },
-    { path: 'product3', component: Product3Component },
     { path: 'home-page', component: HomePageComponent},
     { path: 'admin-login', component: AdminLoginComponent},
     {path: 'logout', component: LogoutComponent},
