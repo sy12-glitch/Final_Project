@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Category } from 'src/Models/Category.model';
+import { CategoryService } from 'src/Services/category.service';
 
 import { ProductsService } from 'src/services/products.service';
 
@@ -14,6 +16,7 @@ export class ProductCreateComponent implements OnInit {
 productForm: FormGroup;
 img = "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
 msg:string;
+categories:Category[]=[{'name':'clothing'},{'name':'shoes'},{'name':'accessories'}] 
 form = new FormGroup({
   category: new FormControl('', Validators.required)
 });
@@ -21,11 +24,12 @@ form = new FormGroup({
 get f(){
   return this.form.controls;
 }
-  constructor(private productService:ProductsService,private router:Router, private http: HttpClient) { }
+  constructor(private productService:ProductsService,private categoryService:CategoryService, private router:Router, private http: HttpClient) { }
 
   
 
   ngOnInit(): void {
+    this.getCategories();
     this.productForm = new FormGroup({
 
       
@@ -56,7 +60,16 @@ get f(){
     }
   }
 
+  getCategories(){
+    this.categoryService.getCategories()
+    .subscribe(
+      (data:Category[])=>{
+        this.categories = data;
+      }
+    )
+  }
 }
+
 function fruits() {
   throw new Error('Function not implemented.');
 }

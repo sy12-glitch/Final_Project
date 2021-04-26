@@ -1,3 +1,4 @@
+import { ResourceLoader } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/Models/Category.model';
@@ -29,11 +30,11 @@ export class ManageCategoryComponent implements OnInit {
       })
   }
   deleteCategory(name){
-    console.log(name);
     this.categoryService.deleteCategory(name)
     .subscribe(
       data=>{
         alert("Delete successful")
+        this.reloadCurrentPage();
       }
     )
   }
@@ -44,8 +45,12 @@ export class ManageCategoryComponent implements OnInit {
     .subscribe(
       (data:Category)=>{
         console.log(data);
-        this.router.navigate(["/manage-cat"]);
+        this.reloadCurrentPage();
       }
     )
   }
+
+  reloadCurrentPage() {
+    window.location.reload();
+   }
 }

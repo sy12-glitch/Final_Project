@@ -87,6 +87,7 @@ msg: string;
 }
 
   decreaseQuantity(item){
+    console.log(item.quantity);
   }
   increaseQuantity(item){
   }
