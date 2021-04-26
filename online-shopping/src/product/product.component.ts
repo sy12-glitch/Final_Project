@@ -49,7 +49,7 @@ msg: string;
     const userlogin = JSON.parse(userstring);
     console.log("++++++++++++++");
     console.log(userlogin);
-
+    if(userlogin!=null){
     let orderdata = {
       user: userlogin,
       product: item,
@@ -80,6 +80,11 @@ msg: string;
           this.router.navigate(["'/','login'"]);
         })
   }
+  else{
+    alert("user must login to add product to cart");
+    this.router.navigate(["/home-page"]);
+  }
+}
 
   decreaseQuantity(item){
   }
