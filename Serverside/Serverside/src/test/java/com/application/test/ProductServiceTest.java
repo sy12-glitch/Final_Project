@@ -37,13 +37,17 @@ public class ProductServiceTest extends ApplicationTests{
 	@Test
 	public void deleteProductTest() {
 	//enter the id of the product to be deleted
-		int id = 103;
-		boolean beforedelete = productRepository.findById(id).isPresent();
-		productRepository.deleteById(id);
-		boolean afterdelete = productRepository.findById(id).isPresent();
-		Assert.assertTrue(beforedelete);
-
-	}
+	//	int id = 15;
+		Product dbproduct = productService.addProduct(new Product(35,4,"Max Pro","Vivo",15000.0,"abc.jpg","New Phone",
+				(float)4.5,"watch",180));
+		System.out.println("product to delete");
+		boolean beforedelete = productRepository.findById(dbproduct.getId()).isPresent();
+		productRepository.deleteById(dbproduct.getId());
+		boolean afterdelete = productRepository.findById(dbproduct.getId()).isPresent();
+		System.out.println("product deleted"+dbproduct.getId());
+		Assert.assertTrue(!afterdelete);
+//		Assert.assertTrue(beforedelete);
+		}
 	// should save product
 		@Test
 		public void shouldSaveProduct(){

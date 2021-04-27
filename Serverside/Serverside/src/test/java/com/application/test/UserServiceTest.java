@@ -85,13 +85,17 @@ public class UserServiceTest extends ApplicationTests {
 	}
 
 	@Test
-	public void deleteteUserTest() {
+	public void deleteteUserTest() throws InvalidUserException {
 		//enter the id of the user to be deleted
-		int id = 35;
-		boolean userbeforedelete = userRepository.findById(id).isPresent();
-		userRepository.deleteById(id);
-		boolean userafterdelete = userRepository.findById(id).isPresent();
-		Assert.assertTrue(userbeforedelete);
+	//	int id = 228;
+		User dbuser = userService.createUser(
+				new User(189, "Rohit", "Sharma", "rs@gmail.com", "Rs@*1933", "Male", "India", "9988776655", "User"));
+		boolean userbeforedelete = userRepository.findById(dbuser.getUserid()).isPresent();
+		System.out.println("User to delete");
+		userRepository.deleteById(dbuser.getUserid());
+		System.out.println("User deleted"+dbuser.getUserid());
+		boolean userafterdelete = userRepository.findById(dbuser.getUserid()).isPresent();
+		Assert.assertTrue(!userafterdelete);
 
 	}
 //
