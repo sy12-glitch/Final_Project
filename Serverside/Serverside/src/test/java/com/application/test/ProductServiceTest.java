@@ -1,5 +1,7 @@
 package com.application.test;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 
 
@@ -39,13 +41,13 @@ public class ProductServiceTest extends ApplicationTests{
 	//enter the id of the product to be deleted
 	//	int id = 15;
 		Product dbproduct = productService.addProduct(new Product(35,4,"Max Pro","Vivo",15000.0,"abc.jpg","New Phone",
-				(float)4.5,"watch",180));
+				(float)4.5,"Electronics",243));
 		System.out.println("product to delete");
 		boolean beforedelete = productRepository.findById(dbproduct.getId()).isPresent();
 		productRepository.deleteById(dbproduct.getId());
 		boolean afterdelete = productRepository.findById(dbproduct.getId()).isPresent();
 		System.out.println("product deleted"+dbproduct.getId());
-		Assert.assertTrue(!afterdelete);
+		assertTrue(!afterdelete);
 //		Assert.assertTrue(beforedelete);
 		}
 	// should save product
@@ -53,18 +55,20 @@ public class ProductServiceTest extends ApplicationTests{
 		public void shouldSaveProduct(){
 			
 		Product dbproduct = productService.addProduct(new Product(35,4,"Thinkpad","Lenevo",45000.0,"abc.jpg","New laptop",
-				(float)4.5,"watch",180));
-			if (dbproduct != null) {
-				System.out.println("Prodcut saved");
-				Assert.assertTrue(true);
-			}
+				(float)4.5,"Electronics",243));
+//			if (dbproduct != null) {
+//				System.out.println("Prodcut saved");
+//				Assert.assertTrue(true);
+//			}
+		System.out.println("Creating new product"+dbproduct.getId());
+		assertTrue(productRepository.findById(dbproduct.getId()).isPresent());
 		}
 	// should not save product
 	@Test
 	public void shouldnotSaveProduct() throws InvalidUserException {
 
 		Product dbproduct = new Product(1,2,"","Lenevo",45000.0,"abc.jpg","New laptop",
-				 (float) 4.5,"Electronics",4);
+				 (float) 4.5,"Electronics",243);
 		if (dbproduct.getName()==null) {
 			System.out.println("Don not save product");
 			Assert.assertFalse(false);

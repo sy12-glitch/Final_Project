@@ -39,7 +39,7 @@ get f(){
       image: new FormControl(this.img),
       price: new FormControl("", [Validators.required, Validators.min(1),Validators.max(10000000)]),
       description: new FormControl("",  [ Validators.required,Validators.minLength(10),Validators.maxLength(50)]),
-      quantity: new FormControl("", [Validators.required,Validators.min(1),Validators.max(100)]),
+      quantity: new FormControl("", [Validators.required,Validators.min(1),Validators.max(1000)]),
       rating: new FormControl("", [Validators.required,Validators.max(5),Validators.min(1)])
 
     });
@@ -52,6 +52,7 @@ get f(){
       console.log(res);
       // this.router.navigate(["/add-product"]);
       // alert("submited");
+      this.reloadCurrentPage();
       this.msg="Successfuly Added";
     }) 
     error=>{
@@ -68,6 +69,9 @@ get f(){
       }
     )
   }
+  reloadCurrentPage() {
+    window.location.reload();
+   }
 }
 
 function fruits() {

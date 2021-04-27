@@ -40,7 +40,7 @@ export class AdminLoginComponent implements OnInit {
         this.adminService.admindata=data;
         localStorage.setItem('adminlogindetails', JSON.stringify(data));
         console.log( this.adminService.admindata);
-        alert("login successful");
+       // alert("login successful");
         this.router.navigate(["/controller"]);
         this.msg="login success !";
       },

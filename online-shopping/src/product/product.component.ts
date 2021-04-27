@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
   catName: String;
   products: Product[] = [];
   orderdata:any;
-  orderqty:any=0;
+  orderqty:any=1;
 
   constructor(private router: Router, 
     private http: HttpClient,private productService:ProductsService, private customService:CustomerService, private session: SessionStorageService,

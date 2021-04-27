@@ -1,6 +1,7 @@
 package com.application.test;
 
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -43,7 +44,7 @@ public class UserServiceTest extends ApplicationTests {
 				new User(189, "Virat", "Kohli", "vk@gmail.com", "Vk@*1933", "Male", "India", "9988776655", "User"));
 		if (dbuser != null) {
 			System.out.println("User saved");
-			Assert.assertTrue(true);
+			assertTrue(userRepository.findById(dbuser.getUserid()).isPresent());
 		}
 	}
 
