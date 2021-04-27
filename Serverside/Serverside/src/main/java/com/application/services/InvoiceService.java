@@ -47,8 +47,13 @@ public class InvoiceService {
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 		Date orderdate = new Date(System.currentTimeMillis());
 		invoice.setDate(orderdate);
+		return invoice;
+	}
+	
+	public Invoice saveInvoice(Invoice invoice) {
 		invoiceRepository.save(invoice);
-		
+		User user = invoice.getUser();
+		List<Order> orders = getOrdersByUser(user);
 		for(Order order:orders) {
 			deleteOrder(order.getId());
 		}

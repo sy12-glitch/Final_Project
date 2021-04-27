@@ -17,6 +17,7 @@ export class InvoiceComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient,private productService:ProductsService, private session: SessionStorageService,
     private invoiceService:InvoiceService) { }
 
+    msg:String;
     invoice:Invoice;
     email:String;
     username:String;
@@ -41,6 +42,16 @@ export class InvoiceComponent implements OnInit {
         this.username=userlogin.fname;
         this.mobile=userlogin.mobile;
         this.address=userlogin.address;
+      }
+    )
+  }
+  saveInvoice(invoice){
+    this.invoiceService.saveInvoice(invoice)
+    .subscribe(
+      data=>{
+        console.log(data);
+        this.msg = "Your order is placed successfully, Thanks for shopping with us."
+        this.router.navigate(["/my-order"]);
       }
     )
   }
