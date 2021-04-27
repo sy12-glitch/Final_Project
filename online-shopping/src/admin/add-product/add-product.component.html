@@ -34,7 +34,7 @@
             <label class="col-sm-2 col-form-label">Description</label>
             <div class="col-sm-10">
               <input type="text" required formControlName="description" class="form-control" />
-              <small *ngIf="productForm.get('description').dirty && productForm.get('description').invalid" class="form-text text-danger">description is required</small>
+              <small *ngIf="productForm.get('description').dirty && productForm.get('description').invalid" class="form-text text-danger">description lenght must be more then 10 character</small>
             </div>
           </div>
           <div class="form-group row">
@@ -48,21 +48,21 @@
             <label class="col-sm-2 col-form-label">Price</label>
             <div class="col-sm-10">
               <input type="number" required formControlName="price" class="form-control" />
-              <small *ngIf="productForm.get('price').dirty && productForm.get('price').invalid" class="form-text text-danger">price is required</small>
+              <small *ngIf="productForm.get('price').dirty && productForm.get('price').invalid" class="form-text text-danger">price must be greater then 0</small>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Quantity</label>
             <div class="col-sm-10">
               <input type="number" required formControlName="quantity" class="form-control" />
-              <small *ngIf="productForm.get('quantity').dirty && productForm.get('quantity').invalid" class="form-text text-danger">quantity is required</small>
+              <small *ngIf="productForm.get('quantity').dirty && productForm.get('quantity').invalid" class="form-text text-danger">quantity must be 1 to 100</small>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Rating</label>
             <div class="col-sm-10">
               <input type="number" required formControlName="rating" class="form-control" />
-              <small *ngIf="productForm.get('rating').dirty && productForm.get('rating').invalid" class="form-text text-danger">rating is required</small>
+              <small *ngIf="productForm.get('rating').dirty && productForm.get('rating').invalid" class="form-text text-danger">rating must be 1 to 5 only</small>
             </div>
           </div>
           <div class="form-group row">

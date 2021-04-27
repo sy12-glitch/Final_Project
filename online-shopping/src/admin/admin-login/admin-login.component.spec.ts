@@ -36,7 +36,7 @@ describe('AdminLoginComponent', () => {
   });
   it('[Email-Check] - should check admin correct email address is entered',()=>{
     let email = component.loginForm.controls['email'];
-    email.setValue('admin@gmail.com');
+    email.setValue('@gmail.com');
     expect(email.errors).toBeNull();
   });
 
@@ -48,7 +48,7 @@ describe('AdminLoginComponent', () => {
   // });
   it('[Password-Check]- should check password validity',()=>{
     let pwd = component.loginForm.controls['password'];
-    pwd.setValue('Admin@123');
+    pwd.setValue('ad');
     expect(pwd.errors).toBeNull();
     expect(pwd.valid).toBeTruthy();
   });
