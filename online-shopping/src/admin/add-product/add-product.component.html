@@ -5,11 +5,12 @@
     <form (ngSubmit)="create()" [formGroup]="productForm" >
         <div class="form-group">
             <label for="category">Category:</label>
-            <select formControlName="category" class="form-control">
+           
+             <select formControlName="category" class="form-control">
                 <option value="clothing">Clothing</option>
                 <option value="shoes">Shoes</option>
                 <option value="accessories">Accessories</option>
-            </select>
+            </select> 
             <div *ngIf="f.category.touched && f.category.invalid" class="alert alert-danger">
                 <div *ngIf="f.category.errors.required">category is required.</div>
             </div>

@@ -16,7 +16,7 @@ import routes from 'src/app.routing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { Product1Component } from './product1/product1.component';
-import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { MyOrderComponent } from './my-order/my-order.component';
 import { Product2Component } from './product2/product2.component';
 import { Product3Component } from './product3/product3.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -32,6 +32,8 @@ import { Cart2Component } from './cart2/cart2.component';
 import { EditProductComponent } from './admin/edit-product/edit-product.component';
 import { InvoiceComponent } from './app/invoice/invoice.component';
 import { ManageCategoryComponent } from './admin/manage-category/manage-category.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -41,7 +43,7 @@ import { ManageCategoryComponent } from './admin/manage-category/manage-category
     AppComponent,
     HomePageComponent,
     Product1Component,
-    MyOrdersComponent,
+    MyOrderComponent,
     Product2Component,
  
     HeaderComponent,
@@ -59,6 +61,8 @@ import { ManageCategoryComponent } from './admin/manage-category/manage-category
       EditProductComponent,
       InvoiceComponent,
       ManageCategoryComponent,
+      ProfileComponent,
+      LogoutComponent,
      
 
   

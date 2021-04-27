@@ -1,1 +1,33 @@
-<p>manage-category works!</p>
+<app-header2></app-header2>
+<div class="container">
+    <div class="table-responsive table table-bordered">
+
+        <h2 class="text-center text-primary">All Categories</h2>
+        <table class="table">
+            <tr class="text-center">
+                <th>id</th>
+                <th>category</th>
+            </tr>
+            <tr *ngFor="let cat of categories">
+
+                <td>{{cat.id}}</td>
+                <td><strong>{{cat.name}}</strong></td>
+
+                <td><button class="btn btn-danger" (click)="deleteCategory(cat.id)">Delete</button></td>
+            </tr>
+
+        </table>
+
+        </div>
+        <div>
+            <h2 class="text-center text-primary">Add Category</h2>
+            <td>
+            <label class="col-sm-8 col-form-label">Category name</label>
+            <div class="col-sm-10">
+                <input type="String" #name/>
+            </div>
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-info btn-lg btn-block" (click)="addCategory(name.value)" >Add Category</button>
+            </td>
+    </div>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,13 +41,14 @@ public class CategoryController {
 	}
 	
 	@PostMapping("/add")
-	public Category addCategory(@RequestBody Category category) {
-		return categoryService.addCategory(category);
+	public Category addCategory(@RequestBody String name) {
+		return categoryService.addCategory(name);
 	}
 	
-	@DeleteMapping("/delete")
-	public void deleteCategory(@RequestBody String name) {
-		int category_id = categoryService.getCategoryId(name);
-		categoryService.deleteCategory(category_id);
+	@DeleteMapping("/delete/{id}")
+	public void deleteCategory(@PathVariable int id) {
+		System.out.println(id);
+		//int category_id = categoryService.getCategoryId(name);
+		categoryService.deleteCategory(id);
 	}
 }

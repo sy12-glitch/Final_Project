@@ -11,6 +11,8 @@ import { CategoryService } from 'src/Services/category.service';
 export class ManageCategoryComponent implements OnInit {
 
   categories:Category[];
+  msg: any;
+  catname:String;
   constructor(private router: Router, 
     private categoryService:CategoryService) { }
 
@@ -25,5 +27,25 @@ export class ManageCategoryComponent implements OnInit {
         console.log(data);
         this.categories = data;
       })
+  }
+  deleteCategory(name){
+    console.log(name);
+    this.categoryService.deleteCategory(name)
+    .subscribe(
+      data=>{
+        alert("Delete successful")
+      }
+    )
+  }
+
+  addCategory(id){
+    console.log(id);
+    this.categoryService.addCategory(id)
+    .subscribe(
+      (data:Category)=>{
+        console.log(data);
+        this.router.navigate(["/manage-cat"]);
+      }
+    )
   }
 }

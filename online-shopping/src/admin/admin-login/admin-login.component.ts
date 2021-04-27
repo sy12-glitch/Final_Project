@@ -10,6 +10,7 @@ import { AdminService } from 'src/Services/admin.service';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
+ 
   username: string;
   password: string;
   msg: string;
@@ -28,7 +29,7 @@ export class AdminLoginComponent implements OnInit {
       });
     }
   
- 
+    
     login() : void {
       if(this.username == 'admin@gmail.com' && this.password == 'Admin@123'){
   

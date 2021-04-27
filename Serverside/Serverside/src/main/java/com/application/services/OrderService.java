@@ -25,9 +25,14 @@ public class OrderService {
 	ProductRepository productRepository;
 
 	public Order createOrder(Order order) {
-	//	order.getProduct().setQuantity((order.getProduct().getQuantity()-order.getQuantity()));
-		return orderRepository.save(order);
-	}
+		//	order.getProduct().setQuantity((order.getProduct().getQuantity()-order.getQuantity()));
+			int productId = order.getProduct().getId();
+			Optional<Product> optional = productRepository.findById(productId);
+			Product product = optional.orElse(null);
+			product.setQuantity((product.getQuantity())-(order.getQuantity()));
+			productRepository.save(product);
+			return orderRepository.save(order);
+		}
 	
 	public List<Order> getAllOrders(){
 		Iterable<Order> iterable = orderRepository.findAll();
@@ -62,6 +67,13 @@ public class OrderService {
 	}
 	
 	public void deleteOrder(int id) {
+		Optional<Order> option = orderRepository.findById(id);
+		Order order = option.orElse(null);
+		int productId = order.getProduct().getId();
+		Optional<Product> optional = productRepository.findById(productId);
+		Product product = optional.orElse(null);
+		product.setQuantity((product.getQuantity())+(order.getQuantity()));
+		productRepository.save(product);
 		orderRepository.deleteById(id);
 	}
 

@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
     ) { }
 
   item:Product;
-
+msg: string;
   ngOnInit(): void {
     this.getProducts();
   }
@@ -49,7 +49,7 @@ export class ProductComponent implements OnInit {
     const userlogin = JSON.parse(userstring);
     console.log("++++++++++++++");
     console.log(userlogin);
-
+    if(userlogin!=null){
     let orderdata = {
       user: userlogin,
       product: item,
@@ -70,18 +70,24 @@ export class ProductComponent implements OnInit {
           console.log(" Added to cart");
           console.log(data);
           this.customService.userdata = data;
+          this.msg="Added to cart";
           //  console.log( this.customService.userdata);
           // alert("login successful");
           // this.router.navigate(["/cart2"]);
         },
         error => {
           console.log("exception occured");
-          this.router.navigate(["/login"]);
-          //this.msg="Bad credential, enter right email-id or passoword !";
+          this.router.navigate(["'/','login'"]);
         })
   }
+  else{
+    alert("user must login to add product to cart");
+    this.router.navigate(["/home-page"]);
+  }
+}
 
   decreaseQuantity(item){
+    console.log(item.quantity);
   }
   increaseQuantity(item){
   }

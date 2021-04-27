@@ -34,7 +34,9 @@ public class CategoryService {
 		return category_id;
 	}
 	
-	public Category addCategory(Category category) {
+	public Category addCategory(String name) {
+		Category category = new Category();
+		category.setName(name);
 		return categoryRepository.save(category);
 	}
 	

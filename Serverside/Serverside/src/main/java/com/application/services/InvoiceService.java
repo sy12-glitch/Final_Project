@@ -49,9 +49,9 @@ public class InvoiceService {
 		invoice.setDate(orderdate);
 		invoiceRepository.save(invoice);
 		
-//		for(Order order:orders) {
-//			deleteOrder(order.getId());
-//		}
+		for(Order order:orders) {
+			deleteOrder(order.getId());
+		}
 		return invoice;
 	}
 	public  User findUserById(int id) throws InvalidUserException {
