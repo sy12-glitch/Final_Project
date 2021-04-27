@@ -31,7 +31,7 @@
             <button class="add-btn" clear (click)="incrementQty(item.quantity)">+</button>
           </tr>
           <td>
-            <button type="button" class="btn btn-outline-success" (click)="OnAddCart(item)"><b>Add to cart</b></button>
+            <button type="button" [disabled]="item.quantity==0" class="btn btn-outline-success" (click)="OnAddCart(item)"><b>Add to cart</b></button>
 
           </td>
 
