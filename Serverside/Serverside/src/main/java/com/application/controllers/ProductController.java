@@ -65,12 +65,10 @@ public class ProductController {
 	}
 	
 	@PutMapping("/updateProduct")
-	public ResponseEntity<Product> updateProduct(@RequestBody Product product, @RequestBody User user, @RequestBody int id) throws NotPermittedException {
+	public Product updateProduct(@RequestBody Product product) {
 		System.out.println(product);
-		Product updatedProduct = productService.updateProduct(user, id, product);
-		ResponseEntity<Product> res = ResponseEntity.status(HttpStatus.CREATED).body(updatedProduct);
-		System.out.println(res);
-		return res;
+		Product updatedProduct = productService.updateProduct(product);
+		return updatedProduct;
 	}
 	
 	@DeleteMapping("deleteProduct/{id}")

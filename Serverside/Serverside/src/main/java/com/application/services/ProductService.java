@@ -84,18 +84,12 @@ public class ProductService {
 		return productRepository.save(product);
 	}
 	
-	public Product updateProduct(User user,int id,Product product) throws NotPermittedException {
+	public Product updateProduct(Product product) {
+		int id = product.getId();
 		Optional<Product> optional = productRepository.findById(id);
 		Product dbProduct = optional.orElse(null);
-		if(dbProduct!=null&&user.getRole().equals("ADMIN")&&(user.getIsactive()))
-		{
-			productRepository.save(product);
-			return product;
-		}
-		else
-		{
-			throw new NotPermittedException("You are not permitted to update this product");
-		}
+		product.setId(id);
+		return productRepository.save(product);
 	}
 
 	

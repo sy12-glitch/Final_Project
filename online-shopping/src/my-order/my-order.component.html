@@ -1,1 +1,12 @@
-<p>my-order works!</p>
+<app-header></app-header>
+<div class="container">
+    <h3 class="text-center">All Purchases</h3>
+    <div *ngFor="let invoice of invoices">
+        <div>
+            <tr>Invoice number: {{invoice.id}}</tr>
+            <tr>Purchase date: {{invoice.date}}</tr>
+            <tr>Invoice total: {{invoice.amount}}</tr>
+        </div>
+            
+    </div>
+</div>

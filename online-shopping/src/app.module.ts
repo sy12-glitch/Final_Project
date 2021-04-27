@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app/app-routing.module';
-
 import { HomePageComponent } from './home-page/home-page.component';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from 'src/sign-up/sign-up/sign-up.component';
 import { ForgetComponent } from 'src/sign-up/forget/forget.component';
@@ -15,10 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import routes from 'src/app.routing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app/app.component';
-import { Product1Component } from './product1/product1.component';
 import { MyOrderComponent } from './my-order/my-order.component';
-import { Product2Component } from './product2/product2.component';
-import { Product3Component } from './product3/product3.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
@@ -37,23 +31,17 @@ import { LogoutComponent } from './logout/logout.component';
 
 
 
-
 @NgModule({
   declarations: [SignUpComponent,ForgetComponent, LoginComponent,
     AppComponent,
     HomePageComponent,
-    Product1Component,
     MyOrderComponent,
-    Product2Component,
- 
     HeaderComponent,
     Header2Component,
     FooterComponent,
     AdminLoginComponent,
-
     ProductCreateComponent,
     ListProductComponent,
-    
     ProductComponent,
       ControllerComponent,
       UserDetailsComponent,

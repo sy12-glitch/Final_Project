@@ -36,8 +36,8 @@ export class Cart2Component implements OnInit {
       this.orders = res;
     })
   }
-  deleteOrder(orders){
-    this.cartService.deleteOrder(orders.id)
+  deleteItem(customer_order){
+    this.cartService.deleteItem()
     .subscribe((res:any)=>{
       this.printCart();
     })
@@ -56,5 +56,11 @@ export class Cart2Component implements OnInit {
         console.log(this.orders);
       }
     )
+  }
+  deleteOrder(item){
+    this.cartService.deleteOrder(item.id)
+    .subscribe((res:any)=>{
+      this.printCart();
+    })
   }
 }

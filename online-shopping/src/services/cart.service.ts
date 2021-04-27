@@ -42,8 +42,8 @@ export class CartService {
 
     return this.http.post(`${this.host}/orders`,orders);
   }
-  deleteOrder(id){
-    return this.http.delete(`${this.host}/deleteOrder/${id}`);
+  deleteItem(){
+    return this.http.delete(`${this.host}/orders/deleteOrder`);
   }
 
   getOrders(user){
@@ -51,5 +51,8 @@ export class CartService {
     const headers = new HttpHeaders()
     return this.http.post(`${this.host}/getorders`, user);
   }
-  
+  deleteOrder(id){
+    return this.http.delete(`${this.host}/deleteOrder/${id}`);
+  }
 }
+

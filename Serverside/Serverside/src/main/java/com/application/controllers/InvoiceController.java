@@ -28,8 +28,18 @@ public class InvoiceController {
 		return invoiceService.createInvoice(user);
 	}
 	
+	@PostMapping("/save")
+	public Invoice saveInvoice(@RequestBody Invoice invoice) {
+		return invoiceService.saveInvoice(invoice);
+	}
+	
 	@PostMapping("/myOrders")
 	public List<Order> getOrders(@RequestBody User user){
 		return invoiceService.getOrdersByUser(user);
+	}
+	
+	@PostMapping("/Myinvoice")
+	public List<Invoice> getAllInvoice(@RequestBody User user){
+		return invoiceService.getAllInvoice(user);
 	}
 }

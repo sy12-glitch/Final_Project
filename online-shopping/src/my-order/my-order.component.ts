@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Invoice } from 'src/Models/Invoice.model';
+import { InvoiceService } from 'src/Services/invoice.service';
 
 @Component({
   selector: 'app-my-order',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyOrderComponent implements OnInit {
 
-  constructor() { }
+  invoices:Invoice[];
+
+  constructor(private invoiceService:InvoiceService) { }
 
   ngOnInit(): void {
+    this.MyOrders();
   }
 
+  MyOrders(){
+    let userstring = localStorage.getItem('userlogindetails');
+    var userlogin = JSON.parse(userstring);
+    this.invoiceService.getAllInvoice(userlogin)
+    .subscribe(
+      (data:Invoice[])=>{
+        console.log(data);
+        this.invoices=data;
+      }
+    )
+  }
 }

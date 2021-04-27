@@ -83,7 +83,7 @@ public class AdminController {
 	}
 
 	@PostMapping("category/add")
-	public Category addCategory(@RequestBody Category category) {
+	public Category addCategory(@RequestBody String category) {
 		return categoryService.addCategory(category);
 	}
 

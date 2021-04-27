@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Category } from 'src/Models/Category.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
+  categories:Category[];
+
   private host: string = "http://localhost:8080/category";
   httpClient: any;
+  static this: any;
   constructor(private http: HttpClient) { }
 
   getCategories(){

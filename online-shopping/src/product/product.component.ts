@@ -6,6 +6,7 @@ import { Product } from 'src/Models/products.model';
 import { ProductsService } from 'src/services/products.service';
 import {CustomerService} from 'src/Services/customer.service';
 import { CartService } from 'src/services/cart.service';
+import { isQualifiedName } from 'typescript';
 
 @Component({
   selector: 'app-product',
@@ -19,6 +20,8 @@ export class ProductComponent implements OnInit {
 
   catName: String;
   products: Product[] = [];
+  orderdata:any;
+  orderqty:any=0;
 
   constructor(private router: Router, 
     private http: HttpClient,private productService:ProductsService, private customService:CustomerService, private session: SessionStorageService,
@@ -50,15 +53,15 @@ msg: string;
     console.log("++++++++++++++");
     console.log(userlogin);
     if(userlogin!=null){
-    let orderdata = {
+    this.orderdata = {
       user: userlogin,
       product: item,
-      quantity: item.quantity
+      quantity: this.orderqty,
 
     }
 
-    localStorage.setItem('ordervalue', JSON.stringify(orderdata));
-    console.log(localStorage.setItem('ordervalue', JSON.stringify(orderdata)));
+    localStorage.setItem('ordervalue', JSON.stringify(this.orderdata));
+    console.log(localStorage.setItem('ordervalue', JSON.stringify(this.orderdata)));
     let userstr = localStorage.getItem('ordervalue');
     const userObj = JSON.parse(userstr);
     console.log("----------");
@@ -82,13 +85,29 @@ msg: string;
   }
   else{
     alert("user must login to add product to cart");
-    this.router.navigate(["/home-page"]);
+    this.router.navigate(["/login"]);
   }
 }
-
-  decreaseQuantity(item){
-    console.log(item.quantity);
+incrementQty(quan){
+  if(this.orderqty<quan){
+  this.orderqty = this.orderqty + 1;
+  console.log(this.orderqty + 1);
   }
-  increaseQuantity(item){
+  else{
+    this.orderqty=quan;
+  }
+  }
+  
+  //decrements item
+  
+  decrementQty(){
+  if(this.orderqty-1 < 1){
+    this.orderqty = 1;
+    console.log('quantity->' + this.orderqty)
+  }
+  else{
+    this.orderqty -= 1;
+    console.log('quantity->' + this.orderqty);
+  }
   }
 }
