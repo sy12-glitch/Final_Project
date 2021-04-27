@@ -93,7 +93,7 @@ public class UserService {
 	// }
 //login service
 	public User Userlogin(User user) throws InvalidUserException {
-		User users = userRepository.findByEmail(user.getEmail());
+		User userdb = userRepository.findByEmail(user.getEmail());
 		if ((user.getEmail().equals("admin@gmail.com")) && (user.getPassword().equals("Admin@123"))) {
 			user.setUserid(1);
 			user.setFname("Admin");
@@ -105,23 +105,27 @@ public class UserService {
 			user.setPassword("Admin@123");
 			user.setGender("Male");
 			user.setIsactive(true);
-			if (users==null) {
+			if (userdb==null) {
 				userRepository.save(user);
+			}
+			else {
+				userdb.setIsactive(true);
+				userRepository.save(userdb);
 			}
 		}
 
-		else if (users == null) {
+		else if (userdb == null) {
 			throw new InvalidUserException("Invalid username or password.");
 		}
 
-		else if ((user.getEmail().equals(users.getEmail())) && (user.getPassword().equals(users.getPassword()))) {
+		else if ((user.getEmail().equals(userdb.getEmail())) && (user.getPassword().equals(userdb.getPassword()))) {
 
-			users.setIsactive(true);
-			userRepository.save(users);
+			userdb.setIsactive(true);
+			userRepository.save(userdb);
 		} else {
 			throw new InvalidUserException("Invalid username or password.");
 		}
-		return users;
+		return userdb;
 
 	}
 

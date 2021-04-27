@@ -1,14 +1,14 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <div class="container-fluid">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;" role="navigation">
-      <!-- <a class="navbar-brand">E-mart</a> -->
-      <a class="nav-link active" routerLink="/home-page"><span id="logo">HappyMart</span></a>
-        <a class="nav-link" routerLink="/about-us">About Us</a>
-        <a class="nav-link"  routerLink="/add-product">Add products</a>
-        <a class="nav-link"  routerLink="/list-product">View products</a>
-        <a class="nav-link"  routerLink="/manage-cat">Manage category</a>
-       
-      <a class="nav-link" [routerLink]="['/']" >Logout</a>
-      
-    </nav>
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;" role="navigation">
+    <!-- <a class="navbar-brand">E-mart</a> -->
+    <a class="nav-link active" routerLink="/home-page"><span id="logo">HappyMart</span></a>
+    <a class="nav-link" routerLink="/about-us">About Us</a>
+    <a class="nav-link" routerLink="/add-product">Add products</a>
+    <a class="nav-link" routerLink="/list-product">View products</a>
+    <a class="nav-link" routerLink="/manage-cat">Manage category</a>
+    <a class="nav-link" (click)="logout()">Logout</a>
+
+  </nav>
+</div>

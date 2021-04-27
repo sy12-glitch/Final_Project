@@ -23,6 +23,10 @@ export class AdminService {
       const headers= new HttpHeaders()
       return this.http.post(`${this.host}/admin/login`, admin);
     }
+
+    logoutAdmin(adminlogin){
+      return this.http.post(`${this.host}/home/user/logout`, adminlogin);
+    }
     // getCustomers(){
     //   return this.http.get(`${this.host}/home/users`);
     // }

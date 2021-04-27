@@ -22,7 +22,7 @@
                         <tr>
                             <td class="description">{{item.product.description|slice:0:50}}</td>
                         </tr>
-                        <td><button class="btn btn-danger" (click)="deleteOrder(item)">Delete</button></td>
+                        <td><button [disabled]="orders.length<1" class="btn btn-danger" (click)="deleteOrder(item)">Delete</button></td>
                     </table>
                 </div>
 

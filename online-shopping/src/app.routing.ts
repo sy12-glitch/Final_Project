@@ -19,16 +19,18 @@ import { AdminGuard } from "./guard/admin.guard";
 import { ProfileComponent } from "./profile/profile.component";
 import { MyOrderComponent } from "./my-order/my-order.component";
 import { LoginGuard } from "./guard/login.guard";
+import { LoggedinGuard } from "./guard/loggedin.guard";
+import { Header2Component } from "./shared/header2/header2.component";
 
 
 const routes:Routes = [
-    { path: 'sign-up', component: SignUpComponent },
+    { path: 'sign-up', component: SignUpComponent, canActivate: [LoggedinGuard]},
     {path: '', component: HomePageComponent},
-    { path: 'login', component: LoginComponent },
+    { path: 'login', component: LoginComponent, canActivate: [LoggedinGuard]},
     { path: 'about-us', component: AboutUsComponent},
     { path: 'home-page', component: HomePageComponent},
     { path: 'admin-login', component: AdminLoginComponent},
-    {path: 'logout', component: LogoutComponent},
+    {path: 'logout', component: LogoutComponent, canActivate: [LoginGuard]}, 
     {path: 'create', component: ProductCreateComponent},
     {path: 'list', component: ListProductComponent},
     //  {path:'add-product', component: ProductCreateComponent, canActivate: [AdminGuard]},
@@ -36,14 +38,13 @@ const routes:Routes = [
     {path: 'edit/:id', component: EditProductComponent},
     {path:'controller', component: ControllerComponent, canActivate: [AdminGuard]},
     {path:'list-product', component: ListProductComponent},
-    {path:'user-det', component: UserDetailsComponent},
+    {path:'user-det', component: UserDetailsComponent, canActivate: [LoginGuard]}, 
     {path:'product', component: ProductComponent},
     {path:'cart2', component: Cart2Component, canActivate: [LoginGuard]}, 
-    {path:'invoice', component:InvoiceComponent},
+    {path:'invoice', component:InvoiceComponent, canActivate: [LoginGuard]}, 
     {path:'manage-cat', component:ManageCategoryComponent},
-    {path:'profile', component:ProfileComponent},
-    {path:'my-order',component:MyOrderComponent}
- 
+    {path:'profile', component:ProfileComponent, canActivate: [LoginGuard]}, 
+    {path:'my-order',component:MyOrderComponent, canActivate: [LoginGuard]}
    
 
    
